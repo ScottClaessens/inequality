@@ -1,1 +1,7 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+dplace_data_url|stem|e0e023be3db9dfae|14e703ec1d8b5d26|2c530c1562a7fbd1|545186855|https://raw.githubusercontent.com/D-PLACE/dplace-cldf/6c2008c187a297d1955b41d8ae80d8e31d404f6c/cldf/data.csv|t20509.8898095372s||0|url|local|vector|||0||
+dplace_societies_url|stem|c3caf7f2ccd75161|aee14d29acec2be0|2c530c1562a7fbd1|17396771|https://raw.githubusercontent.com/D-PLACE/dplace-cldf/6c2008c187a297d1955b41d8ae80d8e31d404f6c/cldf/societies.csv|t20509.8914343642s||0|url|local|vector|||0.263||
+data|stem|c2cf70641b3c0675|976bd67ea17a778d|aa48c9ddfc7d87d2|33550471||t20509.8960233118s|s14137b|14137|rds|local|vector|||7.917||
+wrangle_ea|function|61e62918f4d634a2
+wrangle_sccs|function|8c34a9133e9da87b
+load_dplace_data|function|3498144577eba179
