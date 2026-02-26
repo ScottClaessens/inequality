@@ -22,5 +22,7 @@ list(
     ),
     format = "url"
   ),
-  tar_target(data, load_dplace_data(dplace_data_url, dplace_societies_url))
+  tar_target(data, load_dplace_data(dplace_data_url, dplace_societies_url)),
+  # plot variable coverage
+  tar_target(plot_coverage, plot_variable_coverage(data))
 )
