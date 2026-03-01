@@ -9,7 +9,7 @@
 #'
 plot_variable_coverage <- function(data) {
   # counts of observed data for D-PLACE variables
-  counts <- apply(data, 2, function(x) sum(!is.na(x)))[-c(1:2)]
+  counts <- apply(data, 2, function(x) sum(!is.na(x)))[-c(1:6)]
   names(counts) <- str_to_sentence(str_replace_all(names(counts), "_", " "))
   # plot
   p <-

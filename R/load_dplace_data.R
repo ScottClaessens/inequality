@@ -5,11 +5,15 @@
 #' (release v3.3.0).
 #'
 #' @details The dataset produced by this function is a tibble with 1290
-#'   observations and 18 variables:
+#'   observations and 21 variables:
 #' \describe{
 #'  \item{soc_id}{Character, society ID}
 #'  \item{xd_id}{Character, cross-dataset ID (see
 #'    https://d-place.org/glossary#q9)}
+#'  \item{society}{Name of the society}
+#'  \item{region}{Region of the society}
+#'  \item{latitude}{Latitude of the society}
+#'  \item{longitude}{Longitude of the society}
 #'  \item{class_differentiation}{Ordered factor (five levels), extent of class
 #'    differentiation; coded from EA066}
 #'  \item{agriculture}{Ordered factor (six levels), intensity of agricultural
@@ -105,7 +109,7 @@ wrangle_ea <- function(data, societies) {
   # function to code absent/present values
   code_absence_presence <- function(variable, absent_values) {
     ifelse(
-      is.na(variable), NA, ifelse(
+      variable == "", NA, ifelse(
         variable %in% absent_values, "Absent", "Present"
       )
     )
@@ -117,7 +121,7 @@ wrangle_ea <- function(data, societies) {
     filter(Contribution_ID == "dplace-dataset-ea") |>
     # pivot wider
     pivot_wider(
-      id_cols = c(Soc_ID, xd_id),
+      id_cols = c(Soc_ID, xd_id, Name, Latitude, Longitude, region),
       names_from = Var_ID,
       values_from = Value
     ) |>
@@ -125,6 +129,10 @@ wrangle_ea <- function(data, societies) {
     transmute(
       soc_id                       = Soc_ID,
       xd_id                        = xd_id,
+      society                      = Name,
+      region                       = region,
+      latitude                     = Latitude,
+      longitude                    = Longitude,
       class_differentiation        = ordered(EA066, levels = levels_EA066),
       agriculture                  = ordered(EA028, levels = levels_EA028),
       large_domestic_animals       = code_absence_presence(EA040, absent_EA040),
@@ -167,7 +175,7 @@ wrangle_ea <- function(data, societies) {
     # absent/present as factor
     mutate(
       across(
-        where(is.character) & !c(soc_id, xd_id),
+        where(is.character) & !c(soc_id, xd_id, society, region),
         function(x) factor(x, levels = c("Absent", "Present"))
       )
     )
