@@ -32,8 +32,6 @@
 #'    population of local communities; coded from EA031}
 #'  \item{local_headman}{Factor, presence/absence of office of local headman;
 #'    coded from EA072}
-#'  \item{caste_differentiation}{Ordered factor (four levels), extent of caste
-#'    differentiation; coded from EA068}
 #'  \item{bridewealth}{Factor, presence/absence of bride-wealth, bride-price,
 #'    bride-service, or token bride-price as the prevailing type of transfer
 #'    or exchange at marriage; coded from EA006}
@@ -89,8 +87,6 @@ wrangle_ea <- function(data, societies) {
   levels_EA066 <- c("Absence of distinctions", "Wealth distinctions",
                     "Elite stratification", "Dual stratification",
                     "Complex stratification")
-  levels_EA068 <- c("Absence of distinctions", "Despised occupation groups",
-                    "Ethnic stratification", "Complex caste stratification")
   # absence codes
   absent_EA006 <- c("Gift exchange", "Woman exchange", "Insignificant", "Dowry")
   absent_EA009 <- c("Limited polygyny", "Polygyny, sororal cohabit",
@@ -139,7 +135,6 @@ wrangle_ea <- function(data, societies) {
       monogamy                     = code_absence_presence(EA009, absent_EA009),
       mean_size_local_community    = ordered(EA031, levels = levels_EA031),
       local_headman                = code_absence_presence(EA072, absent_EA072),
-      caste_differentiation        = ordered(EA068, levels = levels_EA068),
       bridewealth                  = code_absence_presence(EA006, absent_EA006),
       sedentism                    = ordered(EA030, levels = levels_EA030),
       craft_metal_working          = code_absence_presence(EA055, absent_craft),

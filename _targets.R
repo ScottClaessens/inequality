@@ -5,7 +5,7 @@ tar_source()
 
 # pipeline
 list(
-  # load dplace data
+  # dplace urls
   tar_target(
     dplace_data_url,
     paste0(
@@ -22,6 +22,7 @@ list(
     ),
     format = "url"
   ),
+  # load dplace data
   tar_target(data, load_dplace_data(dplace_data_url, dplace_societies_url)),
   # plot variable coverage
   tar_target(plot_coverage, plot_variable_coverage(data))
