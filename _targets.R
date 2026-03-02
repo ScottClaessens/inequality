@@ -1,7 +1,8 @@
 library(targets)
 library(tarchetypes)
 tar_option_set(
-  packages = c("ape", "sf", "rnaturalearth", "tidyverse")
+  packages = c("ape", "cowplot", "ggtree", "phangorn", "rnaturalearth",
+               "sf", "tidyverse")
 )
 tar_source()
 
@@ -32,6 +33,13 @@ list(
   tar_target(tree, read.nexus(tree_file)),
   # plot variable coverage
   tar_target(plot_coverage, plot_variable_coverage(data)),
-  # plot class world map
-  tar_target(plot_world, plot_world_map(data))
+  # plot world map
+  tar_target(plot_world, plot_world_map(data)),
+  # plot maximum clade credibility tree
+  tar_target(mcc_tree, phangorn::mcc(tree)),
+  tar_target(plot_tree, ggtree(mcc_tree, layout = "circular")),
+  # plot gdpm schematic
+  tar_target(plot_gdpm, plot_gdpm_algorithm()),
+  # plot all methods together
+  tar_target(plot_methods, plot_all_methods(plot_world, plot_tree, plot_gdpm))
 )
