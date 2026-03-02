@@ -26,26 +26,28 @@ plot_world_map <- function(data) {
       mapping = aes(
         x = longitude,
         y = latitude,
-        colour = class_differentiation
+        fill = class_differentiation
       ),
-      size = 1
+      size = 1,
+      shape = 21
     ) +
-    scale_colour_brewer(
+    scale_fill_brewer(
       type = "seq",
-      palette = 7
-    ) +
-    guides(
-      colour = guide_legend(
+      palette = 7,
+      guide = guide_legend(
         override.aes = list(
           size = 4,
-          shape = "square"
+          shape = "square filled"
         )
       )
     ) +
     theme_void() +
     theme(
       legend.title = element_blank(),
-      legend.position = "bottom",
-      legend.box.background = element_rect()
+      legend.key.spacing.y = unit(-2, "mm"),
+      legend.position = "inside",
+      legend.position.inside = c(0.1, 0.1),
+      legend.box.background = element_rect(),
+      legend.margin = margin(0, 5, 0, 0)
     )
 }
