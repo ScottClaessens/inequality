@@ -1,6 +1,8 @@
 library(targets)
 library(tarchetypes)
-tar_option_set(packages = c("tidyverse"))
+tar_option_set(
+  packages = c("sf", "rnaturalearth", "tidyverse")
+)
 tar_source()
 
 # pipeline
@@ -25,5 +27,7 @@ list(
   # load dplace data
   tar_target(data, load_dplace_data(dplace_data_url, dplace_societies_url)),
   # plot variable coverage
-  tar_target(plot_coverage, plot_variable_coverage(data))
+  tar_target(plot_coverage, plot_variable_coverage(data)),
+  # plot class world map
+  tar_target(plot_world, plot_world_map(data))
 )

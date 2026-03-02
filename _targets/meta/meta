@@ -2,9 +2,10 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 dplace_data_url|stem|e0e023be3db9dfae|14e703ec1d8b5d26|2c530c1562a7fbd1|545186855|https://raw.githubusercontent.com/D-PLACE/dplace-cldf/6c2008c187a297d1955b41d8ae80d8e31d404f6c/cldf/data.csv|t20509.8898095372s||0|url|local|vector|||0||
 dplace_societies_url|stem|c3caf7f2ccd75161|aee14d29acec2be0|2c530c1562a7fbd1|17396771|https://raw.githubusercontent.com/D-PLACE/dplace-cldf/6c2008c187a297d1955b41d8ae80d8e31d404f6c/cldf/societies.csv|t20509.8914343642s||0|url|local|vector|||0.263||
 data|stem|08552729e4210cd0|976bd67ea17a778d|a087be3d6e3e8da5|33550471||t20513.9206446713s|s29692b|29692|rds|local|vector|||8.187||
+plot_coverage|stem|43159bebd854fa9e|3c337ec3a4bb18ce|09426e2e6763ddd4|249145699||t20513.9214681757s|s448800b|448800|rds|local|vector|||0.103||
 wrangle_ea|function|de3fc0c4fc93d247
 wrangle_sccs|function|8c34a9133e9da87b
-plot_world_map|function|ed070b8c05a6f047
+plot_world_map|function|2abdd430acdbda5e
 plot_variable_coverage|function|f48ead712ee53e7d
 load_dplace_data|function|420872e8cc56421e
-plot_coverage|stem|43159bebd854fa9e|3c337ec3a4bb18ce|09426e2e6763ddd4|249145699||t20513.9214681757s|s448800b|448800|rds|local|vector|||0.103||
+plot_world|stem|bef3bff997a96ccf|597e0c0ffcff6594|d01086da48dd97f6|-1778573588||t20514.0273448101s|s1889909b|1889909|rds|local|vector|||0.049||
