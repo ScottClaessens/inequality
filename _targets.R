@@ -1,7 +1,7 @@
 library(targets)
 library(tarchetypes)
 tar_option_set(
-  packages = c("sf", "rnaturalearth", "tidyverse")
+  packages = c("ape", "sf", "rnaturalearth", "tidyverse")
 )
 tar_source()
 
@@ -24,8 +24,12 @@ list(
     ),
     format = "url"
   ),
+  # data files
+  tar_target(tree_file, "data/tree/dplace.nxs"),
   # load dplace data
   tar_target(data, load_dplace_data(dplace_data_url, dplace_societies_url)),
+  # load tree
+  tar_target(tree, read.nexus(tree_file)),
   # plot variable coverage
   tar_target(plot_coverage, plot_variable_coverage(data)),
   # plot class world map
