@@ -1,20 +1,20 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 dplace_data_url|stem|e0e023be3db9dfae|14e703ec1d8b5d26|2c530c1562a7fbd1|545186855|https://raw.githubusercontent.com/D-PLACE/dplace-cldf/6c2008c187a297d1955b41d8ae80d8e31d404f6c/cldf/data.csv|t20509.8898095372s||0|url|local|vector|||0||
 dplace_societies_url|stem|c3caf7f2ccd75161|aee14d29acec2be0|2c530c1562a7fbd1|17396771|https://raw.githubusercontent.com/D-PLACE/dplace-cldf/6c2008c187a297d1955b41d8ae80d8e31d404f6c/cldf/societies.csv|t20509.8914343642s||0|url|local|vector|||0.263||
-data|stem|08552729e4210cd0|976bd67ea17a778d|a087be3d6e3e8da5|33550471||t20513.9206446713s|s29692b|29692|rds|local|vector|||8.187||
-plot_coverage|stem|43159bebd854fa9e|3c337ec3a4bb18ce|09426e2e6763ddd4|249145699||t20513.9214681757s|s448800b|448800|rds|local|vector|||0.103||
 tree_file|stem|dfdd8efb1023469b|1de9ec4cb0b83efe|2c530c1562a7fbd1|-419834672||t20514.0501492031s|s73b|73|rds|local|vector|||1.145||
 tree|stem|9591bd929a318657|7b4ee45d0a45de90|3506065186727838|437279712||t20514.0503117553s|s18603358b|18603358|rds|local|vector|||3.011||
-plot_world|stem|fa672a87804c06aa|597e0c0ffcff6594|3ecbccd6fef716fd|-1778573588||t20514.0503137186s|s739269b|739269|rds|local|vector|||0.054||
 plot_mcc_tree|function|92e76f3b34e605a0
 mcc_tree|stem|c1b0eb4388578300|c47da3594f89d0e8|8968ad285a04f40e|-2069454262||t20514.0540790611s|s24549b|24549|rds|local|vector|||7.816||
 plot_tree|stem|a03865aab7c7dab6|fd50c2d27dc55c0b|0a61e5776d5276df|-120768443||t20514.0554208108s|s858276b|858276|rds|local|vector|||0.071||
 plot_gdpm|stem|4b866a62c965301f|e1fe878bf61ed907|e98fb3cd55a95d2c|-258833698||t20514.8907504685s|s1737636b|1737636|rds|local|vector|||1.207||
+data|stem|b0d77be10c230ed0|c395f46c2c25663b|5d589b5d2e2adf72|33550471||t20515.1177844078s|s25792b|25792|rds|local|vector|||8.519||
+plot_world|stem|d817b6bb383173cb|597e0c0ffcff6594|a3d46ec58ccc6aa2|-1778573588||t20515.1177860035s|s727137b|727137|rds|local|vector|||0.035||
+plot_methods|stem|5ae5719582bd4f5a|ed909cd554c0cd7f|48269431f2f58c77|478310962||t20515.1178142949s|s7370529b|7370529|rds|local|vector|||0.799|Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.|
+plot_coverage|stem|dcb2e74eda2bb72a|3c337ec3a4bb18ce|ad58f38944d7edf1|249145699||t20515.1188602451s|s444982b|444982|rds|local|vector|||0.102||
 plot_gdpm_algorithm|function|504a495d931ef5dd
 plot_all_methods|function|3a8b15634d960f41
 wrangle_ea|function|de3fc0c4fc93d247
 wrangle_sccs|function|8c34a9133e9da87b
 plot_world_map|function|01e493e6b36335fa
-plot_variable_coverage|function|f48ead712ee53e7d
-load_dplace_data|function|420872e8cc56421e
-plot_methods|stem|15d32041e092bc7a|ed909cd554c0cd7f|8cf6b908c7694ba9|478310962||t20514.891856834s|s7382803b|7382803|rds|local|vector|||0.957|Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.|
+plot_variable_coverage|function|e1561af4c76291c4
+load_dplace_data|function|0d8f460b7d3091e5

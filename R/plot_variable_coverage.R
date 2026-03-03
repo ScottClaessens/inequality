@@ -26,12 +26,12 @@ plot_variable_coverage <- function(data) {
     xlab(NULL) +
     geom_col(fill = "lightblue4") +
     geom_hline(
-      yintercept = 1290,
+      yintercept = 1125,
       linetype = "dashed"
     ) +
     scale_y_continuous(
       name = "Number of societies\nwith observed data",
-      limits = c(0, 1350),
+      limits = c(0, 1300),
       breaks = seq(0, 1250, by = 250),
       expand = c(0, 0)
     ) +

@@ -27,16 +27,20 @@ list(
   ),
   # data files
   tar_target(tree_file, "data/tree/dplace.nxs"),
-  # load dplace data
-  tar_target(data, load_dplace_data(dplace_data_url, dplace_societies_url)),
   # load tree
   tar_target(tree, read.nexus(tree_file)),
+  # compute maximum clade credibility tree
+  tar_target(mcc_tree, phangorn::mcc(tree)),
+  # load dplace data
+  tar_target(
+    data,
+    load_dplace_data(dplace_data_url, dplace_societies_url, mcc_tree)
+  ),
   # plot variable coverage
   tar_target(plot_coverage, plot_variable_coverage(data)),
   # plot world map
   tar_target(plot_world, plot_world_map(data)),
   # plot maximum clade credibility tree
-  tar_target(mcc_tree, phangorn::mcc(tree)),
   tar_target(plot_tree, ggtree(mcc_tree, layout = "circular")),
   # plot gdpm schematic
   tar_target(plot_gdpm, plot_gdpm_algorithm()),

@@ -2,9 +2,10 @@
 #'
 #' Load and wrangle data on inequality and other variables from the Ethnographic
 #' Atlas and Standard Cross-Cultural Sample via the online database D-PLACE
-#' (release v3.3.0).
+#' (release v3.3.0). The dataset is filtered to 1127 societies that can be
+#' linked to the phylogenetic tree.
 #'
-#' @details The dataset produced by this function is a tibble with 1290
+#' @details The dataset produced by this function is a tibble with 1127
 #'   observations and 21 variables:
 #' \describe{
 #'  \item{soc_id}{Character, society ID}
@@ -53,10 +54,12 @@
 #' @param dplace_data_url URL to access cldf/data.csv from D-PLACE v3.3.0
 #' @param dplace_societies_url URL to access cldf/societies.csv from D-PLACE
 #'   v3.3.0
+#' @param mcc_tree Maximum clade credibility tree of D-PLACE societies used to
+#'   filter the dataset
 #'
 #' @returns A tibble
 #'
-load_dplace_data <- function(dplace_data_url, dplace_societies_url) {
+load_dplace_data <- function(dplace_data_url, dplace_societies_url, mcc_tree) {
   # load csv files
   data <- read.csv(file = dplace_data_url)
   societies <- read.csv(file = dplace_societies_url)
@@ -65,7 +68,9 @@ load_dplace_data <- function(dplace_data_url, dplace_societies_url) {
   # wrangle sccs data (n = 186)
   sccs <- wrangle_sccs(data, societies)
   # join datasets
-  left_join(ea, sccs, by = "xd_id")
+  joined <- left_join(ea, sccs, by = "xd_id")
+  # filter to societies in phylogenetic tree (n = 1125)
+  filter(joined, xd_id %in% mcc_tree$tip.label)
 }
 
 #' Wrangle Ethnographic Atlas data from D-PLACE
