@@ -48,7 +48,7 @@ create_table_variables <- function(data, phylogenetic_signal) {
     Name = colnames(data)[7:21],
     Code = c(
       "EA066", "EA028", "EA040", "EA075", "EA077", "EA039", "EA043", "EA009",
-      "EA031", "EA072", "EA006", "EA030", "EA055-EA060", "SCCS1650", "SCCS20"
+      "EA031", "EA072", "EA006", "EA030", "EA055-EA060", "SCCS892", "SCCS20"
     ),
     Type = ifelse(
       sapply(data, function(x) class(x)[[1]])[7:21] == "factor",
@@ -69,7 +69,7 @@ create_table_variables <- function(data, phylogenetic_signal) {
       ),
       "Presence/absence of patrilineality as the major mode of descent",
       "Presence/absence of monogamy as the marital composition of family units",
-      "Average population of local communities",
+      "Average population size of local communities",
       "Presence/absence of office of local headman",
       paste0(
         "Presence/absence of bride-wealth, bride-price, bride-service, ",
@@ -88,5 +88,11 @@ create_table_variables <- function(data, phylogenetic_signal) {
   ) |>
     left_join(prop_observed) |>
     left_join(phylogenetic_signals, by = c("Name" = "variable")) |>
-    mutate(Name = str_to_sentence(str_replace_all(Name, "_", " ")))
+    mutate(
+      Name = str_to_sentence(str_replace_all(Name, "_", " ")),
+      Name = ifelse(
+        Name == "Mean size local community", "Population size", Name
+      ),
+      Name = ifelse(Name == "Local headman", "Leadership", Name)
+    )
 }

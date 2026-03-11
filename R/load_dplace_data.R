@@ -45,8 +45,8 @@
 #'  \item{craft_specialisation}{Factor, presence/absence of craft specialisation
 #     in any of the following: metal working, weaving, leather working, pottery
 #'    making, boat building, or house construction; coded from EA055-EA060}
-#'  \item{external_warfare_frequency}{Ordered factor (five levels), frequency of
-#'    external warfare; recoded from SCCS1650}
+#'  \item{external_warfare_frequency}{Ordered factor (three levels), frequency
+#'    of external warfare (attacking); recoded from SCCS892}
 #'  \item{food_storage}{Ordered factor (five levels), extent of food storage;
 #'    coded from SCCS20}
 #' }
@@ -198,46 +198,7 @@ wrangle_ea <- function(data, societies) {
 #'
 wrangle_sccs <- function(data, societies) {
   # ordered levels
-  all_levels_SCCS1650 <- c(
-    "No resolved rating (original code  0)"                        = NA,
-    "External warfare seems to be absent or rare (orginal code 1)" = 1,
-    "original code 1.25"                                           = 1,
-    "original code 1.5"                                            = 1,
-    "original code 1.75"                                           = 1,
-    "External warfare semems to occur once every 3 to 10 years"    = 2,
-    "original code 2.25"                                           = 2,
-    "original code 2.5"                                            = 2,
-    "original code 2.75"                                           = 2,
-    "External warfare seems to occur at least once ..."            = 3,
-    "original code 3.25"                                           = 3,
-    "original code 3.5"                                            = 3,
-    "original code 3.75"                                           = 3,
-    "External warfare seems to occur every year particular season" = 4,
-    "original code 4.25"                                           = 4,
-    "original code 4.5"                                            = 4,
-    "original code 4.75"                                           = 4,
-    "External warfare occur almost constantly any time of year"    = 5,
-    "Don't know or unclear (original code 8)"                      = NA
-  )
-  names(all_levels_SCCS1650)[10] <-
-    str_replace(
-      names(all_levels_SCCS1650)[10],
-      fixed("..."),
-      "every two years (original code 3)"
-    )
-  levels_SCCS1650 <- c(
-    "External warfare seems to be absent or rare",
-    "External warfare seems to occur once every 3 to 10 years",
-    "External warfare seems to occur at least once every two years",
-    paste0(
-      "External warfare seems to occur every year, ",
-      "but usually only during a particular season"
-    ),
-    paste0(
-      "External warfare seems to occur almost constantly ",
-      "and at any time of the year"
-    )
-  )
+  levels_SCCS892 <- c("Infrequent", "Frequent", "Continual")
   levels_SCCS20 <- c("None", "Individual households", "Communal facilities",
                      "Political agent controlled", "Economic agent controlled")
   # wrangle standard cross-cultural sample data
@@ -254,10 +215,7 @@ wrangle_sccs <- function(data, societies) {
     # retain variables
     transmute(
       xd_id = xd_id,
-      external_warfare_frequency = ordered(
-        levels_SCCS1650[all_levels_SCCS1650[SCCS1650]],
-        levels = levels_SCCS1650
-      ),
+      external_warfare_frequency = ordered(SCCS892, levels = levels_SCCS892),
       food_storage = ordered(SCCS20, levels = levels_SCCS20)
     )
 }
