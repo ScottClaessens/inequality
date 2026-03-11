@@ -28,7 +28,7 @@ plot_world_map <- function(data) {
         y = latitude,
         fill = class_differentiation
       ),
-      size = 1,
+      size = 1.2,
       shape = 21
     ) +
     scale_fill_brewer(

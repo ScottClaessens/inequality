@@ -31,7 +31,7 @@ plot_gdpm_algorithm <- function() {
     data = d,
     cols = x:y
   ) |>
-    mutate(name = ifelse(name == "x", "Variable 1", "Variable 2"))
+    mutate(name = ifelse(name == "x", "Trait 1", "Trait 2"))
   # plot top
   top <-
     ggplot(
@@ -57,7 +57,7 @@ plot_gdpm_algorithm <- function() {
       x = "Time along branch",
       y = "Latent trait value"
     ) +
-    scale_colour_manual(values = c("purple", "darkseagreen3")) +
+    scale_colour_manual(values = c("#016699", "#993401")) +
     theme_bw() +
     theme(
       axis.text = element_blank(),
@@ -67,8 +67,8 @@ plot_gdpm_algorithm <- function() {
       legend.position.inside = c(0.11, 0.85),
       legend.title = element_blank(),
       legend.key.spacing.y = unit(-2.5, "mm"),
-      panel.background = element_rect(fill = "#faf3fe"),
-      legend.background = element_rect(fill = "#faf3fe"),
+      panel.background = element_rect(fill = "#f8fdff"),
+      legend.background = element_rect(fill = "#f8fdff"),
       legend.margin = margin()
     )
   # bottom row: example phylogenetic tree
@@ -91,8 +91,8 @@ plot_gdpm_algorithm <- function() {
       xend = 0.564,
       yend = 4.75,
       linewidth = 5,
-      alpha = 0.2,
-      colour = "purple"
+      alpha = 0.3,
+      colour = "#016699"
     ) +
     annotate(
       x = 0.43,
@@ -104,7 +104,7 @@ plot_gdpm_algorithm <- function() {
         type = "closed"
       ),
       linewidth = 1,
-      colour = "purple",
+      colour = "#016699",
       geom = "segment"
     )
   # rest of the plot
