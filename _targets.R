@@ -4,8 +4,8 @@ library(targets)
 library(tarchetypes)
 library(tidyverse)
 tar_option_set(
-  packages = c("ape", "brms", "cowplot", "ggtree", "phangorn",
-               "rnaturalearth", "sf", "tidyverse"),
+  packages = c("ape", "brms", "cowplot", "ggtree", "patchwork",
+               "phangorn", "rnaturalearth", "sf", "tidyverse"),
   controller = crew_controller_local(workers = 2)
 )
 tar_source()
