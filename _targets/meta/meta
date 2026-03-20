@@ -5,10 +5,7 @@ dplace_data_url|stem|e0e023be3db9dfae|14e703ec1d8b5d26|2c530c1562a7fbd1|54518685
 tree|stem|9591bd929a318657|7b4ee45d0a45de90|3506065186727838|437279712||t20523.9320739283s|s18603358b|18603358|rds|local|vector|||3.094||
 mcc_tree|stem|c1b0eb4388578300|c47da3594f89d0e8|8968ad285a04f40e|-2069454262||t20523.9321676517s|s24549b|24549|rds|local|vector|||7.878||
 plot_tree|stem|a03865aab7c7dab6|fd50c2d27dc55c0b|0a61e5776d5276df|-120768443||t20523.9321701684s|s858276b|858276|rds|local|vector|||0.051||
-plot_coverage|stem|e3f0609e61db9a41|3c337ec3a4bb18ce|ad85d18f8a11ca6b|249145699||t20523.932584851s|s444840b|444840|rds|local|vector|||0.176||
 plot_gdpm|stem|01451fc60fa39fc6|e1fe878bf61ed907|7a614baa99810060|-258833698||t20524.0156702989s|s1737547b|1737547|rds|local|vector|||1.576||
-plot_world|stem|1450c45c14ea0ba2|597e0c0ffcff6594|b423d746e8f98794|-1778573588||t20524.0156720945s|s726301b|726301|rds|local|vector|||0.043||
-plot_methods|stem|84b04df9b251f188|ed909cd554c0cd7f|a37f046887d405e6|478310962||t20524.0156996919s|s7382916b|7382916|rds|local|vector|||1.025|Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.|
 tree_ids|stem|1ee35ba5c6359472|be2a883b96fddff2|8968ad285a04f40e|1609238890||t20524.0563331966s|s49b|49|rds|local|vector||tree_ids_b037933365e22b3c|0||
 signal_bridewealth_8667b3ff85e50782|branch|6661b782dd815a3b|bbedb5f16f781028|0f5094fbe880a5ee|750574717||t20524.0581333105s|s29612b|29612|rds|local|vector|signal_bridewealth||153.768|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
 signal_bridewealth|pattern|65ae2ed10c11cee3|bbedb5f16f781028||958264039||||29612|rds|local|vector||signal_bridewealth_8667b3ff85e50782|153.768||
@@ -55,3 +52,6 @@ plot_linguistic_spatial_distance|function|478941d595f26337
 plot_variable_coverage|function|e1561af4c76291c4
 calculate_phylogenetic_signal|function|652277e12566ebd8
 load_dplace_data|function|b5047ecc9374d1fb
+plot_world|stem|f1ce679b77c30dda|597e0c0ffcff6594|27242c3bf536c246|-1778573588||t20532.1690457471s|s726578b|726578|rds|local|vector|||0.062||
+plot_coverage|stem|d859d8edb3c4e692|3c337ec3a4bb18ce|32b3462698bf3432|249145699||t20532.1690466367s|s444893b|444893|rds|local|vector|||0.119||
+plot_methods|stem|9cd4d529bce32bac|ed909cd554c0cd7f|bb05cf0ae4a26f48|478310962||t20532.1690739586s|s7369490b|7369490|rds|local|vector|||1.029|Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.|
