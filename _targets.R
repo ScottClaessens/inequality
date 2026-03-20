@@ -32,7 +32,7 @@ list(
   # data files
   tar_target(tree_file, "data/tree/dplace.nxs"),
   # load tree
-  tar_target(tree, read.nexus(tree_file)),
+  tar_target(tree, load_tree(tree_file)),
   # compute maximum clade credibility tree
   tar_target(mcc_tree, phangorn::mcc(tree)),
   # load dplace data
