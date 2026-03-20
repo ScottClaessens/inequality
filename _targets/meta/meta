@@ -5,19 +5,53 @@ dplace_data_url|stem|e0e023be3db9dfae|14e703ec1d8b5d26|2c530c1562a7fbd1|54518685
 tree|stem|9591bd929a318657|7b4ee45d0a45de90|3506065186727838|437279712||t20523.9320739283s|s18603358b|18603358|rds|local|vector|||3.094||
 mcc_tree|stem|c1b0eb4388578300|c47da3594f89d0e8|8968ad285a04f40e|-2069454262||t20523.9321676517s|s24549b|24549|rds|local|vector|||7.878||
 plot_tree|stem|a03865aab7c7dab6|fd50c2d27dc55c0b|0a61e5776d5276df|-120768443||t20523.9321701684s|s858276b|858276|rds|local|vector|||0.051||
-data|stem|7d9e3b6cc1544211|c395f46c2c25663b|e29d0db59986aa8c|33550471||t20523.9325815045s|s25643b|25643|rds|local|vector|||35.734||
 plot_coverage|stem|e3f0609e61db9a41|3c337ec3a4bb18ce|ad85d18f8a11ca6b|249145699||t20523.932584851s|s444840b|444840|rds|local|vector|||0.176||
 plot_gdpm|stem|01451fc60fa39fc6|e1fe878bf61ed907|7a614baa99810060|-258833698||t20524.0156702989s|s1737547b|1737547|rds|local|vector|||1.576||
-tree_ids|stem|a1682c7e32045e98|373a4294de60a584|8968ad285a04f40e|1609238890||t20524.0156707224s|s288b|288|rds|local|vector|||0.001||
 plot_world|stem|1450c45c14ea0ba2|597e0c0ffcff6594|b423d746e8f98794|-1778573588||t20524.0156720945s|s726301b|726301|rds|local|vector|||0.043||
 plot_methods|stem|84b04df9b251f188|ed909cd554c0cd7f|a37f046887d405e6|478310962||t20524.0156996919s|s7382916b|7382916|rds|local|vector|||1.025|Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.|
+tree_ids|stem|1ee35ba5c6359472|be2a883b96fddff2|8968ad285a04f40e|1609238890||t20524.0563331966s|s49b|49|rds|local|vector||tree_ids_b037933365e22b3c|0||
+signal_bridewealth_8667b3ff85e50782|branch|6661b782dd815a3b|bbedb5f16f781028|0f5094fbe880a5ee|750574717||t20524.0581333105s|s29612b|29612|rds|local|vector|signal_bridewealth||153.768|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_bridewealth|pattern|65ae2ed10c11cee3|bbedb5f16f781028||958264039||||29612|rds|local|vector||signal_bridewealth_8667b3ff85e50782|153.768||
+signal_patrilineality_8667b3ff85e50782|branch|f670bfc7785e88e7|67f1b591eee5fe3f|0f5094fbe880a5ee|-1337534847||t20524.0600382842s|s28625b|28625|rds|local|vector|signal_patrilineality||163.469|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_patrilineality|pattern|606418459acb7dfa|67f1b591eee5fe3f||1345093646||||28625|rds|local|vector||signal_patrilineality_8667b3ff85e50782|163.469||
+signal_class_differentiation_8667b3ff85e50782|branch|ec97ac63206873a6|d6d27cd4fd875282|0f5094fbe880a5ee|253977696||t20524.0604033304s|s29267b|29267|rds|local|vector|signal_class_differentiation||195.734|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_class_differentiation|pattern|4694b529256402b4|d6d27cd4fd875282||1989808900||||29267|rds|local|vector||signal_class_differentiation_8667b3ff85e50782|195.734||
+signal_real_property_unigeniture_8667b3ff85e50782|branch|1a276d6462226d33|3a2fcfbf0a6975d2|0f5094fbe880a5ee|-694516891||t20524.0611590505s|s29777b|29777|rds|local|vector|signal_real_property_unigeniture||64.295|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_real_property_unigeniture|pattern|078490c0b2b74587|3a2fcfbf0a6975d2||528775122||||29777|rds|local|vector||signal_real_property_unigeniture_8667b3ff85e50782|64.295||
+signal_craft_specialisation_8667b3ff85e50782|branch|6b5e2d2604abff8d|83448419fe6f7568|0f5094fbe880a5ee|1836277818||t20524.0622425569s|s29179b|29179|rds|local|vector|signal_craft_specialisation||93.146|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_craft_specialisation|pattern|9b4d4864dd9850f8|83448419fe6f7568||-516790633||||29179|rds|local|vector||signal_craft_specialisation_8667b3ff85e50782|93.146||
+signal_agriculture_8667b3ff85e50782|branch|883ddd63ebd90979|299c8824ac406e3f|0f5094fbe880a5ee|-244206838||t20524.0640114686s|s29098b|29098|rds|local|vector|signal_agriculture||243.845|Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_agriculture|pattern|a9901a79f08edc49|299c8824ac406e3f||-1170681045||||29098|rds|local|vector||signal_agriculture_8667b3ff85e50782|243.845||
+signal_sedentism_8667b3ff85e50782|branch|06aa57191a3c05f8|7b5d020004b37286|0f5094fbe880a5ee|2115292706||t20524.0651159496s|s28916b|28916|rds|local|vector|signal_sedentism||248.042|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_sedentism|pattern|6361d73197dae52f|7b5d020004b37286||-541043544||||28916|rds|local|vector||signal_sedentism_8667b3ff85e50782|248.042||
+signal_plough_animals_8667b3ff85e50782|branch|d2e5125084ca8503|3a89db8b37be1c13|0f5094fbe880a5ee|492103695||t20524.0659789316s|s29054b|29054|rds|local|vector|signal_plough_animals||169.771|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_plough_animals|pattern|c20e6d8997da5582|3a89db8b37be1c13||1188697995||||29054|rds|local|vector||signal_plough_animals_8667b3ff85e50782|169.771||
+signal_external_warfare_frequency_8667b3ff85e50782|branch|a7194d2a487a9bdc|3b385b1c32006cd2|0f5094fbe880a5ee|-1371253453||t20524.0660465741s|s30527b|30527|rds|local|vector|signal_external_warfare_frequency||5.622|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_external_warfare_frequency|pattern|211983887570bbd5|3b385b1c32006cd2||1258799475||||30527|rds|local|vector||signal_external_warfare_frequency_8667b3ff85e50782|5.622||
+signal_mean_size_local_community_8667b3ff85e50782|branch|932da312ee173acb|829013859a9c3d7b|0f5094fbe880a5ee|-1096073903||t20524.066665017s|s29549b|29549|rds|local|vector|signal_mean_size_local_community||53.209|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_mean_size_local_community|pattern|8982686858c4ce9f|829013859a9c3d7b||844197122||||29549|rds|local|vector||signal_mean_size_local_community_8667b3ff85e50782|53.209||
+signal_large_domestic_animals_8667b3ff85e50782|branch|538319288dec6540|c6f93439b246fc36|0f5094fbe880a5ee|-1949373176||t20524.0671420016s|s28562b|28562|rds|local|vector|signal_large_domestic_animals||174.014|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_large_domestic_animals|pattern|c7084ec748aeef00|c6f93439b246fc36||-236595803||||28562|rds|local|vector||signal_large_domestic_animals_8667b3ff85e50782|174.014||
+signal_movable_property_unigeniture_8667b3ff85e50782|branch|8eef597ba33e70b1|b225a039c96c76ce|0f5094fbe880a5ee|1038205394||t20524.0678497115s|s29681b|29681|rds|local|vector|signal_movable_property_unigeniture||60.933|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_movable_property_unigeniture|pattern|b105c35dcd8a101c|b225a039c96c76ce||-1209006011||||29681|rds|local|vector||signal_movable_property_unigeniture_8667b3ff85e50782|60.933||
+signal_food_storage_8667b3ff85e50782|branch|5541a74bb1f3ab72|1bc918e5fd49c0f1|0f5094fbe880a5ee|-332247324||t20524.0679954736s|s30503b|30503|rds|local|vector|signal_food_storage||12.374|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_food_storage|pattern|7772f2b68bc70db9|1bc918e5fd49c0f1||280022786||||30503|rds|local|vector||signal_food_storage_8667b3ff85e50782|12.374||
+signal_monogamy_8667b3ff85e50782|branch|c388da35929788d9|15c9be3ab2446fd0|0f5094fbe880a5ee|437293991||t20524.0684777567s|s29385b|29385|rds|local|vector|signal_monogamy||155.589|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_monogamy|pattern|d5d801d31f2184f7|15c9be3ab2446fd0||1987335260||||29385|rds|local|vector||signal_monogamy_8667b3ff85e50782|155.589||
+signal_local_headman_8667b3ff85e50782|branch|e714383f57390fd3|c331ca7ffe79a660|0f5094fbe880a5ee|1227323661||t20524.0686647092s|s30141b|30141|rds|local|vector|signal_local_headman||57.604|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
+signal_local_headman|pattern|de47c2e55b460da9|c331ca7ffe79a660||-2098481973||||30141|rds|local|vector||signal_local_headman_8667b3ff85e50782|57.604||
+phylogenetic_signal|stem|c378eeee2d7ee31e|139a42984378ca1f|6465c60463dfcc1a|1057849121||t20524.068665398s|s438731b|438731|rds|local|vector|||0.001||
+table_variables|stem|5d716fa0c27d227c|30d4d849086ca7f1|66f6a41cc578eb7b|-867459564||t20524.068666305s|s1235b|1235|rds|local|vector|||0.057||
+data|stem|ca9affc5d3767ae6|c395f46c2c25663b|e723158a4085bc77|33550471||t20532.122163282s|s25698b|25698|rds|local|vector|||8.48||
+plot_cor|stem|f3ba0c4a1567cfe9|32c60c4e8375875e|2eb2a2d8e810e5b9|854672363||t20532.1610942514s|s33026587b|33026587|rds|local|vector|||0.666||
 plot_sample_characteristics|function|3b39b1fab982e2d4
 plot_gdpm_algorithm|function|ff5c69c7d5111b70
 plot_all_methods|function|3a8b15634d960f41
-wrangle_ea|function|de3fc0c4fc93d247
+wrangle_ea|function|94c16bbe65005b85
 wrangle_sccs|function|7c04b41b2cc92487
 plot_world_map|function|8bf09b9b701a5479
 create_table_variables|function|98bc60222c3ef28b
+plot_linguistic_spatial_distance|function|478941d595f26337
 plot_variable_coverage|function|e1561af4c76291c4
 calculate_phylogenetic_signal|function|652277e12566ebd8
-load_dplace_data|function|cafaa058bd459401
+load_dplace_data|function|b5047ecc9374d1fb

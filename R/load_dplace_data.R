@@ -76,8 +76,7 @@ load_dplace_data <- function(dplace_data_url, dplace_societies_url, mcc_tree) {
 #' Wrangle Ethnographic Atlas data from D-PLACE
 #'
 #' This function wrangles the data from the Ethnographic Atlas by pivoting the
-#' dataset wider, converting variables to ordinal/binary, and removing a
-#' duplicate case (Nd55).
+#' dataset wider and converting variables to ordinal/binary.
 #'
 #' @param data Data frame of cldf/data.csv file from D-PLACE
 #' @param societies Data frame of cldf/societies.csv file from D-PLACE
@@ -130,6 +129,11 @@ wrangle_ea <- function(data, societies) {
       names_from = Var_ID,
       values_from = Value
     ) |>
+    # match duplicates to tree
+    mutate(
+      xd_id = ifelse(Soc_ID == "Nd53", "xd1189a", xd_id),
+      xd_id = ifelse(Soc_ID == "Nd55", "xd1189b", xd_id)
+    ) |>
     # retain variables
     transmute(
       soc_id                       = Soc_ID,
@@ -175,8 +179,6 @@ wrangle_ea <- function(data, societies) {
       !c(craft_metal_working, craft_weaving, craft_leather_working,
          craft_pottery_making, craft_boat_building, craft_house_construction)
     ) |>
-    # remove one xd_id duplicate
-    filter(soc_id != "Nd55") |>
     # absent/present as factor
     mutate(
       across(
