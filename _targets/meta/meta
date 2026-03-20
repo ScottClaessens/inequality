@@ -44,16 +44,16 @@ plot_all_methods|function|3a8b15634d960f41
 wrangle_ea|function|94c16bbe65005b85
 wrangle_sccs|function|7c04b41b2cc92487
 plot_world_map|function|8bf09b9b701a5479
-load_tree|function|bfbd6b0412aca8fb
+load_tree|function|e54eeff24dc8b91f
 create_table_variables|function|98bc60222c3ef28b
 plot_linguistic_spatial_distance|function|478941d595f26337
 plot_variable_coverage|function|e1561af4c76291c4
 calculate_phylogenetic_signal|function|652277e12566ebd8
 generate_synthetic_data|function|269ef1f2f0768bc1
 load_dplace_data|function|b5047ecc9374d1fb
-tree|stem|5089203d8df91603|c77021f1bbaff69b|59d024ed1c818fc9|437279712||t20532.1945577301s|s18603362b|18603362|rds|local|vector|||3.143||
-mcc_tree|stem|fabf1ca9c5e87299|c47da3594f89d0e8|66949c2cef38d403|-2069454262||t20532.194650844s|s24550b|24550|rds|local|vector|||7.918||
-plot_tree|stem|1603f950b78d6f31|fd50c2d27dc55c0b|6cacd84d93b29045|-120768443||t20532.1946756309s|s858276b|858276|rds|local|vector|||0.088||
-data|stem|ca9affc5d3767ae6|c395f46c2c25663b|5c6fa86950c13140|33550471||t20532.1947686035s|s25698b|25698|rds|local|vector|||10.139||
-plot_cor|stem|35953144f60ebf55|32c60c4e8375875e|8b65ad8194f07f4a|854672363||t20532.1947917342s|s33026900b|33026900|rds|local|vector|||0.405||
-plot_methods|stem|9cd4d529bce32bac|ed909cd554c0cd7f|bcf2bc7afd70fcd5|478310962||t20532.194796762s|s7369490b|7369490|rds|local|vector|||1.048|Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.|
+tree|stem|4a41f3f7527e2494|c77021f1bbaff69b|f5663c873a1e96a1|437279712||t20532.1975226813s|s18604178b|18604178|rds|local|vector|||3.17||
+mcc_tree|stem|ed19bcd016e58b98|c47da3594f89d0e8|c991679290801992|-2069454262||t20532.1976197194s|s24550b|24550|rds|local|vector|||8.266||
+plot_tree|stem|188b20e8d9adff57|fd50c2d27dc55c0b|7adffb26385af4f9|-120768443||t20532.1976431438s|s858346b|858346|rds|local|vector|||0.082||
+data|stem|ca9affc5d3767ae6|c395f46c2c25663b|f2c6eabf6db2008a|33550471||t20532.1976932481s|s25698b|25698|rds|local|vector|||6.319||
+plot_cor|stem|0b182c126fec232c|32c60c4e8375875e|1cfcd7123bd8a53e|854672363||t20532.1977163523s|s33052920b|33052920|rds|local|vector|||0.417||
+plot_methods|stem|61db6651ed56c9d2|ed909cd554c0cd7f|e0f839588e768e5c|478310962||t20532.1977214414s|s7369944b|7369944|rds|local|vector|||1.034|Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.|

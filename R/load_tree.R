@@ -12,7 +12,7 @@ load_tree <- function(tree_file) {
   # load nexus file
   tree <- read.nexus(tree_file)
   # manually fix branch lengths with zero length
-  for (t in length(tree)) {
+  for (t in 1:length(tree)) {
     for (i in which(tree[[t]]$edge.length == 0)) {
       tree[[t]]$edge.length[i] <- 1e-3
     }
