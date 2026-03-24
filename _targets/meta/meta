@@ -3,7 +3,6 @@ tree_file|stem|dfdd8efb1023469b|1de9ec4cb0b83efe|2c530c1562a7fbd1|-419834672||t2
 dplace_societies_url|stem|c3caf7f2ccd75161|aee14d29acec2be0|2c530c1562a7fbd1|17396771|https://raw.githubusercontent.com/D-PLACE/dplace-cldf/6c2008c187a297d1955b41d8ae80d8e31d404f6c/cldf/societies.csv|t20523.9320280742s||0|url|local|vector|||0||
 dplace_data_url|stem|e0e023be3db9dfae|14e703ec1d8b5d26|2c530c1562a7fbd1|545186855|https://raw.githubusercontent.com/D-PLACE/dplace-cldf/6c2008c187a297d1955b41d8ae80d8e31d404f6c/cldf/data.csv|t20523.9320314697s||0|url|local|vector|||0||
 plot_gdpm|stem|01451fc60fa39fc6|e1fe878bf61ed907|7a614baa99810060|-258833698||t20524.0156702989s|s1737547b|1737547|rds|local|vector|||1.576||
-tree_ids|stem|1ee35ba5c6359472|be2a883b96fddff2|8968ad285a04f40e|1609238890||t20524.0563331966s|s49b|49|rds|local|vector||tree_ids_b037933365e22b3c|0||
 signal_bridewealth_8667b3ff85e50782|branch|6661b782dd815a3b|bbedb5f16f781028|0f5094fbe880a5ee|750574717||t20524.0581333105s|s29612b|29612|rds|local|vector|signal_bridewealth||153.768|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
 signal_bridewealth|pattern|65ae2ed10c11cee3|bbedb5f16f781028||958264039||||29612|rds|local|vector||signal_bridewealth_8667b3ff85e50782|153.768||
 signal_patrilineality_8667b3ff85e50782|branch|f670bfc7785e88e7|67f1b591eee5fe3f|0f5094fbe880a5ee|-1337534847||t20524.0600382842s|s28625b|28625|rds|local|vector|signal_patrilineality||163.469|Rows containing NAs were excluded from the model.. Method 'posterior_samples' is deprecated. Please see ?as_draws for recommended alternatives.|
@@ -38,6 +37,23 @@ phylogenetic_signal|stem|c378eeee2d7ee31e|139a42984378ca1f|6465c60463dfcc1a|1057
 table_variables|stem|5d716fa0c27d227c|30d4d849086ca7f1|66f6a41cc578eb7b|-867459564||t20524.068666305s|s1235b|1235|rds|local|vector|||0.057||
 plot_world|stem|f1ce679b77c30dda|597e0c0ffcff6594|27242c3bf536c246|-1778573588||t20532.1690457471s|s726578b|726578|rds|local|vector|||0.062||
 plot_coverage|stem|d859d8edb3c4e692|3c337ec3a4bb18ce|32b3462698bf3432|249145699||t20532.1690466367s|s444893b|444893|rds|local|vector|||0.119||
+tree|stem|4a41f3f7527e2494|c77021f1bbaff69b|f5663c873a1e96a1|437279712||t20532.1975226813s|s18604178b|18604178|rds|local|vector|||3.17||
+mcc_tree|stem|ed19bcd016e58b98|c47da3594f89d0e8|c991679290801992|-2069454262||t20532.1976197194s|s24550b|24550|rds|local|vector|||8.266||
+plot_tree|stem|188b20e8d9adff57|fd50c2d27dc55c0b|7adffb26385af4f9|-120768443||t20532.1976431438s|s858346b|858346|rds|local|vector|||0.082||
+data|stem|ca9affc5d3767ae6|c395f46c2c25663b|f2c6eabf6db2008a|33550471||t20532.1976932481s|s25698b|25698|rds|local|vector|||6.319||
+plot_cor|stem|0b182c126fec232c|32c60c4e8375875e|1cfcd7123bd8a53e|854672363||t20532.1977163523s|s33052920b|33052920|rds|local|vector|||0.417||
+plot_methods|stem|61db6651ed56c9d2|ed909cd554c0cd7f|e0f839588e768e5c|478310962||t20532.1977214414s|s7369944b|7369944|rds|local|vector|||1.034|Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.|
+synthetic_data_food_storage|stem|10ade083085612e3|e22e3ba5363481e4|e9b7318405b7c3bc|-2088158990||t20536.5396524275s|s9233b|9233|rds|local|vector|||41.678||
+synthetic_data_intergroup_conflict|stem|ed4317c386aeb52a|4780300eaadcd9ee|e9b7318405b7c3bc|1319458892||t20536.5416372409s|s9061b|9061|rds|local|vector|||39.83||
+synthetic_data_population_size|stem|086f7fc9fc7b88f3|0cecc5533a61b5d4|e9b7318405b7c3bc|-285821508||t20536.5421010851s|s9684b|9684|rds|local|vector|||40.04||
+synthetic_data_bridewealth|stem|0c697ea24fb0c360|39b68d439331bbb0|e9b7318405b7c3bc|856635690||t20536.5424651776s|s8664b|8664|rds|local|vector|||31.42||
+synthetic_data_scalar_stress|stem|0a33767756e4c986|6e00c619f7438315|e9b7318405b7c3bc|-1726057261||t20536.5429430497s|s9325b|9325|rds|local|vector|||41.267||
+synthetic_data_family|stem|4ca86c477c29f741|97d0b36c1f9fd4ec|e9b7318405b7c3bc|-404474078||t20536.5435757084s|s9796b|9796|rds|local|vector|||54.639||
+synthetic_data_land_limited|stem|63eee84fd9e45802|4a9e456e853a00e1|e9b7318405b7c3bc|-797850726||t20536.5442044886s|s9911b|9911|rds|local|vector|||54.304||
+synthetic_data_craft_specialisation|stem|c55c3b003356b95f|311d2f7d99d1a01a|e9b7318405b7c3bc|2088484398||t20536.5443874929s|s8754b|8754|rds|local|vector|||15.786||
+synthetic_data_intergenerational_wealth_transmission|stem|db5321e887ea95f1|c85f7db5aedcdbc1|e9b7318405b7c3bc|2129264660||t20536.54529185s|s10276b|10276|rds|local|vector|||78.114||
+synthetic_data_agriculture|stem|17d3d7daa8a44369|7720b6b32bba70d8|e9b7318405b7c3bc|-1348648764||t20536.5456765861s|s8984b|8984|rds|local|vector|||33.221||
+get_effects_matrix|function|bc2a5cf1989e2679
 plot_sample_characteristics|function|3b39b1fab982e2d4
 plot_gdpm_algorithm|function|ff5c69c7d5111b70
 plot_all_methods|function|3a8b15634d960f41
@@ -49,11 +65,9 @@ create_table_variables|function|98bc60222c3ef28b
 plot_linguistic_spatial_distance|function|478941d595f26337
 plot_variable_coverage|function|e1561af4c76291c4
 calculate_phylogenetic_signal|function|652277e12566ebd8
-generate_synthetic_data|function|269ef1f2f0768bc1
+get_cutpoints_list|function|7ffcea36d78df680
 load_dplace_data|function|b5047ecc9374d1fb
-tree|stem|4a41f3f7527e2494|c77021f1bbaff69b|f5663c873a1e96a1|437279712||t20532.1975226813s|s18604178b|18604178|rds|local|vector|||3.17||
-mcc_tree|stem|ed19bcd016e58b98|c47da3594f89d0e8|c991679290801992|-2069454262||t20532.1976197194s|s24550b|24550|rds|local|vector|||8.266||
-plot_tree|stem|188b20e8d9adff57|fd50c2d27dc55c0b|7adffb26385af4f9|-120768443||t20532.1976431438s|s858346b|858346|rds|local|vector|||0.082||
-data|stem|ca9affc5d3767ae6|c395f46c2c25663b|f2c6eabf6db2008a|33550471||t20532.1976932481s|s25698b|25698|rds|local|vector|||6.319||
-plot_cor|stem|0b182c126fec232c|32c60c4e8375875e|1cfcd7123bd8a53e|854672363||t20532.1977163523s|s33052920b|33052920|rds|local|vector|||0.417||
-plot_methods|stem|61db6651ed56c9d2|ed909cd554c0cd7f|e0f839588e768e5c|478310962||t20532.1977214414s|s7369944b|7369944|rds|local|vector|||1.034|Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.. Unknown or uninitialised column: `subgroup`.|
+get_variables_list|function|421afb88949c3641
+fix_parameters|function|834356ee9c9c5902
+generate_synthetic_data|function|1bcdefb00d3f2f1d
+tree_ids|stem|9023480b82aca7c3|be2a883b96fddff2|c991679290801992|1609238890||t20536.5763469585s|s49b|49|rds|local|vector|||0.001||

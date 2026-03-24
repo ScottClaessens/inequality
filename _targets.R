@@ -4,9 +4,10 @@ library(targets)
 library(tarchetypes)
 library(tidyverse)
 tar_option_set(
-  packages = c("ape", "brms", "cowplot", "ggtree", "patchwork",
-               "phangorn", "rnaturalearth", "sf", "tidyverse"),
-  controller = crew_controller_local(workers = 2)
+  packages = c("ape", "brms", "cmdstanr", "coevolve", "cowplot", "ggtree",
+               "patchwork", "phangorn", "posterior", "rnaturalearth", "sf",
+               "tidyverse"),
+  controller = crew_controller_local(workers = 1)
 )
 tar_source()
 
@@ -88,5 +89,18 @@ list(
   tar_target(
     table_variables,
     create_table_variables(data, phylogenetic_signal)
+  ),
+  # run simulations with generative models
+  tar_map(
+    values = tibble(
+      model = c(
+        "agriculture", "intergenerational_wealth_transmission", "family",
+        "population_size", "land_limited", "scalar_stress",
+        "intergroup_conflict", "bridewealth", "craft_specialisation",
+        "food_storage"
+      )
+    ),
+    # generate synthetic data
+    tar_target(synthetic_data, generate_synthetic_data(data, mcc_tree, model))
   )
 )
