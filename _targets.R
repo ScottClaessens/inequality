@@ -5,9 +5,9 @@ library(tarchetypes)
 library(tidyverse)
 tar_option_set(
   packages = c("ape", "brms", "cmdstanr", "coevolve", "cowplot", "ggtree",
-               "patchwork", "phangorn", "posterior", "rnaturalearth", "sf",
-               "tidyverse"),
-  controller = crew_controller_local(workers = 1)
+               "patchwork", "phangorn", "posterior", "rethinking",
+               "rnaturalearth", "sf", "tidyverse")#,
+  #controller = crew_controller_local(workers = 1)
 )
 tar_source()
 
@@ -90,7 +90,12 @@ list(
     table_variables,
     create_table_variables(data, phylogenetic_signal)
   ),
-  # run simulations with generative models
+  # create subsample of dummy data (n = 20) for prior predictive check
+  tar_target(
+    data_subsample,
+    data[sample(which(!is.na(data$food_storage)), size = 20), ]
+  ),
+  # loop over causal models
   tar_map(
     values = tibble(
       model = c(
@@ -100,7 +105,15 @@ list(
         "food_storage"
       )
     ),
-    # generate synthetic data
-    tar_target(synthetic_data, generate_synthetic_data(data, mcc_tree, model))
+    # run prior predictive check
+    tar_target(prior_check, fit_model(data_subsample, mcc_tree, model,
+                                      prior_only = TRUE)),
+    # plot prior predictive check
+    tar_target(plot_prior, plot_prior_predictive_check(prior_check, model)),
+    ## generate synthetic data
+    #tar_target(synthetic_data, generate_synthetic_data(data, mcc_tree, model)),
+    ## fit model to synthetic data
+    #tar_target(synthetic_fit, fit_model(synthetic_data, mcc_tree, model,
+    #                                    spatial_control = FALSE))
   )
 )
