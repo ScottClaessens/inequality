@@ -5,7 +5,7 @@
 #'
 #' @param data Tibble of D-PLACE data
 #'
-#' @returns A ggplot object
+#' @returns A patchwork of ggplots
 #'
 plot_sample_characteristics <- function(data) {
   # edit class labels for plot

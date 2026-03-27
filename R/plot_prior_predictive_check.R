@@ -1,3 +1,16 @@
+#' Plot prior predictive check
+#'
+#' Plot predictions for the prior for a particular causal model
+#'
+#' @param prior_check Fitted model run with prior_only = TRUE
+#' @param model String of length one. Causal model. Must be equal to one of the
+#'   following: "agriculture", "intergenerational_wealth_transmission",
+#'   "family", "population_size", "land_limited", "scalar_stress",
+#'   "intergroup_conflict", "bridewealth", "craft_specialisation", or
+#'   "food_storage"
+#'
+#' @returns A patchwork of ggplots
+#'
 plot_prior_predictive_check <- function(prior_check, model) {
   # get variables list
   variables <- get_variables_list(model)

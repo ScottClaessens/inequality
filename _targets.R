@@ -90,6 +90,8 @@ list(
     table_variables,
     create_table_variables(data, phylogenetic_signal)
   ),
+  # plot prior predictive check for spatial gaussian processes
+  tar_target(plot_spatial_prior, plot_spatial_gp_prior()),
   # create subsample of dummy data (n = 20) for prior predictive check
   tar_target(
     data_subsample,
@@ -109,7 +111,7 @@ list(
     tar_target(prior_check, fit_model(data_subsample, mcc_tree, model,
                                       prior_only = TRUE)),
     # plot prior predictive check
-    tar_target(plot_prior, plot_prior_predictive_check(prior_check, model)),
+    tar_target(plot_prior, plot_prior_predictive_check(prior_check, model))
     ## generate synthetic data
     #tar_target(synthetic_data, generate_synthetic_data(data, mcc_tree, model)),
     ## fit model to synthetic data

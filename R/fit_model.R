@@ -39,8 +39,8 @@ fit_model <- function(data, tree, model, prior_only = FALSE,
     Q_sigma    = "exponential(1)",
     eta_anc    = "std_normal()",
     c          = "normal(0, 3)",
-    sigma_dist = "exponential(1)",
-    rho_dist   = "exponential(5)"
+    sigma_dist = "exponential(2)",
+    rho_dist   = "exponential(6)"
   )
   # fit model in cmdstanr
   coev_fit(
