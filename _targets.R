@@ -4,8 +4,8 @@ library(targets)
 library(tarchetypes)
 library(tidyverse)
 tar_option_set(
-  packages = c("ape", "brms", "cmdstanr", "coevolve", "cowplot", "ggtree",
-               "patchwork", "phangorn", "posterior", "rethinking",
+  packages = c("ape", "brms", "cmdstanr", "coevolve", "cowplot", "ggdist",
+               "ggtree", "patchwork", "phangorn", "posterior", "rethinking",
                "rnaturalearth", "sf", "tidyverse")#,
   #controller = crew_controller_local(workers = 1)
 )
@@ -53,9 +53,9 @@ list(
   tar_target(plot_methods, plot_all_methods(plot_world, plot_tree, plot_gdpm)),
   # plot correlation between linguistic and geographic distances
   tar_target(plot_cor, plot_linguistic_spatial_distance(data, mcc_tree)),
-  # get random tree ids to loop over
+  # get random tree ids
   tar_target(tree_ids, sample(1:length(tree), size = 1)),
-  # calculate phylogenetic signals for all variables
+  # loop over all variables
   tar_map(
     values = tibble(
       variable = c(
@@ -67,6 +67,9 @@ list(
         "food_storage"
       )
     ),
+    # plot variable on tree
+    #...
+    # calculate phylogenetic signal
     tar_target(
       signal,
       calculate_phylogenetic_signal(data, tree, variable, tree_ids),
@@ -111,11 +114,16 @@ list(
     tar_target(prior_check, fit_model(data_subsample, mcc_tree, model,
                                       prior_only = TRUE)),
     # plot prior predictive check
-    tar_target(plot_prior, plot_prior_predictive_check(prior_check, model))
-    ## generate synthetic data
-    #tar_target(synthetic_data, generate_synthetic_data(data, mcc_tree, model)),
-    ## fit model to synthetic data
-    #tar_target(synthetic_fit, fit_model(synthetic_data, mcc_tree, model,
-    #                                    spatial_control = FALSE))
+    tar_target(plot_prior, plot_prior_predictive_check(prior_check, model)),
+    # generate synthetic data
+    tar_target(synthetic_data, generate_synthetic_data(data, mcc_tree, model)),
+    # fit model to synthetic data
+    tar_target(
+      synthetic_fit,
+      fit_model(synthetic_data, mcc_tree, model, spatial_control = FALSE,
+                iter_warmup = 250, iter_sampling = 250)
+    ),
+    # plot synthetic results
+    tar_target(plot_synthetic, plot_synthetic_fit(synthetic_fit, model))
   )
 )
