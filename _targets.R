@@ -68,7 +68,7 @@ list(
       )
     ),
     # plot variable on tree
-    #...
+    tar_target(plot_trait, plot_trait_on_tree(data, mcc_tree, variable)),
     # calculate phylogenetic signal
     tar_target(
       signal,
