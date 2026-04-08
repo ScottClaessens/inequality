@@ -52,8 +52,8 @@ generate_synthetic_data <- function(data, mcc_tree, model) {
       stan_code = stan_code,
       parameters = list(
         intercept = 0,
-        auto_effect = -1,
-        cross_effect = 4,
+        auto_effect = -0.5,
+        cross_effect = 3,
         drift = 2,
         init = 0
       ),

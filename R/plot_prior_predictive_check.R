@@ -16,6 +16,22 @@ plot_prior_predictive_check <- function(prior_check, model) {
   variables <- get_variables_list(model)
   # get samples
   prior <- extract_samples(prior_check)
+  # get dordlogit function from rethinking package
+  logistic <- function(x) {
+    p <- 1/(1 + exp(-x))
+    p <- ifelse(x == Inf, 1, p)
+    p
+  }
+  dordlogit <- function(x, phi, a, log = FALSE) {
+    a <- c(as.numeric(a), Inf)
+    p <- logistic(a[x] - phi)
+    na <- c(-Inf, a)
+    np <- logistic(na[x] - phi)
+    p <- p - np
+    if (log == TRUE)
+      p <- log(p)
+    p
+  }
   # loop over variables
   plots <- list()
   for (j in 1:length(variables)) {
@@ -48,7 +64,7 @@ plot_prior_predictive_check <- function(prior_check, model) {
       if (is_ordinal) {
         # for ordinal variable
         pred[i, ] <-
-          rethinking::dordlogit(
+          dordlogit(
             x = 1:k,
             phi = phi,
             a = prior[[paste0("c", j)]][i, ]

@@ -55,10 +55,10 @@ calculate_phylogenetic_signal <- function(data, tree, variable, tree_id) {
     variable = variable,
     tree_id = tree_id,
     phylogenetic_signal = list(phylogenetic_signal),
-    max_rhat = max(rhat(fit), na.rm = TRUE),
-    min_neff_ratio = min(neff_ratio(fit), na.rm = TRUE),
+    max_rhat = max(brms::rhat(fit), na.rm = TRUE),
+    min_neff_ratio = min(brms::neff_ratio(fit), na.rm = TRUE),
     num_divergences = sum(
-      subset(nuts_params(fit), Parameter == "divergent__")$Value
+      subset(brms::nuts_params(fit), Parameter == "divergent__")$Value
     )
   )
 }

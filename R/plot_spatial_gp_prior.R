@@ -9,8 +9,8 @@ plot_spatial_gp_prior <- function() {
     distance <- seq(0, 1, length.out = n)
     # simulate draws from the prior for gaussian process kernel function
     ndraws <- 50
-    sdgp <- abs(rnorm(ndraws, 0, 1)) # sdgp ~ +normal(0, 1)
-    rho <- abs(rnorm(ndraws, 0, 0.25)) # rho ~ +normal(0, 0.25)
+    sdgp <- rexp(ndraws, 2) # sdgp ~ exponential(2)
+    rho  <- rexp(ndraws, 6) # rho  ~ exponential(6)
     covariance <- matrix(nrow = ndraws, ncol = n)
     for (i in 1:n) {
       covariance[, i] <- sdgp^2 * exp(-(1 / (2 * rho^2)) * distance[i]^2)

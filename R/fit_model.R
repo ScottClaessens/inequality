@@ -30,46 +30,67 @@ fit_model <- function(data, tree, model, prior_only = FALSE,
                       spatial_control = TRUE, adapt_delta = 0.99,
                       iter_warmup = 1000, iter_sampling = 1000,
                       chains = 4, parallel_chains = 4) {
-  # ensure binary variables are 0/1 integers in data for coevolve
-  variables <- get_variables_list(model)
-  for (j in 1:length(variables)) {
-    if (variables[[j]] == "bernoulli_logit") {
-      variable_name <- names(variables)[j]
-      data[[variable_name]] <- as.integer(data[[variable_name]] == "Present")
+  # set temporary options
+  withr::with_options(list(cmdstanr_warn_inits = FALSE), {
+    # ensure binary variables are 0/1 integers in data for coevolve
+    variables <- get_variables_list(model)
+    for (j in 1:length(variables)) {
+      if (variables[[j]] == "bernoulli_logit") {
+        variable_name <- names(variables)[j]
+        data[[variable_name]] <- as.integer(data[[variable_name]] == "Present")
+      }
     }
-  }
-  # priors for model
-  priors <- list(
-    b          = "std_normal()",
-    A_diag     = "std_normal()",
-    A_offdiag  = "normal(0, 2.5)",
-    Q_sigma    = "std_normal()",
-    eta_anc    = "std_normal()",
-    c          = "normal(0, 3)",
-    sigma_dist = "std_normal()",
-    rho_dist   = "normal(0, 0.25)"
-  )
-  # fit model in cmdstanr
-  coev_fit(
-    data = data,
-    variables = variables,
-    id = "xd_id",
-    tree = keep.tip(tree, data$xd_id),
-    effects_mat = get_effects_matrix(model),
-    lon_lat = if (spatial_control) {
-      dplyr::rename(data, id = xd_id)
-    } else {
-      NULL
-    },
-    dist_k = 20,
-    estimate_correlated_drift = FALSE,
-    prior = priors,
-    prior_only = prior_only,
-    adapt_delta = adapt_delta,
-    iter_warmup = iter_warmup,
-    iter_sampling = iter_sampling,
-    chains = chains,
-    parallel_chains = parallel_chains,
-    seed = 1234
-  )
+    # get tree as multiphylo object
+    tree <- ape::keep.tip.multiPhylo(
+      phytools::as.multiPhylo(tree),
+      tip = data$xd_id
+    )
+    # get priors for model
+    priors <- list(
+      b          = "std_normal()",
+      A_diag     = "double_exponential(0, 0.5)",
+      A_offdiag  = "double_exponential(0, 2)",
+      Q_sigma    = "exponential(2)",
+      eta_anc    = "std_normal()",
+      c          = "normal(0, 3)",
+      sigma_dist = "exponential(2)",
+      rho_dist   = "exponential(6)"
+    )
+    # get effects matrix
+    effects_matrix <- get_effects_matrix(model)
+    # get number of traits
+    j <- nrow(effects_matrix)
+    # function to get initial values for mcmc
+    initialise <- function() {
+      list(
+        A_diag = rep(-0.5, j),
+        A_offdiag = rep(0, sum(effects_matrix) - j),
+        Q_sigma = rep(0.5, j)
+      )
+    }
+    # fit model in cmdstanr
+    coev_fit(
+      data = data,
+      variables = variables,
+      id = "xd_id",
+      tree = tree,
+      effects_mat = effects_matrix,
+      lon_lat = if (spatial_control) {
+        dplyr::rename(data, id = xd_id)
+      } else {
+        NULL
+      },
+      dist_k = 20,
+      estimate_correlated_drift = FALSE,
+      prior = priors,
+      prior_only = prior_only,
+      adapt_delta = adapt_delta,
+      iter_warmup = iter_warmup,
+      iter_sampling = iter_sampling,
+      chains = chains,
+      parallel_chains = parallel_chains,
+      init = initialise,
+      seed = 1234
+    )
+  })
 }
