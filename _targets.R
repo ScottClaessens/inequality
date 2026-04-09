@@ -5,8 +5,8 @@ library(tarchetypes)
 library(tidyverse)
 tar_option_set(
   packages = c("ape", "brms", "cmdstanr", "coevolve", "cowplot", "ggdist",
-               "ggtree", "patchwork", "phangorn", "posterior", "rnaturalearth",
-               "sf", "tidyverse", "withr"),
+               "ggtree", "gt", "patchwork", "phangorn", "posterior",
+               "rnaturalearth", "sf", "tidyverse", "withr"),
   controller = crew_controller_local(workers = 2)
 )
 tar_source()
@@ -41,6 +41,8 @@ list(
     data,
     load_dplace_data(dplace_data_url, dplace_societies_url, mcc_tree)
   ),
+  # plot sample characteristics
+  tar_target(plot_sample, plot_sample_characteristics(data)),
   # plot variable coverage
   tar_target(plot_coverage, plot_variable_coverage(data)),
   # plot world map
@@ -123,5 +125,12 @@ list(
                                         spatial_control = FALSE)),
     # plot synthetic results
     tar_target(plot_synthetic, plot_synthetic_fit(synthetic_fit, model))
+  ),
+  # generate manuscript
+  tar_quarto(manuscript, "quarto/manuscript.qmd", quiet = FALSE),
+  # print session info
+  tar_target(
+    sessionInfo,
+    writeLines(capture.output(sessionInfo()), "sessionInfo.txt")
   )
 )

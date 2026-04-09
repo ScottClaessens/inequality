@@ -12,7 +12,12 @@ To run this code, you will need to [install R](https://www.r-project.org/) and
 the following R packages:
 
 ```r
-install.packages(c("tarchetypes", "targets", "tidyverse"))
+install.packages(
+  c("ape", "brms", "cmdstanr", "cowplot", "devtools", "ggdist", 
+    "ggtree", "gt", "patchwork", "phangorn", "posterior", 
+    "rnaturalearth", "sf", "tidyverse", "withr")
+)
+devtools::install_github("ScottClaessens/coevolve")
 ```
 
 ### Execute code
