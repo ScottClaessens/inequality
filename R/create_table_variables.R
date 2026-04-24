@@ -45,13 +45,13 @@ create_table_variables <- function(data, phylogenetic_signal) {
     summarise(`Phylogenetic signal` = print_lambda(phylogenetic_signal))
   # create table
   tibble(
-    Name = colnames(data)[7:21],
+    Name = colnames(data)[10:24],
     Code = c(
       "EA066", "EA028", "EA040", "EA075", "EA077", "EA039", "EA043", "EA009",
       "EA031", "EA072", "EA006", "EA030", "EA055-EA060", "SCCS892", "SCCS20"
     ),
     Type = ifelse(
-      sapply(data, function(x) class(x)[[1]])[7:21] == "factor",
+      sapply(data, function(x) class(x)[[1]])[10:24] == "factor",
       "Binary", "Ordinal"
     ),
     Description = c(

@@ -30,8 +30,16 @@ list(
     ),
     format = "url"
   ),
+  tar_target(
+    glottolog_languages_url,
+    paste0(
+      "https://raw.githubusercontent.com/glottolog/glottolog-cldf/",
+      "072ca0d0410039fb8b779be8fc165bac575d2cda/cldf/languages.csv"
+    ),
+    format = "url"
+  ),
   # get data file paths
-  tar_target(tree_file, "data/tree/dplace.nxs"),
+  tar_target(tree_file, "data/tree/dplace.nxs", format = "file"),
   # load tree
   tar_target(tree, load_tree(tree_file)),
   # compute maximum clade credibility tree
@@ -39,7 +47,10 @@ list(
   # load dplace data
   tar_target(
     data,
-    load_dplace_data(dplace_data_url, dplace_societies_url, mcc_tree)
+    load_dplace_data(
+      dplace_data_url, dplace_societies_url,
+      glottolog_languages_url, mcc_tree
+    )
   ),
   # plot sample characteristics
   tar_target(plot_sample, plot_sample_characteristics(data)),

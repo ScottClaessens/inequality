@@ -2,17 +2,21 @@
 #'
 #' Load and wrangle data on inequality and other variables from the Ethnographic
 #' Atlas and Standard Cross-Cultural Sample via the online database D-PLACE
-#' (release v3.3.0). The dataset is filtered to 1127 societies that can be
+#' (release v3.3.0). The dataset is filtered to 1258 societies that can be
 #' linked to the phylogenetic tree.
 #'
-#' @details The dataset produced by this function is a tibble with 1127
-#'   observations and 21 variables:
+#' @details The dataset produced by this function is a tibble with 1258
+#'   observations and 24 variables:
 #' \describe{
 #'  \item{soc_id}{Character, society ID}
 #'  \item{xd_id}{Character, cross-dataset ID (see
 #'    https://d-place.org/glossary#q9)}
 #'  \item{society}{Name of the society}
+#'  \item{glottocode}{Glottocode for the language or dialect of the society}
+#'  \item{language_family}{Language family for the language or dialect of the
+#'    society}
 #'  \item{region}{Region of the society}
+#'  \item{focal_year}{Principal year to which data refer}
 #'  \item{latitude}{Latitude of the society}
 #'  \item{longitude}{Longitude of the society}
 #'  \item{class_differentiation}{Ordered factor (five levels), extent of class
@@ -54,23 +58,39 @@
 #' @param dplace_data_url URL to access cldf/data.csv from D-PLACE v3.3.0
 #' @param dplace_societies_url URL to access cldf/societies.csv from D-PLACE
 #'   v3.3.0
+#' @param glottolog_languages_url URL to access cldf/languages.csv from
+#'   Glottolog v5.3
 #' @param mcc_tree Maximum clade credibility tree of D-PLACE societies used to
 #'   filter the dataset
 #'
 #' @returns A tibble
 #'
-load_dplace_data <- function(dplace_data_url, dplace_societies_url, mcc_tree) {
+load_dplace_data <- function(dplace_data_url, dplace_societies_url,
+                             glottolog_languages_url, mcc_tree) {
   # load csv files
   data <- read.csv(file = dplace_data_url)
   societies <- read.csv(file = dplace_societies_url)
+  languages <- read.csv(file = glottolog_languages_url)
   # wrangle ethnographic atlas data (n = 1290)
   ea <- wrangle_ea(data, societies)
   # wrangle sccs data (n = 186)
   sccs <- wrangle_sccs(data, societies)
   # join datasets
-  joined <- left_join(ea, sccs, by = "xd_id")
-  # filter to societies in phylogenetic tree (n = 1125)
-  filter(joined, xd_id %in% mcc_tree$tip.label)
+  left_join(ea, sccs, by = "xd_id") |>
+    # filter to societies in phylogenetic tree (n = 1258)
+    filter(xd_id %in% mcc_tree$tip.label) |>
+    # add data on language family affiliation
+    left_join(
+      dplyr::select(languages, Glottocode, Family_ID),
+      by = c("glottocode" = "Glottocode")
+    ) |>
+    mutate(Family_ID = ifelse(Family_ID == "", NA, Family_ID)) |>
+    left_join(
+      dplyr::select(languages, Glottocode, Name),
+      by = c("Family_ID" = "Glottocode")
+    ) |>
+    dplyr::select(soc_id:glottocode, Name, region:food_storage) |>
+    rename(language_family = Name)
 }
 
 #' Wrangle Ethnographic Atlas data from D-PLACE
@@ -125,7 +145,8 @@ wrangle_ea <- function(data, societies) {
     filter(Contribution_ID == "dplace-dataset-ea") |>
     # pivot wider
     pivot_wider(
-      id_cols = c(Soc_ID, xd_id, Name, Latitude, Longitude, region),
+      id_cols = c(Soc_ID, xd_id, Name, Latitude, Longitude, region,
+                  Glottocode, main_focal_year),
       names_from = Var_ID,
       values_from = Value
     ) |>
@@ -139,7 +160,9 @@ wrangle_ea <- function(data, societies) {
       soc_id                       = Soc_ID,
       xd_id                        = xd_id,
       society                      = Name,
+      glottocode                   = Glottocode,
       region                       = region,
+      focal_year                   = main_focal_year,
       latitude                     = Latitude,
       longitude                    = Longitude,
       class_differentiation        = ordered(EA066, levels = levels_EA066),
@@ -182,7 +205,7 @@ wrangle_ea <- function(data, societies) {
     # absent/present as factor
     mutate(
       across(
-        where(is.character) & !c(soc_id, xd_id, society, region),
+        where(is.character) & !c(soc_id, xd_id, society, region, glottocode),
         function(x) factor(x, levels = c("Absent", "Present"))
       )
     )

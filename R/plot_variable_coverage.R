@@ -9,7 +9,7 @@
 #'
 plot_variable_coverage <- function(data) {
   # counts of observed data for D-PLACE variables
-  counts <- apply(data, 2, function(x) sum(!is.na(x)))[-c(1:6)]
+  counts <- apply(data, 2, function(x) sum(!is.na(x)))[-c(1:9)]
   names(counts) <- str_to_sentence(str_replace_all(names(counts), "_", " "))
   # plot
   p <-
@@ -26,7 +26,7 @@ plot_variable_coverage <- function(data) {
     xlab(NULL) +
     geom_col(fill = "lightblue4") +
     geom_hline(
-      yintercept = 1125,
+      yintercept = nrow(data),
       linetype = "dashed"
     ) +
     scale_y_continuous(

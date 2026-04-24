@@ -48,6 +48,48 @@ plot_trait_on_tree <- function(data, mcc_tree, variable) {
         values = c("#ADD8E6", "#26667C")
       )
   }
+  # taxa bookends for major language families
+  taxa_bookends <- list(
+    "Atlantic-Congo"          = c("xd10",   "xd253"),
+    "Mande"                   = c("xd188",  "xd480"),
+    "Athabaskan-Eyak-Tlingit" = c("xd1026", "xd1082"),
+    "Algic"                   = c("xd1047", "xd1101"),
+    "Uto-Aztecan"             = c("xd1118", "xd1292"),
+    "Arawakan"                = c("xd1323", "xd1404"),
+    "Afro-Asiatic"            = c("xd305",  "xd526"),
+    "Indo-European"           = c("xd528",  "xd604"),
+    "Dravidian"               = c("xd668",  "xd680"),
+    "Uralic"                  = c("xd544",  "xd632"),
+    "Nilotic"                 = c("xd2",    "xd406"),
+    "Austronesian"            = c("xd687",  "xd749"),
+    "Sino-Tibetan"            = c("xd639",  "xd704"),
+    "Austroasiatic"           = c("xd661",  "xd724"),
+    "Salishan"                = c("xd1071", "xd1146"),
+    "Eskimo-Aleut"            = c("xd1022", "xd1067"),
+    "Central Sudanic"         = c("xd155",  "xd358"),
+    "Cariban"                 = c("xd1328", "xd1350")
+  )
+  # add clade labels for major language families
+  for (family in names(taxa_bookends)) {
+    # node number for most recent common ancestor
+    node <- getMRCA(mcc_tree, taxa_bookends[[family]])
+    # add clade label
+    out <-
+      out +
+      geom_cladelab(
+        node = node,
+        label = family,
+        offset = 10,
+        offset.text = 2,
+        barsize = 0.2,
+        fontsize = 3,
+        hjust = ifelse(
+          family %in% c("Afro-Asiatic", "Indo-European", "Uralic", "Dravidian",
+                        "Austronesian", "Austroasiatic", "Sino-Tibetan"),
+          1, 0
+        )
+      )
+  }
   # save
   ggsave(
     filename = paste0("plots/tree/tree_", variable, ".pdf"),
