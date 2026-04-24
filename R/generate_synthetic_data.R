@@ -92,16 +92,6 @@ generate_synthetic_data <- function(data, mcc_tree, model) {
       )
     }
   }
-  # match missing data pattern in real data
-  out <- out[match(data$xd_id, out$xd_id), ]
-  if (!identical(out$xd_id, data$xd_id)) {
-    stop("Real and synthetic datasets are not aligned on 'xd_id'.")
-  }
-  for (i in 1:length(variables)) {
-    var <- names(variables)[i]
-    missing <- is.na(data[[var]])
-    out[[var]][missing] <- NA
-  }
   # return synthetic dataset with longitude and latitude information
   out |>
     left_join(
