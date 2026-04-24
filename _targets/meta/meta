@@ -1,6 +1,5 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 plot_gdpm|stem|b4362a62db3b043c|e1fe878bf61ed907|7a614baa99810060|-258833698||t20545.6886278789s|s1737547b|1737547|rds|local|vector|||0.322||
-plot_spatial_prior|stem|abbe2cd3141b4b1e|73182a2d47786d20|d26ffd85c16d83de|-1566623752||t20545.6886309796s|s511076b|511076|rds|local|vector|||0.163||
 dplace_data_url|stem|e0e023be3db9dfae|14e703ec1d8b5d26|2c530c1562a7fbd1|545186855|https://raw.githubusercontent.com/D-PLACE/dplace-cldf/6c2008c187a297d1955b41d8ae80d8e31d404f6c/cldf/data.csv|t20545.6886886483s||0|url|local|vector|||0||
 data_subsample|stem|9ded11a128c8084c|5d2151a041ffe531|7fa4dc0f5148665d|-1334058284||t20545.6890830472s|s1617b|1617|rds|local|vector|||0||
 synthetic_data_craft_specialisation|stem|9a2e2d6aeed47adc|311d2f7d99d1a01a|29231edb99bd3f20|2088484398||t20545.9383426509s|s8760b|8760|rds|local|vector|||35.68||
@@ -1607,7 +1606,7 @@ plot_trait_on_tree|function|1044ae0de5c8c036
 plot_all_methods|function|3a8b15634d960f41
 wrangle_ea|function|21e76abdb929fb77
 wrangle_sccs|function|7c04b41b2cc92487
-plot_spatial_gp_prior|function|04ffc1433276a799
+plot_spatial_gp_prior|function|11a777ba75897eeb
 plot_world_map|function|8bf09b9b701a5479
 plot_synthetic_fit|function|0fa7ae085a622e91
 load_tree|function|36feda55b1e32dd5
@@ -1619,6 +1618,7 @@ get_cutpoints_list|function|7ffcea36d78df680
 load_dplace_data|function|14fce25c6420ff54
 get_variables_list|function|421afb88949c3641
 fix_parameters|function|834356ee9c9c5902
-fit_model|function|23d17d28edfe4697
+fit_model|function|202341983e411e52
 plot_prior_predictive_check|function|a5d82791ccd318fe
 generate_synthetic_data|function|889a162d543ca81b
+plot_spatial_prior|stem|78300547f3355558|73182a2d47786d20|31f041d10b99cc3e|-1566623752||t20567.7240258218s|s504100b|504100|rds|local|vector|||1.922||
