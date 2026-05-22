@@ -14,8 +14,14 @@
 #'
 plot_synthetic_fit <- function(synthetic_fit, model) {
   # get posterior draws
+  if (synthetic_fit$nuts_sampler == "stan") {
+    post <- as_draws_df(synthetic_fit$fit)
+  } else if (synthetic_fit$nuts_sampler == "nutpie") {
+    post <- as_draws_df(synthetic_fit$fit$draws_array)
+  }
+  # wrangle posterior draws
   post <-
-    as_draws_df(synthetic_fit$fit) |>
+    post |>
     dplyr::select(
       starts_with("A[") |
         starts_with("Q[") |
@@ -37,8 +43,8 @@ plot_synthetic_fit <- function(synthetic_fit, model) {
       unique_nums = sum(str_count(par, as.character(1:5)) != 0),
       true = ifelse(str_starts(par, fixed("b[")), 0, NA),
       true = ifelse(str_starts(par, fixed("Q[")), 2, true),
-      true = ifelse(str_starts(par, fixed("A[")) & unique_nums == 1, -1, true),
-      true = ifelse(str_starts(par, fixed("A[")) & unique_nums == 2, 4, true)
+      true = ifelse(str_starts(par, fixed("A[")) & unique_nums == 1, -0.5, true),
+      true = ifelse(str_starts(par, fixed("A[")) & unique_nums == 2, 3, true)
     ) |>
     transmute(
       parameter = par,

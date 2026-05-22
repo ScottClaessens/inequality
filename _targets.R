@@ -1,15 +1,23 @@
 options(tidyverse.quiet = TRUE)
 library(crew)
+library(reticulate)
 library(targets)
 library(tarchetypes)
 library(tidyverse)
 tar_option_set(
   packages = c("ape", "brms", "cmdstanr", "coevolve", "cowplot", "ggdist",
                "ggtree", "gt", "patchwork", "phangorn", "posterior",
-               "rnaturalearth", "sf", "tidyverse", "withr"),
+               "reticulate", "rnaturalearth", "sf", "tidyverse", "withr"),
   controller = crew_controller_local(workers = 2)
 )
 tar_source()
+
+# set python path
+Sys.setenv(
+  RETICULATE_PYTHON =
+    "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3"
+)
+invisible(py_config())
 
 # pipeline
 list(
@@ -109,11 +117,8 @@ list(
   ),
   # plot prior predictive check for spatial gaussian processes
   tar_target(plot_spatial_prior, plot_spatial_gp_prior()),
-  # create subsample of dummy data (n = 20) for prior predictive check
-  tar_target(
-    data_subsample,
-    data[sample(which(!is.na(data$food_storage)), size = 20), ]
-  ),
+  # create subsample of dummy data for prior predictive check
+  tar_target(data_subsample, subsample_data(data)),
   # loop over causal models
   tar_map(
     values = tibble(
@@ -132,8 +137,14 @@ list(
     # generate synthetic data
     tar_target(synthetic_data, generate_synthetic_data(data, mcc_tree, model)),
     # fit model to synthetic data
-    tar_target(synthetic_fit, fit_model(synthetic_data, mcc_tree, model,
-                                        spatial_control = FALSE)),
+    tar_target(
+      synthetic_fit,
+      fit_model(
+        synthetic_data, mcc_tree, model,
+        iter_warmup = 3000, iter_sampling = 3000,
+        nuts_sampler = "nutpie"
+      )
+    ),
     # plot synthetic results
     tar_target(plot_synthetic, plot_synthetic_fit(synthetic_fit, model))
   ),
