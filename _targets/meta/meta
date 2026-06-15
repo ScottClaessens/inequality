@@ -1558,48 +1558,48 @@ synthetic_data_intergenerational_wealth_transmission|stem|64203dd51cd0b19b|c85f7
 synthetic_data_food_storage|stem|84af9c8314344124|e22e3ba5363481e4|a7b52cecc72c90bd|-2088158990||t20569.8970060198s|s9533b|9533|rds|local|vector|||66.438||
 synthetic_data_craft_specialisation|stem|cece4a4b0356d666|311d2f7d99d1a01a|a7b52cecc72c90bd|2088484398||t20571.6526463028s|s9396b|9396|rds|local|vector|||39.201||
 synthetic_data_family|stem|450fd62a80130e50|97d0b36c1f9fd4ec|a7b52cecc72c90bd|-404474078||t20571.6529625562s|s10337b|10337|rds|local|vector|||66.534||
-synthetic_fit_population_size|stem|af6072697b1ad886|25c848e484279eca|b67841ece828ec6d|931312762||t20592.184115063s|s82538225b|82538225|rds|local|vector|||24199.417|cannot symlink '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/config-3.11-darwin' to '/var/folders/1c/18978_5s35n79f0fw4_d2lyc0000gp/T/rstudio-fallback-library-path-212731738/config-3.11-darwin', reason 'Permission denied'|
-synthetic_fit_scalar_stress|stem|c0871576091df95d|2d9cdbcffd27234f|6c7e3a99844cd196|752306696||t20592.231916768s|s81701541b|81701541|rds|local|vector|||28329.616||
-synthetic_fit_intergroup_conflict|stem|71d6900d07b94fa9|e979af764404e9a1|ab563523c1c25a8b|-384403606||t20592.8396104296s|s79793006b|79793006|rds|local|vector|||17816.205||
-synthetic_fit_land_limited|stem|616de015478d3197|053fd7f4e554939e|b0290e9cd7901b31|552606562||t20593.1474290663s|s83351987b|83351987|rds|local|vector|||44411.586||
-synthetic_fit_bridewealth|stem|58d8a2e910a5b9d6|34c232bd93ba5d8c|11c4019135bea2e7|-1671773941||t20593.2609485083s|s76491387b|76491387|rds|local|vector|||9803.269||
 data_subsample|stem|88c5c0566f63baeb|221cb9b64e465b81|198f3b8b833964a6|-1334058284||t20593.4061067471s|s3949b|3949|rds|local|vector|||0.014||
-prior_check_food_storage|stem|cacf3fcee3417ab7|a91be2f252e8aa5e|3dd657152697ea28|-101032885||t20593.4815372983s|s811978367b|811978367|rds|local|vector|||851.065||
-plot_prior_food_storage|stem|6feee25bb8a18966|3834bf37f5b8a296|20cb840d28d8055b|716449626||t20593.4821866073s|s1622905470b|1622905470|rds|local|vector|||2.535||
-prior_check_bridewealth|stem|666165ee29649a5a|2425c1c3483bb859|3dd657152697ea28|1407898675||t20593.4888198508s|s536330398b|536330398|rds|local|vector|||556.998||
-plot_prior_bridewealth|stem|d086ec2bb8bcad22|e94edc671ed8cf0c|b4f872fb5597171a|452567639||t20593.4892019733s|s1070038568b|1070038568|rds|local|vector|||1.256||
-prior_check_land_limited|stem|a75812394559ed9d|faa8390257bf41f3|3dd657152697ea28|-1633204915||t20593.5063555005s|s1092632115b|1092632115|rds|local|vector|||1447.957||
-plot_prior_land_limited|stem|dc031ff223a52e58|4929eae4382724a6|5011123eea0a8be5|-672325284||t20593.5072762697s|s2183855987b|2183855987|rds|local|vector|||2.551||
-prior_check_population_size|stem|e54a9c55a875d21b|97cba8d4346cc1cf|3dd657152697ea28|511781539||t20593.5187205035s|s811933216b|811933216|rds|local|vector|||963.717||
-plot_prior_population_size|stem|d5c76ae9e0becc56|ffe2cbf6b44cb5fe|50ca10e6d103317e|-13420569||t20593.5193071816s|s1623024996b|1623024996|rds|local|vector|||2.374||
-prior_check_intergenerational_wealth_transmission|stem|2d888463d822680a|e9ea7a34c22aac07|3dd657152697ea28|795865029||t20593.539806822s|s1377543514b|1377543514|rds|local|vector|||1731.589||
-plot_prior_intergenerational_wealth_transmission|stem|99e4cb60b4797b0c|20e941cfae38c338|daa74b74d412f94f|2039864174||t20593.5408213334s|s2754066351b|2754066351|rds|local|vector|||4.219||
-prior_check_family|stem|e50fbbc3286a0574|91f0b55fb8d878a9|3dd657152697ea28|1484314846||t20593.5559466747s|s1092537506b|1092537506|rds|local|vector|||1274.274||
-plot_prior_family|stem|6176d613e2dd4f1a|71d0d0b05360468a|0ac4792688cadc1d|1006072920||t20593.5567422692s|s2183754855b|2183754855|rds|local|vector|||3.064||
-prior_check_agriculture|stem|e7b842ac0a7cd1ee|2617fc31bea9deab|3dd657152697ea28|1575411061||t20593.562800975s|s536574689b|536574689|rds|local|vector|||506.169||
-plot_prior_agriculture|stem|1e6442560f402737|23963c99825809ba|49d31acdaa84de4d|2109572897||t20593.5631780454s|s1071135864b|1071135864|rds|local|vector|||1.244||
-prior_check_scalar_stress|stem|091799b388d833de|87418c4d6a2a18db|3dd657152697ea28|-1027962223||t20593.5765002324s|s811730558b|811730558|rds|local|vector|||1095.745||
-plot_prior_scalar_stress|stem|47578f602fd8cb98|af19f8621961245f|f9efbb1a4b7968db|1833294293||t20593.5772036799s|s1621946031b|1621946031|rds|local|vector|||2.068||
-prior_check_intergroup_conflict|stem|466b14ec528900f3|1074b4572154d66f|3dd657152697ea28|-1543377566||t20593.5885670534s|s811449378b|811449378|rds|local|vector|||958.486||
-plot_prior_intergroup_conflict|stem|9e75ecb3df99c5d0|f46a4edc42c87d7c|6a4cb44861424d37|1678707575||t20593.5891199063s|s1620765274b|1620765274|rds|local|vector|||1.509||
-prior_check_craft_specialisation|stem|0be6bdfc5cf2cbac|b3b5b12ec2ede0c6|3dd657152697ea28|-1544948927||t20593.5949632804s|s536270437b|536270437|rds|local|vector|||489.107||
-plot_prior_craft_specialisation|stem|8f4628e767ef6310|593cc68c66875a69|6eee22076e0b51da|-1327187119||t20593.5953444653s|s1069970237b|1069970237|rds|local|vector|||1.519||
-synthetic_fit_agriculture|stem|41a3a8130281ba8d|c7e14b35027296c8|72ef5168f4902287|1129756449||t20593.7491633668s|s77865562b|77865562|rds|local|vector|||13286.865||
-synthetic_fit_intergenerational_wealth_transmission|stem|c0c7e0b1119875e1|1a1574ab6d6fc2bc|2914efc3bd6e03bd|1725067326||t20594.1837820232s|s87211917b|87211917|rds|local|vector|||61548.17||
-synthetic_fit_craft_specialisation|stem|9b4791e141005aea|a4da9e121e3077dc|c3bb8efe9d58b821|289649177||t20594.3095469s|s76491419b|76491419|rds|local|vector|||10860.756||
-synthetic_fit_family|stem|2c8bc5b8bfb3ad69|a631b96c8a2082e1|d9e0d7fa8a904c26|-1816634483||t20595.302711245s|s83910813b|83910813|rds|local|vector|||47118.756||
-synthetic_fit_food_storage|stem|2a556acffdf71a5a|bd00feb1e8a78269|1499b37dea3b2162|1823542803||t20595.7506156619s|s83295626b|83295626|rds|local|vector|||85818.451||
-plot_synthetic_population_size|stem|ec80e707b7c9367d|a600a6b8d11d9835|ca9729b239ba17d0|-441647125||t20595.7804418448s|s6896917b|6896917|rds|local|vector|||0.547|Dropping 'draws_df' class as required metadata was removed.|
-plot_synthetic_scalar_stress|stem|b0cf9fccaafb865c|c90d139d421c4035|55d9a29301edef07|-980594035||t20595.7804419794s|s7458410b|7458410|rds|local|vector|||0.531|Dropping 'draws_df' class as required metadata was removed.|
-plot_synthetic_intergroup_conflict|stem|fa600d97fc518f51|eecf901175d85a8e|e8703c8d9cb6fc05|-2049338747||t20595.7804532163s|s6894251b|6894251|rds|local|vector|||0.223|Dropping 'draws_df' class as required metadata was removed.|
-plot_synthetic_land_limited|stem|668a942d85cdf66b|e5942e22103a1b26|c32defc8efae4de2|578398836||t20595.7804545569s|s9125893b|9125893|rds|local|vector|||0.282|Dropping 'draws_df' class as required metadata was removed.|
-plot_synthetic_bridewealth|stem|e8af54ab18e88206|6e3d73a7b7699b7d|3d97628bc5968802|-374067137||t20595.7804635195s|s4625736b|4625736|rds|local|vector|||0.281|Dropping 'draws_df' class as required metadata was removed.|
-plot_synthetic_intergenerational_wealth_transmission|stem|a6971ddbb18d46a4|01d26f5c7025c06f|f1134051f146869e|-1185349958||t20595.7804695832s|s12533450b|12533450|rds|local|vector|||0.57|Dropping 'draws_df' class as required metadata was removed.|
-plot_synthetic_agriculture|stem|fca9354b7899b318|5ad68ef3be3ca8e7|9fc9b2352fa2cce8|-1488661531||t20595.780472474s|s4627756b|4627756|rds|local|vector|||0.267|Dropping 'draws_df' class as required metadata was removed.|
-plot_synthetic_food_storage|stem|2d7acdb2680ba2f2|cda3e32247cdc03c|49e9911b17978384|-289359994||t20595.7804810884s|s8005781b|8005781|rds|local|vector|||0.347|Dropping 'draws_df' class as required metadata was removed.|
-plot_synthetic_craft_specialisation|stem|2576e8145b86a33e|42aba17d48949faf|192e7f2af3150f0b|1244063401||t20595.7804813252s|s4625756b|4625756|rds|local|vector|||0.275|Dropping 'draws_df' class as required metadata was removed.|
-plot_synthetic_family|stem|246c9f074885e531|ca5832730ff6faf6|c0c0eedf75e89257|-1103233302||t20595.780493622s|s9688711b|9688711|rds|local|vector|||0.383|Dropping 'draws_df' class as required metadata was removed.|
-manuscript|stem|ef055eeaa4023380|ddb2fa285f9b0ec4|6d609c5bd0d96ca9|-1793997187|quarto/manuscript.docx*quarto/manuscript.pdf*quarto/manuscript.qmd*quarto/supplement.qmd|t20595.8397167836s|s6356921b|6356921|file|local|vector|||230.293||
+synthetic_fit_population_size|stem|759e304692f4771c|25c848e484279eca|61c5516e49ae8d13|931312762||t20612.9276887s|s82522256b|82522256|rds|local|vector|||26313.256||
+plot_synthetic_population_size|stem|11beea48a4b164c9|a600a6b8d11d9835|26a640b572621d0b|-441647125||t20612.9277196871s|s6899976b|6899976|rds|local|vector|||1.484|Dropping 'draws_df' class as required metadata was removed.|
+synthetic_fit_scalar_stress|stem|ef4ad0ce11dc8476|2d9cdbcffd27234f|3fb26a5238a2e74b|752306696||t20612.96253768s|s81688750b|81688750|rds|local|vector|||29324.325||
+plot_synthetic_scalar_stress|stem|f236ab10755c19a3|c90d139d421c4035|3d5a6b126cd978ee|-980594035||t20612.9625621828s|s7461573b|7461573|rds|local|vector|||1.072|Dropping 'draws_df' class as required metadata was removed.|
+synthetic_fit_intergroup_conflict|stem|0a1d7043d6038d3e|e979af764404e9a1|cc29bd3fa70605b4|-384403606||t20613.2150366855s|s79778901b|79778901|rds|local|vector|||21811.355||
+plot_synthetic_intergroup_conflict|stem|17ccc99ec84a124f|eecf901175d85a8e|c92ca6d9f016f136|-2049338747||t20613.2150551701s|s6900062b|6900062|rds|local|vector|||0.535|Dropping 'draws_df' class as required metadata was removed.|
+synthetic_fit_bridewealth|stem|5daf34fa8d5a92b7|34c232bd93ba5d8c|171a81a7343db7d2|-1671773941||t20613.9653751647s|s76487968b|76487968|rds|local|vector|||11034.768|cannot symlink '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/config-3.11-darwin' to '/var/folders/1c/18978_5s35n79f0fw4_d2lyc0000gp/T/rstudio-fallback-library-path-748822543/config-3.11-darwin', reason 'Permission denied'|
+plot_synthetic_bridewealth|stem|090711d2712b4fd0|6e3d73a7b7699b7d|12e07dbfdded362c|-374067137||t20613.9653989171s|s4627938b|4627938|rds|local|vector|||1.131|Dropping 'draws_df' class as required metadata was removed.|
+synthetic_fit_agriculture|stem|2974d993e2896c9d|c7e14b35027296c8|9a54da1bea4de5ec|1129756449||t20613.9825991416s|s77863130b|77863130|rds|local|vector|||12522.942||
+plot_synthetic_agriculture|stem|4cc12b5fdbfb74c2|5ad68ef3be3ca8e7|a8e11f9af6b75b1e|-1488661531||t20613.9826157593s|s4627916b|4627916|rds|local|vector|||0.708|Dropping 'draws_df' class as required metadata was removed.|
+prior_check_bridewealth|stem|c2729c154533146c|2425c1c3483bb859|dd19a0d4347eb13e|1407898675||t20614.8341687179s|s536331357b|536331357|rds|local|vector|||455.333||
+plot_prior_bridewealth|stem|091bc2fbf24c4038|e94edc671ed8cf0c|84f1401a2f9892fb|452567639||t20614.8345252157s|s1070035000b|1070035000|rds|local|vector|||1.76||
+prior_check_food_storage|stem|f8cfb37915720a58|a91be2f252e8aa5e|dd19a0d4347eb13e|-101032885||t20614.837564221s|s811969444b|811969444|rds|local|vector|||741.345||
+plot_prior_food_storage|stem|e5dfce52fe032ee5|3834bf37f5b8a296|161479c26a0f5ce5|716449626||t20614.8381019167s|s1622900138b|1622900138|rds|local|vector|||1.903||
+prior_check_population_size|stem|69a9f52a50ac44a7|97cba8d4346cc1cf|dd19a0d4347eb13e|511781539||t20614.8475229793s|s811938406b|811938406|rds|local|vector|||792.994||
+plot_prior_population_size|stem|5d190b066f5e32f8|ffe2cbf6b44cb5fe|930e3f2c928eaed8|-13420569||t20614.8480349235s|s1623025721b|1623025721|rds|local|vector|||1.43||
+prior_check_land_limited|stem|f0781786159a7999|faa8390257bf41f3|dd19a0d4347eb13e|-1633204915||t20614.8485386913s|s1092639336b|1092639336|rds|local|vector|||1182.794||
+plot_prior_land_limited|stem|d491e4802e362a26|4929eae4382724a6|f2732fa72c4a3408|-672325284||t20614.849262253s|s2183885582b|2183885582|rds|local|vector|||2.423||
+prior_check_family|stem|c629d84f57033cae|91f0b55fb8d878a9|dd19a0d4347eb13e|1484314846||t20614.8640401437s|s1092604022b|1092604022|rds|local|vector|||1246.175||
+plot_prior_family|stem|c76f1ecde8b6b5c9|71d0d0b05360468a|39c4e5a97e3dd1fe|1006072920||t20614.8647692244s|s2183886126b|2183886126|rds|local|vector|||2.252||
+prior_check_intergenerational_wealth_transmission|stem|4e23f7018cbeed63|e9ea7a34c22aac07|dd19a0d4347eb13e|795865029||t20614.8667168907s|s1378786673b|1378786673|rds|local|vector|||1577.425||
+plot_prior_intergenerational_wealth_transmission|stem|8e7ef2f2b47706c0|20e941cfae38c338|a95905c41cc00354|2039864174||t20614.8676554197s|s2756558151b|2756558151|rds|local|vector|||4.386||
+prior_check_agriculture|stem|dc9e08bb571f5737|2617fc31bea9deab|dd19a0d4347eb13e|1575411061||t20614.8698031196s|s536579758b|536579758|rds|local|vector|||419.3||
+plot_prior_agriculture|stem|8cfd9aef7749292c|23963c99825809ba|fed85ccb4b2b1905|2109572897||t20614.8701619463s|s1071140717b|1071140717|rds|local|vector|||1.073||
+prior_check_scalar_stress|stem|6ad95d88f044b3ec|87418c4d6a2a18db|dd19a0d4347eb13e|-1027962223||t20614.8771629603s|s811730283b|811730283|rds|local|vector|||796.963||
+plot_prior_scalar_stress|stem|dcc3bcafa8f56873|af19f8621961245f|cf5a0aacfd229b7a|1833294293||t20614.8776981927s|s1621936077b|1621936077|rds|local|vector|||1.287||
+prior_check_intergroup_conflict|stem|6de65a04c89a157e|1074b4572154d66f|dd19a0d4347eb13e|-1543377566||t20614.8794684967s|s811453321b|811453321|rds|local|vector|||781.556||
+plot_prior_intergroup_conflict|stem|124e05cbb853e5b7|f46a4edc42c87d7c|11f19c45f98d5df8|1678707575||t20614.8800052256s|s1620790232b|1620790232|rds|local|vector|||1.508||
+prior_check_craft_specialisation|stem|988201be7578989a|b3b5b12ec2ede0c6|dd19a0d4347eb13e|-1544948927||t20614.8832566424s|s536331376b|536331376|rds|local|vector|||462.921||
+plot_prior_craft_specialisation|stem|65d9dcf507026048|593cc68c66875a69|bacf60a247c045d2|-1327187119||t20614.8836625897s|s1070034881b|1070034881|rds|local|vector|||1.344||
+synthetic_fit_craft_specialisation|stem|1bd59a3b3cb246b1|a4da9e121e3077dc|9ebeab94e1447173|289649177||t20615.0167826394s|s76487991b|76487991|rds|local|vector|||11498.478||
+plot_synthetic_craft_specialisation|stem|a6f0786f05daf6e9|42aba17d48949faf|dfb868c3aa6a5862|1244063401||t20615.0167968017s|s4627956b|4627956|rds|local|vector|||0.45|Dropping 'draws_df' class as required metadata was removed.|
+synthetic_fit_land_limited|stem|169afaf961345c4c|053fd7f4e554939e|8c9546f7e736c973|552606562||t20617.3335950895s|s83335026b|83335026|rds|local|vector|||47276.198||
+plot_synthetic_land_limited|stem|d5e07b50bb6436e0|e5942e22103a1b26|14f0e5211f36078c|578398836||t20617.3336299499s|s9132241b|9132241|rds|local|vector|||1.457|Dropping 'draws_df' class as required metadata was removed.|
+synthetic_fit_intergenerational_wealth_transmission|stem|dd070c1403da7e7c|1a1574ab6d6fc2bc|787ae0838f56767d|1725067326||t20617.4839286368s|s87212825b|87212825|rds|local|vector|||60264.809||
+plot_synthetic_intergenerational_wealth_transmission|stem|a6eb0763787b97eb|01d26f5c7025c06f|cdd8a4c3ae0a21e9|-1185349958||t20617.4839605967s|s12539150b|12539150|rds|local|vector|||1.502|Dropping 'draws_df' class as required metadata was removed.|
+synthetic_fit_family|stem|b5de2cce1927c106|a631b96c8a2082e1|31353daea2c7b16f|-1816634483||t20618.1037101013s|s83911224b|83911224|rds|local|vector|||53543.424||
+plot_synthetic_family|stem|ce11469dbd9e7702|ca5832730ff6faf6|9abf834d43208bc8|-1103233302||t20618.1037298643s|s9702833b|9702833|rds|local|vector|||0.651|Dropping 'draws_df' class as required metadata was removed.|
+synthetic_fit_food_storage|stem|643fcbcdb3fd797e|bd00feb1e8a78269|fe7013c283437fb3|1823542803||t20618.3639065394s|s83281774b|83281774|rds|local|vector|||89013.555||
+plot_synthetic_food_storage|stem|bd012770671ff85f|cda3e32247cdc03c|ddf41da14cff97ac|-289359994||t20618.3639184396s|s8005594b|8005594|rds|local|vector|||0.313|Dropping 'draws_df' class as required metadata was removed.|
+manuscript|stem|8a23b230bf7f4700|ddb2fa285f9b0ec4|e1b81561531b38f7|-1793997187|quarto/manuscript.docx*quarto/manuscript.pdf*quarto/manuscript.qmd*quarto/supplement.qmd|t20618.3676085525s|s6355441b|6355441|file|local|vector|||235.94||
 get_effects_matrix|function|bc2a5cf1989e2679
 plot_sample_characteristics|function|3b39b1fab982e2d4
 subsample_data|function|03488ab8c4868c39
@@ -1610,7 +1610,7 @@ wrangle_ea|function|21e76abdb929fb77
 wrangle_sccs|function|7c04b41b2cc92487
 plot_spatial_gp_prior|function|11a777ba75897eeb
 plot_world_map|function|8bf09b9b701a5479
-.Random.seed|object|3986edcab400cd71
+.Random.seed|object|e2fc106bd5088a36
 plot_synthetic_fit|function|7bcee6a6d40cf7cf
 load_tree|function|36feda55b1e32dd5
 create_table_variables|function|5be231dca0c93be7
@@ -1621,6 +1621,6 @@ get_cutpoints_list|function|7ffcea36d78df680
 load_dplace_data|function|14fce25c6420ff54
 get_variables_list|function|421afb88949c3641
 fix_parameters|function|834356ee9c9c5902
-fit_model|function|e3debb7d62ea6bd8
+fit_model|function|c84101c7842ef047
 plot_prior_predictive_check|function|a5d82791ccd318fe
 generate_synthetic_data|function|cec7d6a2611752ee

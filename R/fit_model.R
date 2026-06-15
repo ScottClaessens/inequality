@@ -45,7 +45,7 @@ fit_model <- function(data, tree, model, prior_only = FALSE, adapt_delta = 0.99,
     priors <- list(
       b          = "std_normal()",
       A_diag     = "std_normal()",
-      A_offdiag  = "std_normal()",
+      A_offdiag  = "normal(0, 2)",
       Q_sigma    = "std_normal()",
       eta_anc    = "std_normal()",
       c          = "normal(0, 3)",
