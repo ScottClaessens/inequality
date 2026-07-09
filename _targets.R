@@ -75,7 +75,10 @@ list(
   # plot correlation between linguistic and geographic distances
   tar_target(plot_cor, plot_linguistic_spatial_distance(data, mcc_tree)),
   # get random tree ids
-  tar_target(tree_ids, sample(1:length(tree), size = 100)),
+  tar_target(tree_ids, sample(1:length(tree), size = 10)),
+  # compile stan model for calculating phylogenetic signal
+  tar_target(file_stan, "stan/phylogenetic_signal.stan", format = "file"),
+  tar_target(phylogenetic_signal_model, cmdstanr::cmdstan_model(file_stan)),
   # loop over all variables
   tar_map(
     values = tibble(
@@ -93,8 +96,9 @@ list(
     # calculate phylogenetic signal for variable
     tar_target(
       signal,
-      calculate_phylogenetic_signal(data, tree, variable, tree_ids),
-      pattern = map(tree_ids)
+      calculate_phylogenetic_signal(
+        data, phylogenetic_signal_model, tree, variable, tree_ids
+      )
     )
   ),
   # combine phylogenetic signal estimates
