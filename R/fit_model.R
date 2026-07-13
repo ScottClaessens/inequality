@@ -10,8 +10,9 @@
 #' @param model String of length one. Causal model to structure the effects
 #'   matrix for the statistical model. Must be equal to one of the following:
 #'   "agriculture", "intergenerational_wealth_transmission", "family",
-#'   "population_size", "land_limited", "scalar_stress", "intergroup_conflict",
-#'   "bridewealth", "craft_specialisation", or "food_storage"
+#'   "population_size", "plough_animals", "scalar_stress",
+#'   "intergroup_conflict", "bridewealth", "craft_specialisation", or
+#'   "food_storage"
 #' @param prior_only Logical. If \code{FALSE} (default), the model is fitted to
 #'   the data and returns a posterior distribution. If \code{TRUE}, the model
 #'   samples from the prior only, ignoring the likelihood.

@@ -37,12 +37,20 @@ create_table_variables <- function(data, phylogenetic_signal) {
       "]"
     )
   }
-  # wrangle phylogenetic signals
-  phylogenetic_signals <-
+  # wrangle signals
+  signals <-
     phylogenetic_signal |>
-    unnest(phylogenetic_signal) |>
+    dplyr::select(c(variable, signal_type, signal)) |>
+    pivot_wider(
+      names_from = signal_type,
+      values_from = signal
+    ) |>
+    unnest(c(phylogenetic, geographic)) |>
     group_by(variable) |>
-    summarise(`Phylogenetic signal` = print_lambda(phylogenetic_signal))
+    summarise(
+      `Phylogenetic signal` = print_lambda(phylogenetic),
+      `Geographic signal` = print_lambda(geographic)
+    )
   # create table
   tibble(
     Name = colnames(data)[10:24],
@@ -87,7 +95,7 @@ create_table_variables <- function(data, phylogenetic_signal) {
     )
   ) |>
     left_join(prop_observed) |>
-    left_join(phylogenetic_signals, by = c("Name" = "variable")) |>
+    left_join(signals, by = c("Name" = "variable")) |>
     mutate(
       Name = str_to_sentence(str_replace_all(Name, "_", " ")),
       Name = ifelse(

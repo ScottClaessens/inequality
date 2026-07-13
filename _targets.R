@@ -128,7 +128,7 @@ list(
     values = tibble(
       model = c(
         "agriculture", "intergenerational_wealth_transmission", "family",
-        "population_size", "land_limited", "scalar_stress",
+        "population_size", "plough_animals", "scalar_stress",
         "intergroup_conflict", "bridewealth", "craft_specialisation",
         "food_storage"
       )

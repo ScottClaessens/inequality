@@ -9,7 +9,7 @@
 #' @param model String of length one. Causal model from which to generate
 #'   synthetic data. Must be equal to one of the following: "agriculture",
 #'   "intergenerational_wealth_transmission", "family", "population_size",
-#'   "land_limited", "scalar_stress", "intergroup_conflict", "bridewealth",
+#'   "plough_animals", "scalar_stress", "intergroup_conflict", "bridewealth",
 #'   "craft_specialisation", or "food_storage"
 #'
 #' @returns Tibble of synthetic data

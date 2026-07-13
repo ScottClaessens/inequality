@@ -9,8 +9,9 @@
 #' @param model String of length one. Causal model used to determine which
 #'   parameters to fix in Stan code. Must be equal to one of the following:
 #'   "agriculture", "intergenerational_wealth_transmission", "family",
-#'   "population_size", "land_limited", "scalar_stress", "intergroup_conflict",
-#'   "bridewealth", "craft_specialisation", or "food_storage"
+#'   "population_size", "plough_animals", "scalar_stress",
+#'   "intergroup_conflict", "bridewealth", "craft_specialisation", or
+#'   "food_storage"
 #'
 #' @returns Stan code with fixed parameters as a string
 #'

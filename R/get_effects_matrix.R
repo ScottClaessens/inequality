@@ -5,7 +5,7 @@
 #'
 #' @param model String of length one. Causal model. Must be equal to one of the
 #'   following: "agriculture", "intergenerational_wealth_transmission",
-#'   "family", "population_size", "land_limited", "scalar_stress",
+#'   "family", "population_size", "plough_animals", "scalar_stress",
 #'   "intergroup_conflict", "bridewealth", "craft_specialisation", or
 #'   "food_storage"
 #'
@@ -34,7 +34,7 @@ get_effects_matrix <- function(model) {
 
     variables <- c("class_differentiation", "agriculture",
                    "patrilineality", "monogamy")
-    effects_matrix <- c(TRUE, TRUE, FALSE, TRUE,
+    effects_matrix <- c(TRUE, FALSE, FALSE, TRUE,
                         FALSE, TRUE, FALSE, FALSE,
                         FALSE, TRUE, TRUE, FALSE,
                         FALSE, FALSE, TRUE, TRUE)
@@ -47,7 +47,7 @@ get_effects_matrix <- function(model) {
                         FALSE, TRUE, FALSE,
                         FALSE, TRUE, TRUE)
 
-  } else if (model == "land_limited") {
+  } else if (model == "plough_animals") {
 
     variables <- c("class_differentiation", "agriculture",
                    "plough_animals", "real_property_unigeniture")
@@ -61,7 +61,7 @@ get_effects_matrix <- function(model) {
     variables <- c("class_differentiation", "mean_size_local_community",
                    "local_headman")
     effects_matrix <- c(TRUE, FALSE, TRUE,
-                        TRUE, TRUE, FALSE,
+                        FALSE, TRUE, TRUE,
                         FALSE, TRUE, TRUE)
 
   } else if (model == "intergroup_conflict") {
