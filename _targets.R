@@ -150,10 +150,19 @@ list(
       )
     ),
     # plot synthetic results
-    tar_target(plot_synthetic, plot_synthetic_fit(synthetic_fit, model))
+    tar_target(plot_synthetic, plot_synthetic_fit(synthetic_fit, model)),
+    # fit model to observed data
+    tar_target(
+      fit,
+      fit_model(
+        data, tree[tree_ids], model,
+        iter_warmup = 1000, iter_sampling = 1000,
+        nuts_sampler = "nutpie"
+      )
+    )
   ),
   # generate manuscript
-  tar_quarto(manuscript, "quarto/manuscript.qmd", quiet = FALSE),
+  #tar_quarto(manuscript, "quarto/manuscript.qmd", quiet = FALSE),
   # print session info
   tar_target(
     sessionInfo,
