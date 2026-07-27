@@ -1,0 +1,40 @@
+Variables: class_differentiation = ordered_logistic 
+           craft_specialisation = bernoulli_logit 
+     Data: data (Number of observations: 1258)
+Phylogeny: tree (Number of trees: 10)
+    Draws: 4 chains, each with iter = 2000; warmup = 2000; thin = 1
+           total post-warmup draws = 8000
+
+Autoregressive selection effects:
+                      Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation    -0.41      0.33 -1.22 -0.02 1.01      890      631
+craft_specialisation     -0.49      0.33 -1.23 -0.02 1.00      605      458
+
+Cross selection effects:
+                                             Estimate Est.Error 2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+craft_specialisation ⟶ class_differentiation     5.63      1.05 3.81  7.88 1.01      844     1210
+
+Drift parameters:
+                          Estimate Est.Error 2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+sd(class_differentiation)     0.82      0.61 0.04  2.26 1.00     1025     1015
+sd(craft_specialisation)      2.90      0.53 1.98  4.03 1.01      734     1741
+
+Continuous time intercept parameters:
+                      Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation    -0.57      0.93 -2.39  1.26 1.00     1174     2217
+craft_specialisation     -0.60      0.73 -2.04  0.80 1.00      840     1900
+
+Ordinal cutpoint parameters:
+                         Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation[1]    -4.38      1.36 -7.15 -1.81 1.00      791     1364
+class_differentiation[2]    -0.65      1.26 -3.11  1.80 1.00      920     1294
+class_differentiation[3]     0.24      1.25 -2.20  2.66 1.00     1002     1424
+class_differentiation[4]     6.91      1.46  4.07  9.84 1.01     1525     3139
+
+Gaussian Process parameters for distances:
+                            Estimate Est.Error 2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+sdgp(class_differentiation)     3.06      0.48 2.20  4.05 1.00     2015     3860
+sdgp(craft_specialisation)      2.73      0.41 2.00  3.62 1.00     2587     3252
+rho(class_differentiation)      0.08      0.02 0.06  0.12 1.00     2135     3628
+rho(craft_specialisation)       0.13      0.02 0.10  0.17 1.00     1540     2490
+
