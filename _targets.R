@@ -7,8 +7,8 @@ library(tidyverse)
 tar_option_set(
   packages = c("ape", "brms", "cmdstanr", "coevolve", "cowplot", "ggdist",
                "ggtree", "gt", "patchwork", "phangorn", "posterior",
-               "reticulate", "rnaturalearth", "sf", "tidyverse", "withr"),
-  controller = crew_controller_local(workers = 2)
+               "reticulate", "rnaturalearth", "sf", "tidyverse", "withr")#,
+  #controller = crew_controller_local(workers = 2)
 )
 tar_source()
 
@@ -156,10 +156,20 @@ list(
       fit,
       fit_model(
         data, tree[tree_ids], model,
-        iter_warmup = 1000, iter_sampling = 1000,
+        iter_warmup = 2000, iter_sampling = 2000,
         nuts_sampler = "nutpie"
       )
-    )
+    ),
+    # print model summary to file
+    tar_target(
+      summary,
+      print_model_summary(
+        fit,
+        paste0("outputs/summary_", model, ".txt")
+      )
+    ),
+    # extract standardised selection matrix
+    tar_target(A_std, extract_standardised(fit))
   ),
   # generate manuscript
   #tar_quarto(manuscript, "quarto/manuscript.qmd", quiet = FALSE),
