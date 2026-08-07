@@ -1,5 +1,6 @@
 options(tidyverse.quiet = TRUE)
 library(crew)
+library(crew.cluster)
 library(targets)
 library(tarchetypes)
 library(tidyverse)
@@ -7,7 +8,12 @@ tar_option_set(
   packages = c("ape", "brms", "cmdstanr", "coevolve", "cowplot", "ggdist",
                "ggtree", "gt", "patchwork", "phangorn", "posterior",
                "rnaturalearth", "sf", "tidyverse", "withr"),
-  controller = crew_controller_local(workers = 2)
+  controller = crew_controller_slurm(
+    workers = 1,
+    script_lines = "module load R",
+    slurm_memory_gigabytes_per_cpu = 10,
+    slurm_cpus_per_task = 4
+  )
 )
 tar_source()
 
