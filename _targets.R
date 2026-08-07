@@ -1,23 +1,15 @@
 options(tidyverse.quiet = TRUE)
 library(crew)
-library(reticulate)
 library(targets)
 library(tarchetypes)
 library(tidyverse)
 tar_option_set(
   packages = c("ape", "brms", "cmdstanr", "coevolve", "cowplot", "ggdist",
                "ggtree", "gt", "patchwork", "phangorn", "posterior",
-               "reticulate", "rnaturalearth", "sf", "tidyverse", "withr")#,
-  #controller = crew_controller_local(workers = 2)
+               "rnaturalearth", "sf", "tidyverse", "withr"),
+  controller = crew_controller_local(workers = 2)
 )
 tar_source()
-
-# set python path
-Sys.setenv(
-  RETICULATE_PYTHON =
-    "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3"
-)
-invisible(py_config())
 
 # pipeline
 list(
@@ -145,8 +137,7 @@ list(
       synthetic_fit,
       fit_model(
         synthetic_data, mcc_tree, model,
-        iter_warmup = 3000, iter_sampling = 3000,
-        nuts_sampler = "nutpie"
+        iter_warmup = 3000, iter_sampling = 3000
       )
     ),
     # plot synthetic results
@@ -156,8 +147,7 @@ list(
       fit,
       fit_model(
         data, tree[tree_ids], model,
-        iter_warmup = 2000, iter_sampling = 2000,
-        nuts_sampler = "nutpie"
+        iter_warmup = 3000, iter_sampling = 3000
       )
     ),
     # print model summary to file

@@ -109,7 +109,19 @@ summary_agriculture|stem|ea95d97d277d3ba7|51497d0385d7d050|4dfaef4feb9dfb42|-178
 A_std_agriculture|stem|0c5fc4e760357f23|e7094f5f51f7a035|0d45077f556d47aa|-267209926||t20661.5009884873s|s199742b|199742|rds|local|vector|||60.708||
 A_std_bridewealth|stem|19dbd5daf30ba807|ddda2a2dcea9d5c4|4fda43b2b21854b7|-1578146655||t20661.503551066s|s200069b|200069|rds|local|vector|||59.395||
 A_std_craft_specialisation|stem|5358d7d0dc4da4f9|31b4fd8d1d889231|c3caed5386672487|-1652861039||t20661.5052207114s|s199836b|199836|rds|local|vector|||60.868||
-.Random.seed|object|7c5f2fadc8bb2b1f
+summary_craft_specialisation|stem|ea95d97d277d3ba7|086fb8825d8eb4c6|b85845cc8163d1d0|538580456||t20661.5160818069s|s43b|43|rds|local|vector|||387.495|Parts of the model have not converged (some Rhats are > 1.05). Be careful when analysing the results! We recommend running more iterations and/or setting stronger priors.|
+summary_bridewealth|stem|ea95d97d277d3ba7|eef624a1a300fd72|d5a6b7cc622ca5fb|1911485713||t20661.5205391885s|s43b|43|rds|local|vector|||357.26||
+fit_population_size|stem|27d87ec00ad1bfaf|4256794da28bfa72|b98cef299e314a3e|1035047215||t20661.9033296154s|s13979738920b|13979738920|rds|local|vector|||31640.12||
+A_std_population_size|stem|5ee27c0593684fb0|d94bd5c97d007d50|b17016e9ba2c7a05|-890268241||t20661.9139432825s|s322875b|322875|rds|local|vector|||875.607||
+summary_population_size|stem|ea95d97d277d3ba7|70763a5daaab08a1|53056aab80820601|1827792110||t20661.9221228838s|s43b|43|rds|local|vector|||672.487|Parts of the model have not converged (some Rhats are > 1.05). Be careful when analysing the results! We recommend running more iterations and/or setting stronger priors.|
+fit_intergroup_conflict|stem|8f500fdf694d3b0c|014ef82f6b0c476f|b98cef299e314a3e|-378588900||t20663.1588018177s|s14069494866b|14069494866|rds|local|vector|||31779.908||
+summary_intergroup_conflict|stem|ea95d97d277d3ba7|77d3fab9353f3126|fcce4ae929d796fe|-115011812||t20663.1666992192s|s43b|43|rds|local|vector|||641.22|Parts of the model have not converged (some Rhats are > 1.05). Be careful when analysing the results! We recommend running more iterations and/or setting stronger priors.|
+A_std_intergroup_conflict|stem|5bd7e621b94ed5ed|0fb0b63068e684d5|ae87c7122bfa58c2|-840374260||t20663.1772371645s|s323832b|323832|rds|local|vector|||875.658||
+fit_scalar_stress|stem|45f0145aa1eba805|22431d628e9b5f8e|b98cef299e314a3e|602320134||t20664.2304360756s|s14054918689b|14054918689|rds|local|vector|||34056.384||
+A_std_scalar_stress|stem|b2f2fba9ca1c7510|0d5510cc9f848bb9|651699ef3eafe6ec|1099769541||t20664.3341200843s|s384336b|384336|rds|local|vector|||882.584||
+summary_scalar_stress|stem|ea95d97d277d3ba7|cb1e0f1316183e78|58234965daefc38c|1099548570||t20664.3423175235s|s43b|43|rds|local|vector|||673.606|Parts of the model have not converged (some Rhats are > 1.05). Be careful when analysing the results! We recommend running more iterations and/or setting stronger priors.|
+fit_food_storage|stem|d333fd11c6533ddb|6debe9653a33aa17|b98cef299e314a3e|1143525565||t20668.6129127626s|s14036239815b|14036239815|rds|local|vector|||115734.479||
+.Random.seed|object|7a4f248bb712b080
 wrangle_sccs|function|7c04b41b2cc92487
 calculate_phylogenetic_signal|function|26fe6106ad9643ba
 plot_world_map|function|8bf09b9b701a5479
@@ -135,5 +147,31 @@ fix_parameters|function|42597dab9243b8e0
 plot_prior_predictive_check|function|becc9212a5963dd5
 fit_model|function|c8caa89052c490cc
 generate_synthetic_data|function|fd688ef4f35a89b8
-summary_craft_specialisation|stem|ea95d97d277d3ba7|086fb8825d8eb4c6|b85845cc8163d1d0|538580456||t20661.5160818069s|s43b|43|rds|local|vector|||387.495|Parts of the model have not converged (some Rhats are > 1.05). Be careful when analysing the results! We recommend running more iterations and/or setting stronger priors.|
-summary_bridewealth|stem|ea95d97d277d3ba7|eef624a1a300fd72|d5a6b7cc622ca5fb|1911485713||t20661.5205391885s|s43b|43|rds|local|vector|||357.26||
+summary_food_storage|stem|ea95d97d277d3ba7|d5fd814b83689dac|f00904fccd233867|979822281||t20669.762448072s|s43b|43|rds|local|vector|||629.758|Parts of the model have not converged (some Rhats are > 1.05). Be careful when analysing the results! We recommend running more iterations and/or setting stronger priors.|
+A_std_food_storage|stem|3712f1778c317026|8dc90ed485b12fa4|60f6db219d0f2ad2|-604144009||t20669.7734709481s|s445862b|445862|rds|local|vector|||916.7||
+.Random.seed|object|ec8aa6caec9458b8
+wrangle_sccs|function|7c04b41b2cc92487
+calculate_phylogenetic_signal|function|26fe6106ad9643ba
+plot_world_map|function|8bf09b9b701a5479
+plot_all_methods|function|3a8b15634d960f41
+plot_variable_coverage|function|3f6a8e954a7fc9d4
+plot_sample_characteristics|function|3b39b1fab982e2d4
+wrangle_ea|function|21e76abdb929fb77
+load_tree|function|36feda55b1e32dd5
+get_effects_matrix|function|281e9d2a4eb723c7
+extract_standardised|function|b62e02042f234fd4
+plot_linguistic_spatial_distance|function|478941d595f26337
+plot_synthetic_fit|function|7bcee6a6d40cf7cf
+subsample_data|function|03488ab8c4868c39
+plot_gdpm_algorithm|function|ff5c69c7d5111b70
+plot_spatial_gp_prior|function|11a777ba75897eeb
+print_model_summary|function|175d7507c9c7dbb7
+plot_trait_on_tree|function|1044ae0de5c8c036
+create_table_variables|function|a74030a1facf2bcb
+load_dplace_data|function|14fce25c6420ff54
+get_cutpoints_list|function|1904fea920bd0028
+get_variables_list|function|fc883381446834d1
+fix_parameters|function|42597dab9243b8e0
+plot_prior_predictive_check|function|becc9212a5963dd5
+fit_model|function|c8caa89052c490cc
+generate_synthetic_data|function|fd688ef4f35a89b8
