@@ -1,0 +1,59 @@
+Variables: class_differentiation = ordered_logistic 
+           sedentism = ordered_logistic 
+           food_storage = ordered_logistic 
+     Data: data (Number of observations: 1258)
+Phylogeny: tree (Number of trees: 1)
+    Draws: 8 chains, each with iter = 1500; warmup = 3000; thin = 1
+           total post-warmup draws = 12000
+
+Autoregressive selection effects:
+                      Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation    -1.64      0.69 -3.04 -0.37 1.01     1241     1067
+sedentism                -0.99      0.60 -2.34 -0.08 1.01     1528     1274
+food_storage             -1.17      0.72 -2.67 -0.05 1.01      646      385
+
+Cross selection effects:
+                                          Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+sedentism <U+27F6> class_differentiation        3.45      1.27  1.08  6.01 1.01      616     1434
+sedentism <U+27F6> food_storage                 2.40      1.08  0.68  4.78 1.02      450     1101
+food_storage <U+27F6> class_differentiation    -0.31      1.61 -3.54  2.86 1.01     1031     2331
+food_storage <U+27F6> sedentism                -1.67      1.79 -5.13  1.81 1.02      379     1110
+
+Drift parameters:
+                          Estimate Est.Error 2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+sd(class_differentiation)     3.23      0.62 2.03  4.45 1.01     1561     1876
+sd(sedentism)                 4.41      0.53 3.40  5.49 1.01     1560     3094
+sd(food_storage)              0.49      0.39 0.02  1.46 1.00     2348     2272
+
+Continuous time intercept parameters:
+                      Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation    -0.14      0.98 -2.03  1.87 1.01     1262     2065
+sedentism                -0.11      0.96 -1.95  1.78 1.00     1354     2734
+food_storage             -0.22      0.95 -2.02  1.67 1.01     1501     3348
+
+Ordinal cutpoint parameters:
+                         Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation[1]    -0.89      1.09 -3.17  1.19 1.01      729     1493
+class_differentiation[2]     0.38      1.09 -1.89  2.46 1.01      730     1472
+class_differentiation[3]     0.64      1.09 -1.65  2.72 1.01      730     1501
+class_differentiation[4]     2.83      1.10  0.56  4.92 1.01      737     1469
+sedentism[1]                -4.76      0.76 -6.25 -3.26 1.01      993     2034
+sedentism[2]                -2.37      0.74 -3.81 -0.90 1.01     1024     2229
+sedentism[3]                -1.45      0.73 -2.90  0.01 1.01     1031     2330
+sedentism[4]                -1.31      0.73 -2.75  0.15 1.01     1029     2264
+sedentism[5]                -0.23      0.73 -1.66  1.23 1.01     1043     2244
+sedentism[6]                 0.40      0.73 -1.05  1.85 1.01     1046     2167
+sedentism[7]                 5.22      0.77  3.70  6.73 1.01     1176     2376
+food_storage[1]             -2.17      0.92 -4.04 -0.46 1.01     1328     3198
+food_storage[2]              2.13      0.90  0.34  3.86 1.01     1410     3541
+food_storage[3]              2.84      0.91  1.03  4.60 1.01     1511     3931
+food_storage[4]              3.42      0.95  1.54  5.27 1.01     1660     4240
+
+Gaussian Process parameters for distances:
+                            Estimate Est.Error 2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+sdgp(class_differentiation)     1.65      0.35 1.12  2.54 1.00     2057     2885
+sdgp(sedentism)                 2.18      0.37 1.57  3.02 1.00     1838     3913
+sdgp(food_storage)              0.80      0.43 0.07  1.79 1.00     2156     1609
+rho(class_differentiation)      0.07      0.02 0.04  0.11 1.00     1777     2882
+rho(sedentism)                  0.08      0.02 0.05  0.12 1.00     1466     2779
+rho(food_storage)               0.18      0.12 0.02  0.47 1.00     1344     2032

@@ -6,14 +6,27 @@ library(tarchetypes)
 library(tidyverse)
 tar_option_set(
   packages = c("ape", "brms", "cmdstanr", "coevolve", "cowplot", "ggdist",
-               "ggtree", "gt", "patchwork", "phangorn", "posterior",
-               "rnaturalearth", "sf", "tidyverse", "withr"),
-  controller = crew_controller_slurm(
-    workers = 1,
-    script_lines = "module load R",
-    slurm_memory_gigabytes_per_cpu = 10,
-    slurm_cpus_per_task = 4
-  )
+               "ggtree", "gt", "patchwork", "phangorn", "phytools", "posterior",
+               "reticulate", "rnaturalearth", "sf", "tidyverse", "withr"),
+  garbage_collection = 1#,
+  #controller = crew_controller_slurm(
+  #  workers = 10,
+  #  options_metrics = crew_options_metrics(
+  #    path = "/dev/stdout",
+  #    seconds_interval = 60
+  #  ),
+  #  options_cluster = crew_options_slurm(
+  #    script_lines = c(
+  #      "#SBATCH --account=arch039044",
+  #      "module load languages/R/4.5.1"
+  #    ),
+  #    memory_gigabytes_required = 100,
+  #    cpus_per_task = 8,
+  #    time_minutes = 10 * 24 * 60,
+  #    log_output = "crew_log_%A.out",
+  #    log_error = "crew_log_%A.err"
+  #  )
+  #)
 )
 tar_source()
 
@@ -63,13 +76,13 @@ list(
   # plot variable coverage
   tar_target(plot_coverage, plot_variable_coverage(data)),
   # plot world map
-  tar_target(plot_world, plot_world_map(data)),
+  #tar_target(plot_world, plot_world_map(data)),
   # plot maximum clade credibility tree
   tar_target(plot_tree, ggtree(mcc_tree, layout = "circular")),
   # plot gdpm schematic
   tar_target(plot_gdpm, plot_gdpm_algorithm()),
   # plot all methods together
-  tar_target(plot_methods, plot_all_methods(plot_world, plot_tree, plot_gdpm)),
+  #tar_target(plot_methods, plot_all_methods(plot_world, plot_tree, plot_gdpm)),
   # plot correlation between linguistic and geographic distances
   tar_target(plot_cor, plot_linguistic_spatial_distance(data, mcc_tree)),
   # get random tree ids
@@ -143,7 +156,9 @@ list(
       synthetic_fit,
       fit_model(
         synthetic_data, mcc_tree, model,
-        iter_warmup = 3000, iter_sampling = 3000
+        iter_warmup = 3000, iter_sampling = 1500,
+        chains = 8, cores = 8L,
+        nuts_sampler = "nutpie"
       )
     ),
     # plot synthetic results
@@ -152,8 +167,10 @@ list(
     tar_target(
       fit,
       fit_model(
-        data, tree[tree_ids], model,
-        iter_warmup = 3000, iter_sampling = 3000
+        data, mcc_tree, model,
+        iter_warmup = 3000, iter_sampling = 1500,
+        chains = 8, cores = 8L,
+        nuts_sampler = "nutpie"
       )
     ),
     # print model summary to file

@@ -15,8 +15,10 @@ extract_standardised <- function(fit) {
   # get posterior estimates for tip trait values
   eta_tips <- post$eta[, , 1:1258, ]
 
-  # average tip trait values across trees
-  eta_tips <- apply(eta_tips, c(1, 3, 4), mean)
+  # if more than one tree, average tip trait values across trees
+  if (length(phytools::as.multiPhylo(fit$tree)) > 1) {
+    eta_tips <- apply(eta_tips, c(1, 3, 4), mean)
+  }
 
   # get standard deviations across tips
   eta_sd <- apply(eta_tips, c(1, 3), sd)

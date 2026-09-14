@@ -20,7 +20,7 @@
 #' @param iter_warmup Number of warmup iterations.
 #' @param iter_sampling Number of sampling iterations.
 #' @param chains Number of Markov chains to run.
-#' @param parallel_chains Number of Markov chains to run in parallel.
+#' @param cores Number of Markov chains to run in parallel.
 #'
 #' @returns coevfit object
 #'

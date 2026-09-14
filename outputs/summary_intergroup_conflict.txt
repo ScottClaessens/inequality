@@ -1,0 +1,48 @@
+Variables: class_differentiation = ordered_logistic 
+           external_warfare_frequency = ordered_logistic 
+           local_headman = bernoulli_logit 
+     Data: data (Number of observations: 1258)
+Phylogeny: tree (Number of trees: 1)
+    Draws: 8 chains, each with iter = 1500; warmup = 3000; thin = 1
+           total post-warmup draws = 12000
+
+Autoregressive selection effects:
+                           Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation         -1.19      0.61 -2.46 -0.14 1.01     1305      781
+external_warfare_frequency    -0.81      0.60 -2.23 -0.03 1.00     2613     1695
+local_headman                 -0.63      0.49 -1.84 -0.02 1.01     1617     1133
+
+Cross selection effects:
+                                                Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+external_warfare_frequency <U+27F6> local_headman    -0.19      2.20 -4.10  3.96 1.02      332     1549
+local_headman <U+27F6> class_differentiation         -0.44      1.40 -3.15  2.39 1.01      633     1212
+
+Drift parameters:
+                               Estimate Est.Error 2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+sd(class_differentiation)          3.67      0.55 2.60  4.77 1.00     2501     4323
+sd(external_warfare_frequency)     0.58      0.43 0.02  1.59 1.00     1981     2622
+sd(local_headman)                  0.78      0.56 0.04  2.13 1.00     1507     1870
+
+Continuous time intercept parameters:
+                           Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation         -0.22      0.98 -2.13  1.68 1.00     2315     3985
+external_warfare_frequency    -0.11      1.00 -2.08  1.82 1.01     1333     3674
+local_headman                  0.95      0.93 -0.90  2.69 1.00     1983     3449
+
+Ordinal cutpoint parameters:
+                              Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation[1]         -0.92      1.25 -3.41  1.51 1.01      666     1595
+class_differentiation[2]          0.37      1.25 -2.12  2.79 1.01      669     1577
+class_differentiation[3]          0.63      1.25 -1.87  3.05 1.01      671     1556
+class_differentiation[4]          2.84      1.26  0.35  5.28 1.01      677     1634
+external_warfare_frequency[1]    -0.48      1.05 -2.52  1.54 1.02      386     2011
+external_warfare_frequency[2]     1.51      1.05 -0.52  3.54 1.02      395     2174
+
+Gaussian Process parameters for distances:
+                                 Estimate Est.Error 2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+sdgp(class_differentiation)          1.61      0.35 1.07  2.44 1.00     2636     3600
+sdgp(external_warfare_frequency)     0.67      0.36 0.05  1.44 1.00     2766     1766
+sdgp(local_headman)                  1.58      0.44 0.84  2.61 1.00     1897     3912
+rho(class_differentiation)           0.07      0.02 0.04  0.12 1.00     2057     3849
+rho(external_warfare_frequency)      0.19      0.12 0.02  0.49 1.00     1839     2014
+rho(local_headman)                   0.09      0.05 0.04  0.22 1.01     1244      911
