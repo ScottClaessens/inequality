@@ -1,33 +1,9 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 dplace_data_url|stem|e0e023be3db9dfae|14e703ec1d8b5d26|2c530c1562a7fbd1|545186855|https://raw.githubusercontent.com/D-PLACE/dplace-cldf/6c2008c187a297d1955b41d8ae80d8e31d404f6c/cldf/data.csv|t20545.6886886483s||0|url|local|vector|||0||
 dplace_societies_url|stem|c3caf7f2ccd75161|aee14d29acec2be0|2c530c1562a7fbd1|17396771|https://raw.githubusercontent.com/D-PLACE/dplace-cldf/6c2008c187a297d1955b41d8ae80d8e31d404f6c/cldf/societies.csv|t20552.7407712499s||0|url|local|vector|||1.831||
-plot_synthetic_intergenerational_wealth_transmission|stem|a6eb0763787b97eb|01d26f5c7025c06f|cdd8a4c3ae0a21e9|-1185349958||t20617.4839605967s|s12539150b|12539150|rds|local|vector|||1.502|Dropping 'draws_df' class as required metadata was removed.|
 plot_synthetic_food_storage|stem|bd012770671ff85f|cda3e32247cdc03c|ddf41da14cff97ac|-289359994||t20618.3639184396s|s8005594b|8005594|rds|local|vector|||0.313|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_plough_animals|stem|169afaf961345c4c|88213441bf625b15|fca1a60b18901247|-43481187||t20645.1872730655s|s83335026b|83335026|rds|local|vector|||60566.356||
-plot_synthetic_plough_animals|stem|a78de6f4ec6e7a4e|e07b63759dbce6d8|1fe3eabc4582a471|-271073653||t20645.1873190953s|s9132247b|9132247|rds|local|vector|||2.57|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_scalar_stress|stem|e67b270a35dee1c2|2d9cdbcffd27234f|92c2ad5edae3d08c|752306696||t20645.7369308087s|s81668687b|81668687|rds|local|vector|||123866.506||
-plot_synthetic_scalar_stress|stem|ac9ce508204ef39d|c90d139d421c4035|e5eb9001ffeaf871|-980594035||t20645.7369624659s|s7453333b|7453333|rds|local|vector|||1.198|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_intergenerational_wealth_transmission|stem|dd070c1403da7e7c|1a1574ab6d6fc2bc|a36da1815352c3cf|1725067326||t20646.3710854663s|s87212825b|87212825|rds|local|vector|||67290.619||
-synthetic_fit_family|stem|d85f07b51f14e7c5|a631b96c8a2082e1|9ff932eaefed47f6|-1816634483||t20647.3331684505s|s83334940b|83334940|rds|local|vector|||62005.522||
-plot_synthetic_family|stem|55756917ef3f1a5e|ca5832730ff6faf6|bfe2a9c29b2a2e38|-1103233302||t20647.3331940372s|s9132231b|9132231|rds|local|vector|||0.98|Dropping 'draws_df' class as required metadata was removed.|
 synthetic_fit_food_storage|stem|643fcbcdb3fd797e|bd00feb1e8a78269|b81ed672efa708bc|1823542803||t20647.6837600978s|s83281774b|83281774|rds|local|vector|||107244.614||
 manuscript|stem|8fb6497564b2ceda|ad6a377a1310aa1e|68484595ec4c4215|-1793997187|quarto/manuscript.docx*quarto/manuscript.pdf*quarto/manuscript.qmd*quarto/supplement.qmd|t20621.5862216326s||6355488|file|local|vector|||15.296||! Error running quarto CLI from R. Caused by error: ✖ Error returned by quarto CLI.   -----------------------------         processing file: manuscript.qmd      0%   .   1%  .   2% [unnamed-chunk-1]  ..   4%  ..   5%   [fig-methods]  ...   6%  ...   7% [tbl-variables]  ....   8%    .....   9% [phylogenetic-signal]      Error in `unnest()`:   ! Can't select columns that don't exist.   x Column `phylogenetic_signal` doesn't exist.   Backtrace:   x   1. +-dplyr::pull(...)   2. +-tidyr::unnest(...)   3. +-tidyr:::unnest.data.frame(...)   4.  \-tidyselect::eval_select(expr = enquo(cols), data = data, allow_rename   = FALSE)   5.  \-tidyselect:::eval_select_impl(...)   6.  +-tidyselect:::with_subscript_errors(...)   7.   \-base::withCallingHandlers(...)   8.  \-tidyselect:::vars_select_eval(...)   9.  \-tidyselect:::walk_data_tree(expr, data_mask, context_mask)   10.  \-tidyselect:::as_indices_sel_impl(...)   11.  \-tidyselect:::as_indices_impl(...)   12.  \-tidyselect:::chr_as_locations(x, vars, call = call, arg = arg)   13.  \-vctrs::vec_as_location(...)   14. \-vctrs (local) `<fn>`() at vctrs/R/subscript-loc.R:84:3   15.  \-vctrs:::stop_subscript_oob(...)   16.  \-vctrs:::stop_subscript(...) at vctrs/R/subscript-loc.R:503:3   17.  \-rlang::abort(...) at vctrs/R/subscript.R:150:3      Quitting from manuscript.qmd:174-181 [phylogenetic-signal]      Execution halted   WARN: Error encountered when rendering files    Caused by error in `processx::run()`: ! System command 'quarto' failed
-fit_bridewealth|stem|0c045981f8ed4bf3|15a919ec920dd0fb|b98cef299e314a3e|743879563||t20660.9853786576s|s9411963976b|9411963976|rds|local|vector|||18024.628||
-fit_agriculture|stem|582113fb0638d44e|3467230c6a9fb5b2|b98cef299e314a3e|-1202320715||t20661.192947457s|s9331070978b|9331070978|rds|local|vector|||17713.739||
-summary_agriculture|stem|ea95d97d277d3ba7|51497d0385d7d050|4dfaef4feb9dfb42|-1788799359||t20661.4715421157s|s43b|43|rds|local|vector|||396.302|Parts of the model have not converged (some Rhats are > 1.05). Be careful when analysing the results! We recommend running more iterations and/or setting stronger priors.|
-A_std_agriculture|stem|0c5fc4e760357f23|e7094f5f51f7a035|0d45077f556d47aa|-267209926||t20661.5009884873s|s199742b|199742|rds|local|vector|||60.708||
-A_std_bridewealth|stem|19dbd5daf30ba807|ddda2a2dcea9d5c4|4fda43b2b21854b7|-1578146655||t20661.503551066s|s200069b|200069|rds|local|vector|||59.395||
-A_std_craft_specialisation|stem|5358d7d0dc4da4f9|31b4fd8d1d889231|c3caed5386672487|-1652861039||t20661.5052207114s|s199836b|199836|rds|local|vector|||60.868||
-summary_craft_specialisation|stem|ea95d97d277d3ba7|086fb8825d8eb4c6|b85845cc8163d1d0|538580456||t20661.5160818069s|s43b|43|rds|local|vector|||387.495|Parts of the model have not converged (some Rhats are > 1.05). Be careful when analysing the results! We recommend running more iterations and/or setting stronger priors.|
-summary_bridewealth|stem|ea95d97d277d3ba7|eef624a1a300fd72|d5a6b7cc622ca5fb|1911485713||t20661.5205391885s|s43b|43|rds|local|vector|||357.26||
-A_std_population_size|stem|5ee27c0593684fb0|d94bd5c97d007d50|b17016e9ba2c7a05|-890268241||t20661.9139432825s|s322875b|322875|rds|local|vector|||875.607||
-summary_population_size|stem|ea95d97d277d3ba7|70763a5daaab08a1|53056aab80820601|1827792110||t20661.9221228838s|s43b|43|rds|local|vector|||672.487|Parts of the model have not converged (some Rhats are > 1.05). Be careful when analysing the results! We recommend running more iterations and/or setting stronger priors.|
-summary_intergroup_conflict|stem|ea95d97d277d3ba7|77d3fab9353f3126|fcce4ae929d796fe|-115011812||t20663.1666992192s|s43b|43|rds|local|vector|||641.22|Parts of the model have not converged (some Rhats are > 1.05). Be careful when analysing the results! We recommend running more iterations and/or setting stronger priors.|
-A_std_scalar_stress|stem|b2f2fba9ca1c7510|0d5510cc9f848bb9|651699ef3eafe6ec|1099769541||t20664.3341200843s|s384336b|384336|rds|local|vector|||882.584||
-summary_scalar_stress|stem|ea95d97d277d3ba7|cb1e0f1316183e78|58234965daefc38c|1099548570||t20664.3423175235s|s43b|43|rds|local|vector|||673.606|Parts of the model have not converged (some Rhats are > 1.05). Be careful when analysing the results! We recommend running more iterations and/or setting stronger priors.|
-fit_food_storage|stem|d333fd11c6533ddb|6debe9653a33aa17|b98cef299e314a3e|1143525565||t20668.6129127626s|s14036239815b|14036239815|rds|local|vector|||115734.479||
-summary_food_storage|stem|ea95d97d277d3ba7|d5fd814b83689dac|f00904fccd233867|979822281||t20669.762448072s|s43b|43|rds|local|vector|||629.758|Parts of the model have not converged (some Rhats are > 1.05). Be careful when analysing the results! We recommend running more iterations and/or setting stronger priors.|
-A_std_food_storage|stem|3712f1778c317026|8dc90ed485b12fa4|60f6db219d0f2ad2|-604144009||t20669.7734709481s|s445862b|445862|rds|local|vector|||916.7||
 .Random.seed|object|ec8aa6caec9458b8
 file_stan|stem|93ec70372d4a0771|ada09a347cdb2d7a|2c530c1562a7fbd1|739539972|stan/phylogenetic_signal.stan|t20672.6931329845s|s1320b|1320|file|local|vector|||2.783||
 plot_gdpm|stem|934e3f7f92eb3b06|e1fe878bf61ed907|7a614baa99810060|-258833698||t20672.7971816609s|s1735234b|1735234|rds|local|vector|||13.621|package 'stringr' was built under R version 4.5.2|
@@ -38,7 +14,6 @@ tree_ids|stem|c8d99ba4f65d3dc1|bb199b886fdd3ecb|6e521ad2d4809cd4|1609238890||t20
 sessionInfo|stem|2959311d4a007915|6f338939dd102f8f|2c530c1562a7fbd1|1164010252||t20672.8450864313s|s53b|53|rds|local|vector|||0.036||
 phylogenetic_signal_model|stem|e85bcafc3f838692|804aea6e4ee99aab|91a4a466485913f5|574656795||t20672.8528222076s|s17824b|17824|rds|local|vector|||31.137||
 mcc_tree|stem|cea89e7500b0dd56|c47da3594f89d0e8|6e521ad2d4809cd4|-2069454262||t20672.8532801099s|s33470b|33470|rds|local|vector|||36.323||
-data|stem|bbd3d9079da1b75c|b9cd236e90084022|bf435d938c7f616f|33550471||t20672.8534859906s|s38020b|38020|rds|local|vector|||17.083||
 synthetic_data_agriculture|stem|fabb24e1de8c8b15|7720b6b32bba70d8|2996a7c2bbdc9276|-1348648764||t20672.8553756713s|s9774b|9774|rds|local|vector|||162.867||
 plot_tree|stem|2296ba3c877e5cea|fd50c2d27dc55c0b|ed5f2d00dc8edf6a|-120768443||t20672.8635651564s|s949064b|949064|rds|local|vector|||0.374||
 plot_coverage|stem|3e9f4a110a749d72|3c337ec3a4bb18ce|594a84cf8f60b61c|249145699||t20672.863608074s|s456420b|456420|rds|local|vector|||0.954||
@@ -92,10 +67,6 @@ phylogenetic_signal|stem|d59f2a24718de7d5|139a42984378ca1f|b42acef7162ce5b4|1057
 table_variables|stem|95b09d640ed8d9f5|30d4d849086ca7f1|2438d6fe35002eb2|-867459564||t20675.8378813513s|s1362b|1362|rds|local|vector|||0.547||
 prior_check_food_storage|stem|e86dd888d0a032d7|a91be2f252e8aa5e|c559210ec799368b|-101032885||t20675.8873116965s|s811979565b|811979565|rds|local|vector|||4231.563||
 plot_prior_food_storage|stem|c311e4d5cbb0c54f|3834bf37f5b8a296|dbc23bd0586541f4|716449626||t20675.8883575683s|s1622908361b|1622908361|rds|local|vector|||6.716||
-synthetic_fit_agriculture|stem|a549af110e0edfbc|c7e14b35027296c8|1bff7ccbf24bc685|1129756449||t20675.9627015183s|s1465295621b|1465295621|rds|local|vector|||37332.849||
-plot_synthetic_agriculture|stem|261e3f44b1cd4bc8|5ad68ef3be3ca8e7|9c71ebe1f10a9417|-1488661531||t20675.9628375303s|s4627407b|4627407|rds|local|vector|||2.048|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_craft_specialisation|stem|336aea2c13950c2e|a4da9e121e3077dc|95c388b3262a34f3|289649177||t20675.9745308117s|s1458764156b|1458764156|rds|local|vector|||50101.949||
-plot_synthetic_craft_specialisation|stem|8b80bd259c82e9b8|42aba17d48949faf|db661090db60a53a|1244063401||t20675.974698791s|s4626750b|4626750|rds|local|vector|||2.863|Dropping 'draws_df' class as required metadata was removed.|
 prior_check_population_size|stem|77542e30f728d30d|97cba8d4346cc1cf|c559210ec799368b|511781539||t20675.9787609559s|s811924423b|811924423|rds|local|vector|||1344.04||
 plot_prior_population_size|stem|88d2c1f4a7777169|ffe2cbf6b44cb5fe|f4f792e5d01651f6|-13420569||t20675.9796388893s|s1623013155b|1623013155|rds|local|vector|||4.784||
 prior_check_bridewealth|stem|c70a6073d592863b|2425c1c3483bb859|c559210ec799368b|1407898675||t20675.9881897233s|s536329600b|536329600|rds|local|vector|||717.048||
@@ -112,73 +83,15 @@ prior_check_plough_animals|stem|2f5f860aa10f71d3|eba276ae4780bec5|c559210ec79936
 plot_prior_plough_animals|stem|64a0cac1bde0fa64|8dc76abfa59ed434|ebf298c89d4c761d|1533048916||t20676.0645722433s|s2179498130b|2179498130|rds|local|vector|||6.562||
 prior_check_family|stem|f2547822a451332a|91f0b55fb8d878a9|c559210ec799368b|1484314846||t20676.1443663831s|s1090450098b|1090450098|rds|local|vector|||14611.186||
 plot_prior_family|stem|8828662cee65ea5f|71d0d0b05360468a|349dc585d633968e|1006072920||t20676.145630625s|s2179498009b|2179498009|rds|local|vector|||7.229||
-synthetic_fit_bridewealth|stem|4b5177ca7a0cb1d8|34c232bd93ba5d8c|4520aead3dfd8404|-1671773941||t20677.7696160618s|s1458764107b|1458764107|rds|local|vector|||55518.417||
-plot_synthetic_bridewealth|stem|aa2b33ce9e9142bb|6e3d73a7b7699b7d|5521a40b112c83f4|-374067137||t20677.7698255531s|s4626735b|4626735|rds|local|vector|||2.875|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_population_size|stem|19ffc16515c1ed47|25c848e484279eca|105555d2182b1499|931312762||t20678.418761075s|s1982774582b|1982774582|rds|local|vector|||110073.109||
-plot_synthetic_population_size|stem|b6bbca9d0787afe0|a600a6b8d11d9835|d569682c7048f9c0|-441647125||t20678.418979986s|s6206126b|6206126|rds|local|vector|||2.927|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_intergroup_conflict|stem|61e009b52b5d5061|e979af764404e9a1|314b32523890c988|-384403606||t20678.4191311755s|s2139337385b|2139337385|rds|local|vector|||114921.575||
-plot_synthetic_intergroup_conflict|stem|8a6b7e7577e9affe|eecf901175d85a8e|999cab4929b040be|-2049338747||t20678.4193821818s|s6901616b|6901616|rds|local|vector|||4.228|Dropping 'draws_df' class as required metadata was removed.|
 fit_intergroup_conflict|stem|883cbd57f89fa7c1|6e47c10f9d9f172f|629998ba59f86197|-378588900||t20690.4861456527s|s2157978709b|2157978709|rds|local|vector|||90607.806||
 fit_plough_animals|stem|0a87df24c8f80655|0c850499be01f56b|629998ba59f86197|1522869800||t20691.2907897545s|s2846430330b|2846430330|rds|local|vector|||159805.448||
 fit_intergenerational_wealth_transmission|stem|5c1b768d15fdc50d|8dc52bcf2f52c55c|629998ba59f86197|-1462613787||t20691.9761454408s|s3552151273b|3552151273|rds|local|vector|||219292.596||
 fit_craft_specialisation|stem|b0c94fc5bf1d4391|7e09d04ccf3001be|629998ba59f86197|-360585670||t20692.1918298576s|s1462715715b|1462715715|rds|local|vector|||70676.782||
 fit_scalar_stress|stem|7fb332f7299c6f7e|6bdd182b89e5497a|629998ba59f86197|602320134||t20692.4772650439s|s2162326230b|2162326230|rds|local|vector|||102416.587||
 fit_family|stem|36428dbfacba2aec|5b0ff7cff49c4cf6|629998ba59f86197|320313290||t20692.7610959317s|s2855500367b|2855500367|rds|local|vector|||196425.125||
-A_std_intergroup_conflict|stem|5bd7e621b94ed5ed|0fb0b63068e684d5|459362471a1f5ad4|-840374260||t20663.1772371645s||323832|rds|local|vector|||2.825||'MARGIN' does not match dim(X)
 A_std_intergenerational_wealth_transmission|stem|2cb4f145d68b6171|edf252abab36658d|e82b36ce8f429179|1497346432||t20695.1840815824s|s1039422b|1039422|rds|local|vector|||6.11||
 glottolog_languages_url|stem|f18a0e38130eafea|bbd54384d0ebe985|2c530c1562a7fbd1|1513706872|https://raw.githubusercontent.com/glottolog/glottolog-cldf/072ca0d0410039fb8b779be8fc165bac575d2cda/cldf/languages.csv|t20699.3289641318s||0|url|local|vector|||13.456||
 fit_population_size|stem|4fff43c2b6063cfc|d2e9a13bbdf780e0|629998ba59f86197|1035047215||t20700.7332439563s|s2164283908b|2164283908|rds|local|vector|||117401.171||
-summary_intergenerational_wealth_transmission|stem||92de0da22a1b775a|9d024a94af16e884|-812153804||t20695.1843356049s||0|rds|local|vector|||0.006|cannot open file 'outputs/summary_intergenerational_wealth_transmission.txt': No such file or directory|cannot open the connection
-wrangle_sccs|function|7c04b41b2cc92487
-calculate_phylogenetic_signal|function|26fe6106ad9643ba
-plot_world_map|function|8bf09b9b701a5479
-plot_all_methods|function|3a8b15634d960f41
-plot_variable_coverage|function|3f6a8e954a7fc9d4
-plot_sample_characteristics|function|3b39b1fab982e2d4
-wrangle_ea|function|21e76abdb929fb77
-load_tree|function|36feda55b1e32dd5
-get_effects_matrix|function|281e9d2a4eb723c7
-extract_standardised|function|93272dbd59e03d1c
-plot_linguistic_spatial_distance|function|478941d595f26337
-plot_synthetic_fit|function|7bcee6a6d40cf7cf
-subsample_data|function|03488ab8c4868c39
-plot_gdpm_algorithm|function|ff5c69c7d5111b70
-plot_spatial_gp_prior|function|11a777ba75897eeb
-print_model_summary|function|175d7507c9c7dbb7
-plot_trait_on_tree|function|1044ae0de5c8c036
-create_table_variables|function|a74030a1facf2bcb
-load_dplace_data|function|14fce25c6420ff54
-get_cutpoints_list|function|1904fea920bd0028
-get_variables_list|function|fc883381446834d1
-fix_parameters|function|42597dab9243b8e0
-plot_prior_predictive_check|function|becc9212a5963dd5
-fit_model|function|c8caa89052c490cc
-generate_synthetic_data|function|fd688ef4f35a89b8
-wrangle_sccs|function|7c04b41b2cc92487
-calculate_phylogenetic_signal|function|26fe6106ad9643ba
-plot_world_map|function|8bf09b9b701a5479
-plot_all_methods|function|3a8b15634d960f41
-plot_variable_coverage|function|3f6a8e954a7fc9d4
-plot_sample_characteristics|function|3b39b1fab982e2d4
-wrangle_ea|function|21e76abdb929fb77
-load_tree|function|36feda55b1e32dd5
-get_effects_matrix|function|281e9d2a4eb723c7
-extract_standardised|function|93272dbd59e03d1c
-plot_linguistic_spatial_distance|function|478941d595f26337
-plot_synthetic_fit|function|7bcee6a6d40cf7cf
-subsample_data|function|03488ab8c4868c39
-plot_gdpm_algorithm|function|ff5c69c7d5111b70
-plot_spatial_gp_prior|function|11a777ba75897eeb
-print_model_summary|function|175d7507c9c7dbb7
-plot_trait_on_tree|function|1044ae0de5c8c036
-create_table_variables|function|a74030a1facf2bcb
-load_dplace_data|function|14fce25c6420ff54
-get_cutpoints_list|function|1904fea920bd0028
-get_variables_list|function|fc883381446834d1
-fix_parameters|function|42597dab9243b8e0
-plot_prior_predictive_check|function|becc9212a5963dd5
-fit_model|function|c8caa89052c490cc
-generate_synthetic_data|function|fd688ef4f35a89b8
 summary_intergenerational_wealth_transmission|stem|2959311d4a007915|92de0da22a1b775a|9d024a94af16e884|-812153804||t20703.698233067s|s53b|53|rds|local|vector|||497.604||
 A_std_intergroup_conflict|stem|6775b604452adf57|0fb0b63068e684d5|d65fa926a8bac1ee|-840374260||t20703.7724114534s|s486128b|486128|rds|local|vector|||3.735||
 summary_intergroup_conflict|stem|2959311d4a007915|77d3fab9353f3126|81c76d6a1932d94c|-115011812||t20703.7759385412s|s53b|53|rds|local|vector|||289.335||
@@ -219,3 +132,29 @@ synthetic_fit_plough_animals|stem|cbf86fc42bcab9ad|8026d5b62a53ab6d|4578af7486b2
 plot_synthetic_plough_animals|stem|1b30304fe593cdf2|e07b63759dbce6d8|2e13faea63b132a6|-271073653||t20707.7648054778s|s8690872b|8690872|rds|local|vector|||2.394|Dropping 'draws_df' class as required metadata was removed.|
 synthetic_fit_scalar_stress|stem|47a1f61f4bdfa39c|28c059c0b16dcfc8|6dd62efb12e1bd8b|752306696||t20708.2993762202s|s2123741553b|2123741553|rds|local|vector|||381965.751||
 plot_synthetic_scalar_stress|stem|b52cb712d9ba3263|c90d139d421c4035|3b60fd85d25c85f0|-980594035||t20708.2999614767s|s7458294b|7458294|rds|local|vector|||11.207|Dropping 'draws_df' class as required metadata was removed.|
+wrangle_sccs|function|7c04b41b2cc92487
+calculate_phylogenetic_signal|function|26fe6106ad9643ba
+plot_world_map|function|8bf09b9b701a5479
+plot_all_methods|function|3a8b15634d960f41
+plot_variable_coverage|function|3f6a8e954a7fc9d4
+plot_sample_characteristics|function|3b39b1fab982e2d4
+wrangle_ea|function|d58c877b1344eb11
+load_tree|function|36feda55b1e32dd5
+get_effects_matrix|function|281e9d2a4eb723c7
+extract_standardised|function|93272dbd59e03d1c
+plot_linguistic_spatial_distance|function|478941d595f26337
+plot_synthetic_fit|function|7bcee6a6d40cf7cf
+subsample_data|function|03488ab8c4868c39
+plot_gdpm_algorithm|function|ff5c69c7d5111b70
+plot_spatial_gp_prior|function|11a777ba75897eeb
+print_model_summary|function|175d7507c9c7dbb7
+plot_trait_on_tree|function|1044ae0de5c8c036
+create_table_variables|function|a74030a1facf2bcb
+load_dplace_data|function|c596cf849ea7eea8
+get_cutpoints_list|function|1904fea920bd0028
+get_variables_list|function|fc883381446834d1
+fix_parameters|function|42597dab9243b8e0
+plot_prior_predictive_check|function|becc9212a5963dd5
+fit_model|function|c8caa89052c490cc
+generate_synthetic_data|function|fd688ef4f35a89b8
+data|stem|5c820e4c86e2d6f9|b9cd236e90084022|86a735458200ccee|33550471||t20710.7967190682s|s39028b|39028|rds|local|vector|||9.616||

@@ -67,14 +67,18 @@
 #'
 load_dplace_data <- function(dplace_data_url, dplace_societies_url,
                              glottolog_languages_url, mcc_tree) {
+  
   # load csv files
   data <- read.csv(file = dplace_data_url)
   societies <- read.csv(file = dplace_societies_url)
   languages <- read.csv(file = glottolog_languages_url)
+  
   # wrangle ethnographic atlas data (n = 1290)
   ea <- wrangle_ea(data, societies)
+  
   # wrangle sccs data (n = 186)
   sccs <- wrangle_sccs(data, societies)
+  
   # join datasets
   left_join(ea, sccs, by = "xd_id") |>
     # filter to societies in phylogenetic tree (n = 1258)
@@ -91,6 +95,7 @@ load_dplace_data <- function(dplace_data_url, dplace_societies_url,
     ) |>
     dplyr::select(soc_id:glottocode, Name, region:food_storage) |>
     rename(language_family = Name)
+
 }
 
 #' Wrangle Ethnographic Atlas data from D-PLACE
@@ -104,6 +109,7 @@ load_dplace_data <- function(dplace_data_url, dplace_societies_url,
 #' @returns A tibble
 #'
 wrangle_ea <- function(data, societies) {
+  
   # ordered levels
   levels_EA028 <- c("No agriculture", "Casual", "Extensive/shifting",
                     "Horticulture", "Intensive", "Intensive irrigated")
@@ -115,6 +121,7 @@ wrangle_ea <- function(data, societies) {
   levels_EA066 <- c("Absence of distinctions", "Wealth distinctions",
                     "Elite stratification", "Dual stratification",
                     "Complex stratification")
+  
   # absence codes
   absent_EA006 <- c("Gift exchange", "Woman exchange", "Insignificant", "Dowry")
   absent_EA009 <- c("Limited polygyny", "Polygyny, sororal cohabit",
@@ -126,10 +133,11 @@ wrangle_ea <- function(data, societies) {
   absent_EA043 <- c("Duolateral", "Matrilineal", "Quasi-lineages", "Ambilineal",
                     "Bilateral", "Mixed")
   absent_EA072 <- c("Absence of office")
-  absent_EA075 <- c("No inher.of real property", "Equally distributed")
-  absent_EA077 <- c("No inher.of real property", "Equally distributed")
+  absent_EA075 <- c("No inher. of real property", "Equally distributed")
+  absent_EA077 <- c("No inher. of mov. property", "Equally distributed")
   absent_craft <- c("Junior age", "Senior age", "Industrial", "Most adults",
                     "Activity is absent")
+  
   # function to code absent/present values
   code_absence_presence <- function(variable, absent_values) {
     ifelse(
@@ -138,6 +146,7 @@ wrangle_ea <- function(data, societies) {
       )
     )
   }
+  
   # wrangle ethnographic atlas data
   data |>
     # filter to ethnographic atlas data only
@@ -209,6 +218,7 @@ wrangle_ea <- function(data, societies) {
         function(x) factor(x, levels = c("Absent", "Present"))
       )
     )
+
 }
 
 #' Wrangle Standard Cross-Cultural Sample data from D-PLACE
@@ -222,10 +232,12 @@ wrangle_ea <- function(data, societies) {
 #' @returns A tibble
 #'
 wrangle_sccs <- function(data, societies) {
+  
   # ordered levels
   levels_SCCS892 <- c("Infrequent", "Frequent", "Continual")
   levels_SCCS20 <- c("None", "Individual households", "Communal facilities",
                      "Political agent controlled", "Economic agent controlled")
+  
   # wrangle standard cross-cultural sample data
   data |>
     # filter to sccs data only
@@ -243,4 +255,5 @@ wrangle_sccs <- function(data, societies) {
       external_warfare_frequency = ordered(SCCS892, levels = levels_SCCS892),
       food_storage = ordered(SCCS20, levels = levels_SCCS20)
     )
+
 }
