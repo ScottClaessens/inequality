@@ -8,7 +8,7 @@ tar_option_set(
   packages = c("ape", "brms", "cmdstanr", "coevolve", "cowplot", "ggdist",
                "ggtree", "gt", "patchwork", "phangorn", "phytools", "posterior",
                "reticulate", "rnaturalearth", "sf", "tidyverse", "withr"),
-  garbage_collection = 1#,
+  garbage_collection = 1,
   controller = crew_controller_slurm(
     workers = 10,
     options_metrics = crew_options_metrics(

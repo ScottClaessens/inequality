@@ -9,50 +9,50 @@ Phylogeny: tree (Number of trees: 1)
 
 Autoregressive selection effects:
                           Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
-class_differentiation        -1.36      0.65 -2.72 -0.23 1.01     1303      999
-agriculture                  -0.51      0.39 -1.45 -0.02 1.01      936      778
-plough_animals               -0.64      0.49 -1.84 -0.03 1.00     1312     1244
-real_property_unigeniture    -1.34      0.70 -2.83 -0.15 1.00     1885     1472
+class_differentiation        -1.22      0.63 -2.55 -0.14 1.01     1098      899
+agriculture                  -0.57      0.41 -1.52 -0.02 1.01      966      502
+plough_animals               -0.63      0.49 -1.83 -0.03 1.00     1854     1811
+real_property_unigeniture    -0.97      0.59 -2.31 -0.07 1.01     1450     1113
 
 Cross selection effects:
                                                        Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
-agriculture <U+27F6> plough_animals                          3.55      1.16  1.43  6.01 1.01     1255     2695
-plough_animals <U+27F6> real_property_unigeniture           -0.89      0.57 -2.15  0.09 1.01      876     1618
-real_property_unigeniture <U+27F6> class_differentiation    -2.15      1.36 -4.77  0.54 1.01     1444     2527
+agriculture <U+27F6> plough_animals                          3.52      1.21  1.32  6.04 1.01     1182     2068
+plough_animals <U+27F6> real_property_unigeniture            0.88      0.61 -0.23  2.22 1.01      689     1086
+real_property_unigeniture <U+27F6> class_differentiation     1.13      1.06 -0.90  3.32 1.01     1323     2365
 
 Drift parameters:
                               Estimate Est.Error 2.5% 97.5% Rhat Bulk_ESS Tail_ESS
-sd(class_differentiation)         3.55      0.58 2.43  4.70 1.00     1980     2910
-sd(agriculture)                   3.07      0.40 2.31  3.90 1.01     1694     3257
-sd(plough_animals)                1.62      0.78 0.11  3.12 1.01      893      620
-sd(real_property_unigeniture)     2.30      0.71 0.77  3.66 1.01      491      230
+sd(class_differentiation)         3.65      0.55 2.61  4.79 1.00     1973     3470
+sd(agriculture)                   3.09      0.41 2.34  3.93 1.00     1796     4072
+sd(plough_animals)                1.72      0.78 0.20  3.22 1.02      689      559
+sd(real_property_unigeniture)     2.58      0.68 1.22  3.91 1.01     1247     1498
 
 Continuous time intercept parameters:
                           Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
-class_differentiation        -0.20      0.99 -2.14  1.76 1.01     1543     3230
-agriculture                  -0.40      0.89 -2.15  1.39 1.01     1020     2004
-plough_animals               -0.73      0.94 -2.58  1.16 1.00     1945     3368
-real_property_unigeniture    -0.12      0.90 -1.87  1.62 1.01     1491     3450
+class_differentiation        -0.24      0.95 -2.09  1.63 1.00     1723     3663
+agriculture                  -0.37      0.91 -2.14  1.42 1.01     1134     2222
+plough_animals               -0.69      0.94 -2.55  1.14 1.00     2357     4039
+real_property_unigeniture    -0.03      0.91 -1.81  1.76 1.00     1595     3404
 
 Ordinal cutpoint parameters:
                          Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
-class_differentiation[1]    -1.00      1.00 -3.09  0.89 1.01      904     1519
-class_differentiation[2]     0.29      1.00 -1.81  2.16 1.01      907     1542
-class_differentiation[3]     0.54      1.00 -1.55  2.43 1.01      908     1569
-class_differentiation[4]     2.74      1.00  0.66  4.65 1.01      926     1570
-agriculture[1]              -4.09      0.75 -5.59 -2.62 1.01     1070     2032
-agriculture[2]              -3.40      0.75 -4.90 -1.94 1.01     1082     1965
-agriculture[3]               0.11      0.74 -1.37  1.58 1.01     1104     2154
-agriculture[4]               0.80      0.74 -0.67  2.27 1.01     1112     2180
-agriculture[5]               2.61      0.75  1.13  4.08 1.01     1125     2413
+class_differentiation[1]    -0.99      0.95 -2.94  0.82 1.01      940     1786
+class_differentiation[2]     0.30      0.95 -1.65  2.13 1.01      959     1792
+class_differentiation[3]     0.56      0.95 -1.39  2.39 1.01      964     1789
+class_differentiation[4]     2.77      0.96  0.82  4.62 1.01      995     1845
+agriculture[1]              -4.01      0.76 -5.47 -2.51 1.01     1029     1878
+agriculture[2]              -3.32      0.76 -4.77 -1.85 1.01     1036     1908
+agriculture[3]               0.19      0.75 -1.26  1.67 1.01     1074     2065
+agriculture[4]               0.89      0.75 -0.57  2.37 1.01     1082     2011
+agriculture[5]               2.69      0.76  1.22  4.19 1.01     1104     1959
 
 Gaussian Process parameters for distances:
                                 Estimate Est.Error 2.5% 97.5% Rhat Bulk_ESS Tail_ESS
-sdgp(class_differentiation)         1.60      0.33 1.07  2.39 1.00     2165     3589
-sdgp(agriculture)                   2.42      0.34 1.84  3.15 1.01     2155     3519
-sdgp(plough_animals)                2.34      0.42 1.61  3.26 1.00     4963     7669
-sdgp(real_property_unigeniture)     1.29      0.31 0.76  2.01 1.00     3043     4537
-rho(class_differentiation)          0.07      0.02 0.04  0.12 1.01     1831     3017
-rho(agriculture)                    0.09      0.02 0.06  0.13 1.01     1082     1976
-rho(plough_animals)                 0.13      0.03 0.08  0.21 1.01     1511     2313
-rho(real_property_unigeniture)      0.15      0.06 0.05  0.28 1.01      804     1386
+sdgp(class_differentiation)         1.62      0.34 1.07  2.41 1.00     2425     4053
+sdgp(agriculture)                   2.40      0.34 1.80  3.13 1.00     2545     4453
+sdgp(plough_animals)                2.33      0.42 1.60  3.23 1.00     4567     6695
+sdgp(real_property_unigeniture)     1.05      0.50 0.17  2.18 1.01      961     1182
+rho(class_differentiation)          0.07      0.02 0.04  0.11 1.00     1897     3728
+rho(agriculture)                    0.09      0.02 0.06  0.13 1.00     1347     2395
+rho(plough_animals)                 0.13      0.04 0.08  0.22 1.00     1613     3253
+rho(real_property_unigeniture)      0.08      0.06 0.02  0.26 1.01     1189     1240
