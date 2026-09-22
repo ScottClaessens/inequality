@@ -5,9 +5,10 @@ library(targets)
 library(tarchetypes)
 library(tidyverse)
 tar_option_set(
-  packages = c("ape", "brms", "cmdstanr", "coevolve", "cowplot", "ggdist",
-               "ggtree", "gt", "patchwork", "phangorn", "phytools", "posterior",
-               "reticulate", "rnaturalearth", "sf", "tidyverse", "withr")#,
+  packages = c("ape", "brms", "cmdstanr", "coda", "coevolve", "cowplot",
+               "ggdist", "ggtree", "gt", "patchwork", "phangorn", "phytools",
+               "posterior", "reticulate", "rnaturalearth", "sf", "tidyverse",
+               "withr")#,
   #garbage_collection = 1,
   #controller = crew_controller_slurm(
   #  workers = 10,
@@ -32,6 +33,7 @@ tar_source()
 
 # pipeline
 list(
+
   # get data urls
   tar_target(
     dplace_data_url,
@@ -57,12 +59,16 @@ list(
     ),
     format = "url"
   ),
+
   # get data file paths
   tar_target(tree_file, "data/tree/dplace.nxs", format = "file"),
+
   # load tree
   tar_target(tree, load_tree(tree_file)),
+
   # compute maximum clade credibility tree
   tar_target(mcc_tree, phangorn::mcc(tree)),
+
   # load dplace data
   tar_target(
     data,
@@ -71,25 +77,35 @@ list(
       glottolog_languages_url, mcc_tree
     )
   ),
+
   # plot sample characteristics
   tar_target(plot_sample, plot_sample_characteristics(data)),
+
   # plot variable coverage
   tar_target(plot_coverage, plot_variable_coverage(data)),
+
   # plot world map
   #tar_target(plot_world, plot_world_map(data)),
+
   # plot maximum clade credibility tree
   tar_target(plot_tree, ggtree(mcc_tree, layout = "circular")),
+
   # plot gdpm schematic
   tar_target(plot_gdpm, plot_gdpm_algorithm()),
+
   # plot all methods together
   #tar_target(plot_methods, plot_all_methods(plot_world, plot_tree, plot_gdpm)),
+
   # plot correlation between linguistic and geographic distances
   tar_target(plot_cor, plot_linguistic_spatial_distance(data, mcc_tree)),
+
   # get random tree ids
   tar_target(tree_ids, sample(1:length(tree), size = 10)),
+
   # compile stan model for calculating phylogenetic signal
   tar_target(file_stan, "stan/phylogenetic_signal.stan", format = "file"),
   tar_target(phylogenetic_signal_model, cmdstanr::cmdstan_model(file_stan)),
+
   # loop over all variables
   tar_map(
     values = tibble(
@@ -112,6 +128,7 @@ list(
       )
     )
   ),
+
   # combine phylogenetic signal estimates
   tar_target(
     phylogenetic_signal,
@@ -125,15 +142,19 @@ list(
       signal_food_storage
     )
   ),
+
   # create table of variables
   tar_target(
     table_variables,
     create_table_variables(data, phylogenetic_signal)
   ),
+
   # plot prior predictive check for spatial gaussian processes
   tar_target(plot_spatial_prior, plot_spatial_gp_prior()),
+
   # create subsample of dummy data for prior predictive check
   tar_target(data_subsample, subsample_data(data)),
+
   # loop over causal models
   tar_map(
     values = tibble(
@@ -184,11 +205,31 @@ list(
     # extract standardised selection matrix
     tar_target(A_std, extract_standardised(fit))
   ),
+
+  # plot standardised effects
+  tar_target(
+    plot_std_effects,
+    plot_standardised_effects(
+      A_std_agriculture,
+      A_std_intergenerational_wealth_transmission,
+      A_std_family,
+      A_std_population_size,
+      A_std_plough_animals,
+      A_std_scalar_stress,
+      A_std_intergroup_conflict,
+      A_std_bridewealth,
+      A_std_craft_specialisation,
+      A_std_food_storage
+    )
+  ),
+
   # generate manuscript
   #tar_quarto(manuscript, "quarto/manuscript.qmd", quiet = FALSE),
+
   # print session info
   tar_target(
     sessionInfo,
     writeLines(capture.output(sessionInfo()), "sessionInfo.txt")
   )
+
 )
