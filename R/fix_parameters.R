@@ -16,10 +16,13 @@
 #' @returns Stan code with fixed parameters as a string
 #'
 fix_parameters <- function(stan_code, parameters, model) {
+
   # get effects matrix for model
   effects_matrix <- get_effects_matrix(model)
+
   # get list of ordinal cut points for model
   cutpoints <- get_cutpoints_list(model)
+
   # construct strings for adding and removing ordinal cut points
   add_cutpoints <- ""
   remove_cutpoints <- ""
@@ -45,6 +48,7 @@ fix_parameters <- function(stan_code, parameters, model) {
         )
     }
   }
+
   # construct stan code for setting A off-diagonals
   set_offdiag <- ""
   for (i in 1:nrow(effects_matrix)) {
@@ -60,6 +64,7 @@ fix_parameters <- function(stan_code, parameters, model) {
       }
     }
   }
+
   # edit stan code to manually fix parameters
   stan_code <-
     stan_code |>
@@ -125,6 +130,7 @@ fix_parameters <- function(stan_code, parameters, model) {
     str_remove(fixed("  A_offdiag ~ std_normal();\n")) |>
     str_remove(fixed("  A_diag ~ std_normal();\n")) |>
     str_remove(fixed("  Q_sigma ~ std_normal();\n"))
+
   # remove remaining cutpoint priors
   for (i in 1:length(cutpoints)) {
     if (!is.null(cutpoints[[i]])) {
@@ -137,6 +143,8 @@ fix_parameters <- function(stan_code, parameters, model) {
         )
     }
   }
+
   # return
   stan_code
+
 }

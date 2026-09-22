@@ -3,158 +3,159 @@ dplace_data_url|stem|e0e023be3db9dfae|14e703ec1d8b5d26|2c530c1562a7fbd1|54518685
 dplace_societies_url|stem|c3caf7f2ccd75161|aee14d29acec2be0|2c530c1562a7fbd1|17396771|https://raw.githubusercontent.com/D-PLACE/dplace-cldf/6c2008c187a297d1955b41d8ae80d8e31d404f6c/cldf/societies.csv|t20552.7407712499s||0|url|local|vector|||1.831||
 manuscript|stem|8fb6497564b2ceda|ad6a377a1310aa1e|68484595ec4c4215|-1793997187|quarto/manuscript.docx*quarto/manuscript.pdf*quarto/manuscript.qmd*quarto/supplement.qmd|t20621.5862216326s||6355488|file|local|vector|||15.296||! Error running quarto CLI from R. Caused by error: ✖ Error returned by quarto CLI.   -----------------------------         processing file: manuscript.qmd      0%   .   1%  .   2% [unnamed-chunk-1]  ..   4%  ..   5%   [fig-methods]  ...   6%  ...   7% [tbl-variables]  ....   8%    .....   9% [phylogenetic-signal]      Error in `unnest()`:   ! Can't select columns that don't exist.   x Column `phylogenetic_signal` doesn't exist.   Backtrace:   x   1. +-dplyr::pull(...)   2. +-tidyr::unnest(...)   3. +-tidyr:::unnest.data.frame(...)   4.  \-tidyselect::eval_select(expr = enquo(cols), data = data, allow_rename   = FALSE)   5.  \-tidyselect:::eval_select_impl(...)   6.  +-tidyselect:::with_subscript_errors(...)   7.   \-base::withCallingHandlers(...)   8.  \-tidyselect:::vars_select_eval(...)   9.  \-tidyselect:::walk_data_tree(expr, data_mask, context_mask)   10.  \-tidyselect:::as_indices_sel_impl(...)   11.  \-tidyselect:::as_indices_impl(...)   12.  \-tidyselect:::chr_as_locations(x, vars, call = call, arg = arg)   13.  \-vctrs::vec_as_location(...)   14. \-vctrs (local) `<fn>`() at vctrs/R/subscript-loc.R:84:3   15.  \-vctrs:::stop_subscript_oob(...)   16.  \-vctrs:::stop_subscript(...) at vctrs/R/subscript-loc.R:503:3   17.  \-rlang::abort(...) at vctrs/R/subscript.R:150:3      Quitting from manuscript.qmd:174-181 [phylogenetic-signal]      Execution halted   WARN: Error encountered when rendering files    Caused by error in `processx::run()`: ! System command 'quarto' failed
 .Random.seed|object|ec8aa6caec9458b8
-file_stan|stem|93ec70372d4a0771|ada09a347cdb2d7a|2c530c1562a7fbd1|739539972|stan/phylogenetic_signal.stan|t20672.6931329845s|s1320b|1320|file|local|vector|||2.783||
-plot_gdpm|stem|934e3f7f92eb3b06|e1fe878bf61ed907|7a614baa99810060|-258833698||t20672.7971816609s|s1735234b|1735234|rds|local|vector|||13.621|package 'stringr' was built under R version 4.5.2|
-plot_spatial_prior|stem|67c5ee2614f2ae53|73182a2d47786d20|31f041d10b99cc3e|-1566623752||t20672.7971939784s|s509044b|509044|rds|local|vector|||0.593||
-tree_file|stem|097e0a16f1431efe|1de9ec4cb0b83efe|2c530c1562a7fbd1|-419834672|data/tree/dplace.nxs|t20672.8098505321s|s55689082b|55689082|file|local|vector|||15.851|package 'stringr' was built under R version 4.5.2|
-tree|stem|8e49bd8b91a9d1d6|c77021f1bbaff69b|4d480221af427e94|437279712||t20672.8450737706s|s26891456b|26891456|rds|local|vector|||15.028||
-tree_ids|stem|c8d99ba4f65d3dc1|bb199b886fdd3ecb|6e521ad2d4809cd4|1609238890||t20672.8450792795s|s85b|85|rds|local|vector|||0||
-sessionInfo|stem|2959311d4a007915|6f338939dd102f8f|2c530c1562a7fbd1|1164010252||t20672.8450864313s|s53b|53|rds|local|vector|||0.036||
-phylogenetic_signal_model|stem|e85bcafc3f838692|804aea6e4ee99aab|91a4a466485913f5|574656795||t20672.8528222076s|s17824b|17824|rds|local|vector|||31.137||
-mcc_tree|stem|cea89e7500b0dd56|c47da3594f89d0e8|6e521ad2d4809cd4|-2069454262||t20672.8532801099s|s33470b|33470|rds|local|vector|||36.323||
-plot_tree|stem|2296ba3c877e5cea|fd50c2d27dc55c0b|ed5f2d00dc8edf6a|-120768443||t20672.8635651564s|s949064b|949064|rds|local|vector|||0.374||
 plot_world|stem|38cc37a058aefe87|597e0c0ffcff6594|9dd91640ef3d8857|-1778573588||t20672.8638644984s|s775592b|775592|rds|local|vector|||0.167|GDAL Error 1: PROJ: proj_create_from_database: Open of /software/local/languages/miniforge3/envs/r-4.5.1/share/proj failed|
 plot_methods|stem|85420f3a208e2f9a|ed909cd554c0cd7f|be0c56dcbda94006|478310962||t20558.4759757384s||7780417|rds|local|vector|||2.86|GDAL Error 1: PROJ: proj_create_from_database: Open of /software/local/languages/miniforge3/envs/r-4.5.1/share/proj failed|crs not found: is it missing?
 glottolog_languages_url|stem|f18a0e38130eafea|bbd54384d0ebe985|2c530c1562a7fbd1|1513706872|https://raw.githubusercontent.com/glottolog/glottolog-cldf/072ca0d0410039fb8b779be8fc165bac575d2cda/cldf/languages.csv|t20699.3289641318s||0|url|local|vector|||13.456||
-synthetic_fit_bridewealth|stem|3472e50c24e0c9f4|d1423f7d35c86caa|4520aead3dfd8404|-1671773941||t20704.3375475369s|s1458634990b|1458634990|rds|local|vector|||38706.194||
-plot_synthetic_bridewealth|stem|6995000dcc80391f|6e3d73a7b7699b7d|f641504cd2399b2e|-374067137||t20704.3377410594s|s4627610b|4627610|rds|local|vector|||2.791|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_agriculture|stem|64bd4074ae35fd63|566cb38be7e4239e|1bff7ccbf24bc685|1129756449||t20704.4596597361s|s1465167588b|1465167588|rds|local|vector|||52726.422||
-plot_synthetic_agriculture|stem|17cc4ec45c52d27a|5ad68ef3be3ca8e7|3b2a18630885b9c5|-1488661531||t20704.4598483472s|s4628479b|4628479|rds|local|vector|||2.621|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_intergroup_conflict|stem|f42e8b86ea842304|095c89b7639a8d91|314b32523890c988|-384403606||t20704.6657615107s|s2138960093b|2138960093|rds|local|vector|||70200.695||
-plot_synthetic_intergroup_conflict|stem|b04931a39cc90615|eecf901175d85a8e|2d3440d930a6f4da|-2049338747||t20704.6660349751s|s6902798b|6902798|rds|local|vector|||3.707|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_craft_specialisation|stem|4ea20d74c348006e|a56bdd0c6961c575|95c388b3262a34f3|289649177||t20704.9306910236s|s1458635009b|1458635009|rds|local|vector|||42689.897||
-plot_synthetic_craft_specialisation|stem|9f2e2b75963fe65a|42aba17d48949faf|94d70262f3de4af5|1244063401||t20704.9308982622s|s4627623b|4627623|rds|local|vector|||3.038|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_population_size|stem|7b084a513cc923b8|3943ba5183c7c341|105555d2182b1499|931312762||t20705.7424959065s|s2071251264b|2071251264|rds|local|vector|||110718.799||
-plot_synthetic_population_size|stem|500b3584bfab3db5|a600a6b8d11d9835|fdcae795004166e3|-441647125||t20705.742756672s|s6549609b|6549609|rds|local|vector|||2.62|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_intergenerational_wealth_transmission|stem|909c7ca9a6ae83c6|e704d85f5a5e3da3|05abd23c90164e45|1725067326||t20706.0649328637s|s3527540266b|3527540266|rds|local|vector|||202138.714||
-plot_synthetic_intergenerational_wealth_transmission|stem|a1bf239edf2fa295|01d26f5c7025c06f|d890036d9f5b331b|-1185349958||t20706.0653496143s|s12538796b|12538796|rds|local|vector|||4.805|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_family|stem|e98b6cb20e7924b2|7418b3558cb08904|803b7e237b98bda5|-1816634483||t20707.3869501618s|s2764168858b|2764168858|rds|local|vector|||318572.035||
-plot_synthetic_family|stem|a81d3bc1b07c1abd|ca5832730ff6faf6|871bedc7a62a1894|-1103233302||t20707.3872447452s|s8690848b|8690848|rds|local|vector|||3.553|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_plough_animals|stem|cbf86fc42bcab9ad|8026d5b62a53ab6d|4578af7486b2552d|-43481187||t20707.764517508s|s2764169001b|2764169001|rds|local|vector|||295936.907||
-plot_synthetic_plough_animals|stem|1b30304fe593cdf2|e07b63759dbce6d8|2e13faea63b132a6|-271073653||t20707.7648054778s|s8690872b|8690872|rds|local|vector|||2.394|Dropping 'draws_df' class as required metadata was removed.|
-synthetic_fit_scalar_stress|stem|47a1f61f4bdfa39c|28c059c0b16dcfc8|6dd62efb12e1bd8b|752306696||t20708.2993762202s|s2123741553b|2123741553|rds|local|vector|||381965.751||
-plot_synthetic_scalar_stress|stem|b52cb712d9ba3263|c90d139d421c4035|3b60fd85d25c85f0|-980594035||t20708.2999614767s|s7458294b|7458294|rds|local|vector|||11.207|Dropping 'draws_df' class as required metadata was removed.|
+sessionInfo|stem|2959311d4a007915|6f338939dd102f8f|2c530c1562a7fbd1|1164010252||t20717.940270787s|s53b|53|rds|local|vector|||0.036||
+tree_file|stem|097e0a16f1431efe|1de9ec4cb0b83efe|2c530c1562a7fbd1|-419834672|data/tree/dplace.nxs|t20557.9999421296s|s55689082b|55689082|file|local|vector|||15.851|package 'stringr' was built under R version 4.5.2|
+file_stan|stem|93ec70372d4a0771|ada09a347cdb2d7a|2c530c1562a7fbd1|739539972|stan/phylogenetic_signal.stan|t20621.6182360506s|s1320b|1320|file|local|vector|||2.783||
+plot_spatial_prior|stem|67c5ee2614f2ae53|73182a2d47786d20|31f041d10b99cc3e|-1566623752||t20718.122005379s|s509044b|509044|rds|local|vector|||0.593||
+plot_gdpm|stem|934e3f7f92eb3b06|e1fe878bf61ed907|7a614baa99810060|-258833698||t20672.7971759259s|s1735234b|1735234|rds|local|vector|||13.621|package 'stringr' was built under R version 4.5.2|
+tree|stem|8e49bd8b91a9d1d6|c77021f1bbaff69b|4d480221af427e94|437279712||t20718.1465994619s|s26891456b|26891456|rds|local|vector|||15.028||
+phylogenetic_signal_model|stem|e85bcafc3f838692|804aea6e4ee99aab|91a4a466485913f5|574656795||t20672.8528125s|s17824b|17824|rds|local|vector|||31.137||
+tree_ids|stem|c8d99ba4f65d3dc1|bb199b886fdd3ecb|6e521ad2d4809cd4|1609238890||t20718.0314483657s|s85b|85|rds|local|vector|||0||
+mcc_tree|stem|cea89e7500b0dd56|c47da3594f89d0e8|6e521ad2d4809cd4|-2069454262||t20717.9803894667s|s33470b|33470|rds|local|vector|||36.323||
+data|stem|1f09dfe3e9705b09|b9cd236e90084022|f45119163a068e7c|33550471||t20711.3752430556s|s37993b|37993|rds|local|vector|||12.69||
+plot_tree|stem|2296ba3c877e5cea|fd50c2d27dc55c0b|ed5f2d00dc8edf6a|-120768443||t20718.0742080321s|s949064b|949064|rds|local|vector|||0.374||
+fit_intergenerational_wealth_transmission|stem|1a89e8a870c40ae7|8dc52bcf2f52c55c|2b0dcfc10ad0b899|-1462613787||t20718.0124786537s|s3549676939b|3549676939|rds|local|vector|||203459.159||
+synthetic_data_family|stem|c870746660b923a2|97d0b36c1f9fd4ec|5e2a766b343b6fa4|-404474078||t20711.381087963s|s10359b|10359|rds|local|vector|||237.146||
+synthetic_data_intergenerational_wealth_transmission|stem|34dde39eabbe1351|c85f7db5aedcdbc1|5e2a766b343b6fa4|2129264660||t20717.9402698408s|s10879b|10879|rds|local|vector|||346.054||
+fit_intergroup_conflict|stem|8caef3f8f7e5df04|6e47c10f9d9f172f|2b0dcfc10ad0b899|-378588900||t20717.9080378199s|s2157978643b|2157978643|rds|local|vector|||95145.283||
+signal_agriculture|stem|0bd660f16f199908|0cf2544db9b3c70b|901a7b3f6790c33a|-1170681045||t20711.7259375s|s120287b|120287|rds|local|vector|||30029.952||
+signal_monogamy|stem|0dc384be15b4c98a|4e266d1ed68bfdfc|901a7b3f6790c33a|1987335260||t20711.7861458333s|s120243b|120243|rds|local|vector|||35228.315||
+signal_bridewealth|stem|c1299996df96ef1b|e4d7d7f1646577de|901a7b3f6790c33a|958264039||t20718.0497245318s|s120374b|120374|rds|local|vector|||22060.106||
+signal_mean_size_local_community|stem|4c98de367afc4f2e|292e1398edd9b247|901a7b3f6790c33a|844197122||t20718.1221477284s|s120207b|120207|rds|local|vector|||4351.37||
+signal_class_differentiation|stem|4de90b13a5fe1898|f0bb3fd673e2cfa8|901a7b3f6790c33a|1989808900||t20717.9402740524s|s119937b|119937|rds|local|vector|||19199.586||
+signal_sedentism|stem|5fc466cd7197ecc9|afae565875960fe4|901a7b3f6790c33a|-541043544||t20717.9803971788s|s119835b|119835|rds|local|vector|||27126.209||
+synthetic_data_food_storage|stem|5f342038a5c323e7|e22e3ba5363481e4|5e2a766b343b6fa4|-2088158990||t20711.3827662037s|s9544b|9544|rds|local|vector|||144.494||
+synthetic_data_agriculture|stem|fabb24e1de8c8b15|7720b6b32bba70d8|5e2a766b343b6fa4|-1348648764||t20718.0217501923s|s9774b|9774|rds|local|vector|||123.988||
+synthetic_data_intergroup_conflict|stem|0db39d94911b9457|4780300eaadcd9ee|5e2a766b343b6fa4|1319458892||t20711.3858912037s|s9854b|9854|rds|local|vector|||156.05||
+fit_plough_animals|stem|e56845a04e01603c|0c850499be01f56b|2b0dcfc10ad0b899|1522869800||t20718.0497201944s|s2843965774b|2843965774|rds|local|vector|||145504.201||
+fit_family|stem|0cf22b2734f6d7b4|5b0ff7cff49c4cf6|2b0dcfc10ad0b899|320313290||t20717.9565546357s|s2855500285b|2855500285|rds|local|vector|||139961.956||
+synthetic_data_scalar_stress|stem|f6a3f9087ec261bd|6e00c619f7438315|5e2a766b343b6fa4|-1726057261||t20711.6038773148s|s9416b|9416|rds|local|vector|||266.333||
+signal_food_storage|stem|54fee3e9377f5409|546996b423cb4813|901a7b3f6790c33a|280022786||t20711.6055092593s|s120664b|120664|rds|local|vector|||139.402||
+fit_scalar_stress|stem|74bf97f3a189677c|6bdd182b89e5497a|2b0dcfc10ad0b899|602320134||t20718.0742019459s|s2162326214b|2162326214|rds|local|vector|||98927.764||
+signal_plough_animals|stem|d56ba1418092559a|77ed65bd256d708e|901a7b3f6790c33a|1188697995||t20711.7479976852s|s120586b|120586|rds|local|vector|||9825.361||
+fit_craft_specialisation|stem|7dc300d2f98a2e1c|7e09d04ccf3001be|2b0dcfc10ad0b899|-360585670||t20717.9803868474s|s1462715619b|1462715619|rds|local|vector|||64709.098||
+fit_population_size|stem|22a06be7d22dedba|d2e9a13bbdf780e0|2b0dcfc10ad0b899|1035047215||t20713.105474537s|s2164283824b|2164283824|rds|local|vector|||119084.791||
+fit_food_storage|stem|e963f123ac4ae4bb|4a8717108553b5be|2b0dcfc10ad0b899|1143525565||t20717.9720759308s|s2169831998b|2169831998|rds|local|vector|||88688.458||
+fit_bridewealth|stem|bd381383102228e6|2f98222c3ef57152|2b0dcfc10ad0b899|743879563||t20718.0825472348s|s1466642383b|1466642383|rds|local|vector|||71051.368||
+data_subsample|stem|d6dd1af4852929de|221cb9b64e465b81|3951d5416c89e4c7|-1334058284||t20712.4447685185s|s3980b|3980|rds|local|vector|||0.06||
+signal_real_property_unigeniture|stem|787b558bbd2b03f3|ae937c4ff448b203|901a7b3f6790c33a|528775122||t20718.0827565996s|s120837b|120837|rds|local|vector|||8350.013||
+synthetic_data_bridewealth|stem|5447a492530eb106|39b68d439331bbb0|5e2a766b343b6fa4|856635690||t20712.4822685185s|s9405b|9405|rds|local|vector|||109.765||
+signal_external_warfare_frequency|stem|09c9ef83f020029a|219f2e6a2cb114c6|901a7b3f6790c33a|1258799475||t20718.0124818431s|s121052b|121052|rds|local|vector|||128.187||
+synthetic_data_plough_animals|stem|821e707b708d365b|738ac06bdf72f872|5e2a766b343b6fa4|-481459703||t20718.1416456316s|s10379b|10379|rds|local|vector|||175.625||
+signal_patrilineality|stem|c48052b577d1864a|48e2e84edc4a4804|901a7b3f6790c33a|1345093646||t20718.1466061403s|s120425b|120425|rds|local|vector|||22927.701||
+fit_agriculture|stem|b33b20b7dd1a5cb8|08d4863b1ba5a50b|2b0dcfc10ad0b899|-1202320715||t20717.940268815s|s1466743304b|1466743304|rds|local|vector|||76810.068||
+synthetic_data_craft_specialisation|stem|bb6003ead54f5cac|311d2f7d99d1a01a|5e2a766b343b6fa4|2088484398||t20718.0825484046s|s9412b|9412|rds|local|vector|||134.422||
+signal_craft_specialisation|stem|a935e84870a8d0ba|5c553dd895d487ff|901a7b3f6790c33a|-516790633||t20717.8944936206s|s120389b|120389|rds|local|vector|||13340.572||
+signal_large_domestic_animals|stem|577f1afd58652518|31baf4f994757d8b|901a7b3f6790c33a|-236595803||t20718.0828157866s|s120124b|120124|rds|local|vector|||24686.081||
+synthetic_data_population_size|stem|c5ab732ec29ed88d|0cecc5533a61b5d4|5e2a766b343b6fa4|-285821508||t20718.1464354386s|s10557b|10557|rds|local|vector|||137.273||
+signal_movable_property_unigeniture|stem|a35374aecb5947c7|97537077d0752052|901a7b3f6790c33a|-1209006011||t20718.0171165548s|s120924b|120924|rds|local|vector|||8714.491||
+signal_local_headman|stem|1138a7cc7a184656|2b4f2e5c39ca2807|901a7b3f6790c33a|-2098481973||t20718.0827501734s|s118768b|118768|rds|local|vector|||7715.796||
+A_std_intergenerational_wealth_transmission|stem|441c07c68a520440|edf252abab36658d|16c7088af8b29e9e|1497346432||t20718.1221546779s|s1041277b|1041277|rds|local|vector|||6.422||
+summary_intergenerational_wealth_transmission|stem|2959311d4a007915|92de0da22a1b775a|e76285cfc0007ef6|-812153804||t20717.980390383s|s53b|53|rds|local|vector|||486.511||
+synthetic_fit_family|stem|e98b6cb20e7924b2|7418b3558cb08904|803b7e237b98bda5|-1816634483||t20707.3869444444s|s2764168858b|2764168858|rds|local|vector|||318572.035||
+synthetic_fit_intergenerational_wealth_transmission|stem|909c7ca9a6ae83c6|e704d85f5a5e3da3|05abd23c90164e45|1725067326||t20706.0649305556s|s3527540266b|3527540266|rds|local|vector|||202138.714||
+A_std_intergroup_conflict|stem|6775b604452adf57|0fb0b63068e684d5|8de902e35d942c29|-840374260||t20718.1220157799s|s486128b|486128|rds|local|vector|||3.271||
+summary_intergroup_conflict|stem|2959311d4a007915|77d3fab9353f3126|62ab9cd1e3820700|-115011812||t20717.9803980991s|s53b|53|rds|local|vector|||231.482||
+synthetic_fit_food_storage|stem|f47e42c8024441db|fb41024aeaca23f5|7b216bd6895a85dd|1823542803||t20716.6637037037s|s2129787355b|2129787355|rds|local|vector|||456169.195||
+synthetic_fit_agriculture|stem|64bd4074ae35fd63|566cb38be7e4239e|1bff7ccbf24bc685|1129756449||t20718.0580529414s|s1465167588b|1465167588|rds|local|vector|||52726.422||
+synthetic_fit_intergroup_conflict|stem|f42e8b86ea842304|095c89b7639a8d91|314b32523890c988|-384403606||t20718.097232478s|s2138960093b|2138960093|rds|local|vector|||70200.695||
+summary_plough_animals|stem|2959311d4a007915|df249c6d8c4a6ab5|a468a304041fdc3f|-1009459813||t20718.08264408s|s53b|53|rds|local|vector|||303.619||
+A_std_plough_animals|stem|334694b1f183fea7|ebb358fdd7ef0cdb|1f4f5e8e1367bc47|-733068758||t20713.0722916667s|s669937b|669937|rds|local|vector|||4.286||
+A_std_family|stem|ccd7c7ffc362e273|d9113f5cee8d1fde|09a0055d37c70ff7|636798350||t20713.0505902778s|s672050b|672050|rds|local|vector|||4.591||
+summary_family|stem|2959311d4a007915|0e1ca1972f1dd0d1|3cfcfc4f587b2d0e|-2103171528||t20718.0580549024s|s53b|53|rds|local|vector|||307.317||
+synthetic_fit_scalar_stress|stem|47a1f61f4bdfa39c|28c059c0b16dcfc8|6dd62efb12e1bd8b|752306696||t20708.299375s|s2123741553b|2123741553|rds|local|vector|||381965.751||
+A_std_scalar_stress|stem|1bcf522b17ca322e|0d5510cc9f848bb9|619c940c03d2288c|1099769541||t20712.7519560185s|s578015b|578015|rds|local|vector|||3.51||
+summary_scalar_stress|stem|2959311d4a007915|cb1e0f1316183e78|0533e040106df3d5|1099548570||t20717.9720768628s|s53b|53|rds|local|vector|||223.089||
+summary_craft_specialisation|stem|2959311d4a007915|086fb8825d8eb4c6|b8593e08d15f7cf9|538580456||t20718.1220071456s|s53b|53|rds|local|vector|||176.321||
+A_std_craft_specialisation|stem|feedd2917b6c4557|31b4fd8d1d889231|4b5ca83987f0c946|-1652861039||t20712.7759837963s|s301108b|301108|rds|local|vector|||1.839||
+A_std_population_size|stem|84afa6213c8b32e2|d94bd5c97d007d50|eddd3e0e3b283134|-890268241||t20713.1057986111s|s485337b|485337|rds|local|vector|||3.537||
+summary_population_size|stem|2959311d4a007915|70763a5daaab08a1|001111d7e0f7c98a|1827792110||t20717.972077773s|s53b|53|rds|local|vector|||243.352||
+A_std_food_storage|stem|2cd47ac5e45ae366|8dc90ed485b12fa4|dcdf98b7f8e35121|-604144009||t20718.112599576s|s667503b|667503|rds|local|vector|||3.469||
+summary_food_storage|stem|2959311d4a007915|d5fd814b83689dac|6e655ec26d10a89c|979822281||t20712.9573263889s|s53b|53|rds|local|vector|||223.789||
+summary_bridewealth|stem|2959311d4a007915|eef624a1a300fd72|53da8323a7542089|1911485713||t20712.6112847222s|s53b|53|rds|local|vector|||165.416||
+A_std_bridewealth|stem|7920403a479c24d5|ddda2a2dcea9d5c4|b93b9868c058f804|-1578146655||t20718.1466038006s|s301201b|301201|rds|local|vector|||1.842||
+prior_check_scalar_stress|stem|7b5ccae490369a18|87418c4d6a2a18db|c4150004dc398d70|-1027962223||t20718.0217481518s|s812277062b|812277062|rds|local|vector|||2980.998||
+prior_check_food_storage|stem|410a9b5b4991621e|a91be2f252e8aa5e|c4150004dc398d70|-101032885||t20718.1464343418s|s812518198b|812518198|rds|local|vector|||2316.522||
+prior_check_plough_animals|stem|653fa41568af0798|eba276ae4780bec5|c4150004dc398d70|-1438479460||t20712.9146527778s|s1091351512b|1091351512|rds|local|vector|||9496.707||
+prior_check_population_size|stem|3893de1689f0dc34|97cba8d4346cc1cf|c4150004dc398d70|511781539||t20718.1416444931s|s812469356b|812469356|rds|local|vector|||2612.491||
+prior_check_family|stem|f5f1ef938a185022|91f0b55fb8d878a9|c4150004dc398d70|1484314846||t20718.3022715952s|s1091351631b|1091351631|rds|local|vector|||14280.653||
+prior_check_bridewealth|stem|4ab1c929b06f5471|2425c1c3483bb859|c4150004dc398d70|1407898675||t20712.9044675926s|s536597950b|536597950|rds|local|vector|||1546.031||
+prior_check_intergroup_conflict|stem|8b3aa6589b1514d3|1074b4572154d66f|c4150004dc398d70|-1543377566||t20718.0171134117s|s811985324b|811985324|rds|local|vector|||2591.271||
+prior_check_craft_specialisation|stem|062d615dd4dc62f0|b3b5b12ec2ede0c6|c4150004dc398d70|-1544948927||t20712.9319444444s|s536598000b|536598000|rds|local|vector|||1356.146||
+prior_check_agriculture|stem|d6ffee094e40b49e|2617fc31bea9deab|c4150004dc398d70|1575411061||t20718.1125952776s|s536850796b|536850796|rds|local|vector|||1321.098||
+prior_check_intergenerational_wealth_transmission|stem|942a2454bbd3beec|e9ea7a34c22aac07|c4150004dc398d70|795865029||t20712.9961921296s|s1380114099b|1380114099|rds|local|vector|||5077.288||
+synthetic_fit_bridewealth|stem|3472e50c24e0c9f4|d1423f7d35c86caa|4520aead3dfd8404|-1671773941||t20704.3375462963s|s1458634990b|1458634990|rds|local|vector|||38706.194||
+synthetic_fit_plough_animals|stem|cbf86fc42bcab9ad|8026d5b62a53ab6d|4578af7486b2552d|-43481187||t20718.1671555884s|s2764169001b|2764169001|rds|local|vector|||295936.907||
+summary_agriculture|stem|2959311d4a007915|51497d0385d7d050|e1438ae88c229c28|-1788799359||t20713.469525463s|s53b|53|rds|local|vector|||172.339||
+A_std_agriculture|stem|a9ff3fd81771a7cd|e7094f5f51f7a035|6b0b08f51a7fc791|-267209926||t20713.4683564815s|s300976b|300976|rds|local|vector|||2.587||
+synthetic_fit_craft_specialisation|stem|4ea20d74c348006e|a56bdd0c6961c575|95c388b3262a34f3|289649177||t20717.9307700657s|s1458635009b|1458635009|rds|local|vector|||42689.897||
+synthetic_fit_population_size|stem|7b084a513cc923b8|3943ba5183c7c341|105555d2182b1499|931312762||t20705.7424884259s|s2071251264b|2071251264|rds|local|vector|||110718.799||
+phylogenetic_signal|stem|f939421b85481be7|139a42984378ca1f|df5eeda6511b909c|1057849121||t20718.1672608925s|s1801268b|1801268|rds|local|vector|||0.002||
+table_variables|stem|eba11125e4518283|30d4d849086ca7f1|9a7e619bafc1f274|-867459564||t20718.0497254412s|s1366b|1366|rds|local|vector|||0.2||
 wrangle_sccs|function|7c04b41b2cc92487
 calculate_phylogenetic_signal|function|26fe6106ad9643ba
 plot_world_map|function|8bf09b9b701a5479
-plot_all_methods|function|3a8b15634d960f41
-plot_variable_coverage|function|3f6a8e954a7fc9d4
-plot_sample_characteristics|function|3b39b1fab982e2d4
+plot_all_methods|function|0fd7f5f791c94dee
+plot_variable_coverage|function|1737c7cc64743ba3
+plot_sample_characteristics|function|2b63d1e8066dadd1
 wrangle_ea|function|d58c877b1344eb11
 load_tree|function|36feda55b1e32dd5
 get_effects_matrix|function|281e9d2a4eb723c7
 extract_standardised|function|93272dbd59e03d1c
-plot_linguistic_spatial_distance|function|478941d595f26337
-plot_synthetic_fit|function|7bcee6a6d40cf7cf
+plot_linguistic_spatial_distance|function|877f49e646772943
+plot_synthetic_fit|function|b3fa705bc559591c
 subsample_data|function|03488ab8c4868c39
 plot_gdpm_algorithm|function|ff5c69c7d5111b70
 plot_spatial_gp_prior|function|11a777ba75897eeb
 print_model_summary|function|175d7507c9c7dbb7
-plot_trait_on_tree|function|1044ae0de5c8c036
+plot_standardised_effects|function|d9278264d75f23a1
+plot_trait_on_tree|function|090146b947e88d49
 create_table_variables|function|a74030a1facf2bcb
 load_dplace_data|function|5f7e98896a3e7067
 get_cutpoints_list|function|1904fea920bd0028
 get_variables_list|function|fc883381446834d1
 fix_parameters|function|42597dab9243b8e0
-plot_prior_predictive_check|function|becc9212a5963dd5
+plot_prior_predictive_check|function|27395fc47c638317
 fit_model|function|c8caa89052c490cc
 generate_synthetic_data|function|fd688ef4f35a89b8
-data|stem|1f09dfe3e9705b09|b9cd236e90084022|f45119163a068e7c|33550471||t20711.3752533488s|s37993b|37993|rds|local|vector|||12.69||
-plot_cor|stem|1f11b584363e2a4d|32c60c4e8375875e|4162af280f066bc8|854672363||t20711.3753116088s|s31070117b|31070117|rds|local|vector|||2.218||
-plot_trait_agriculture|stem|1c3cf718570f0938|0a40aeb2eb241b59|23c6af14e1040c98|1972820836||t20711.3754495953s|s16432983b|16432983|rds|local|vector|||4.654|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. i Please use `linewidth` instead. i The deprecated feature was likely used in the ggtree package.   Please report the issue at <https://github.com/YuLab-SMU/ggtree/issues>.|
-plot_trait_patrilineality|stem|440d24afeb17ac9c|27ef79354dd88ebe|23c6af14e1040c98|935186421||t20711.378552922s|s16427127b|16427127|rds|local|vector|||4.968|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. i Please use `linewidth` instead. i The deprecated feature was likely used in the ggtree package.   Please report the issue at <https://github.com/YuLab-SMU/ggtree/issues>.|
-plot_trait_mean_size_local_community|stem|2cc1afadf3b24619|3e7a72acece98213|23c6af14e1040c98|-663139259||t20711.3785582563s|s16431985b|16431985|rds|local|vector|||5.498|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. i Please use `linewidth` instead. i The deprecated feature was likely used in the ggtree package.   Please report the issue at <https://github.com/YuLab-SMU/ggtree/issues>.|
-plot_trait_plough_animals|stem|98f2bbf808b27271|fd0c8db71e783e62|23c6af14e1040c98|531421282||t20711.378557157s|s16426687b|16426687|rds|local|vector|||5.764|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. i Please use `linewidth` instead. i The deprecated feature was likely used in the ggtree package.   Please report the issue at <https://github.com/YuLab-SMU/ggtree/issues>.|
-synthetic_data_family|stem|c870746660b923a2|97d0b36c1f9fd4ec|5e2a766b343b6fa4|-404474078||t20711.3810953128s|s10359b|10359|rds|local|vector|||237.146||
-synthetic_data_intergenerational_wealth_transmission|stem|34dde39eabbe1351|c85f7db5aedcdbc1|5e2a766b343b6fa4|2129264660||t20711.3823710403s|s10879b|10879|rds|local|vector|||346.054||
-synthetic_data_food_storage|stem|5f342038a5c323e7|e22e3ba5363481e4|5e2a766b343b6fa4|-2088158990||t20711.3827726481s|s9544b|9544|rds|local|vector|||144.494||
-synthetic_data_agriculture|stem|fabb24e1de8c8b15|7720b6b32bba70d8|5e2a766b343b6fa4|-1348648764||t20711.3838121443s|s9774b|9774|rds|local|vector|||123.988||
-plot_trait_sedentism|stem|2f39917273507c34|5e19f3ffa74ec392|23c6af14e1040c98|-115882885||t20711.383953705s|s16431787b|16431787|rds|local|vector|||4.854|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. i Please use `linewidth` instead. i The deprecated feature was likely used in the ggtree package.   Please report the issue at <https://github.com/YuLab-SMU/ggtree/issues>.|
-plot_trait_real_property_unigeniture|stem|bf1204bcd2407314|800d1fd795334f74|23c6af14e1040c98|-1727256738||t20711.3840840539s|s16431962b|16431962|rds|local|vector|||3.805||
-synthetic_data_intergroup_conflict|stem|0db39d94911b9457|4780300eaadcd9ee|5e2a766b343b6fa4|1319458892||t20711.3858954163s|s9854b|9854|rds|local|vector|||156.05||
-signal_mean_size_local_community|stem|4c98de367afc4f2e|292e1398edd9b247|901a7b3f6790c33a|844197122||t20711.4289317349s|s120207b|120207|rds|local|vector|||4351.37||
-signal_class_differentiation|stem|4de90b13a5fe1898|f0bb3fd673e2cfa8|901a7b3f6790c33a|1989808900||t20711.6007865567s|s119937b|119937|rds|local|vector|||19199.586||
-synthetic_data_scalar_stress|stem|f6a3f9087ec261bd|6e00c619f7438315|5e2a766b343b6fa4|-1726057261||t20711.6038874699s|s9416b|9416|rds|local|vector|||266.333||
-signal_food_storage|stem|54fee3e9377f5409|546996b423cb4813|901a7b3f6790c33a|280022786||t20711.6055117152s|s120664b|120664|rds|local|vector|||139.402||
-plot_trait_large_domestic_animals|stem|5febf34b12c51566|6903cded574c27e2|23c6af14e1040c98|2013059600||t20711.6056343444s|s16430206b|16430206|rds|local|vector|||3.394||
-signal_bridewealth|stem|c1299996df96ef1b|e4d7d7f1646577de|901a7b3f6790c33a|958264039||t20711.6341345715s|s120374b|120374|rds|local|vector|||22060.106||
-plot_trait_local_headman|stem|adacc554d71f41e7|1197dfa5c7ac1bba|23c6af14e1040c98|909372801||t20711.6342717035s|s16428590b|16428590|rds|local|vector|||4.942|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. i Please use `linewidth` instead. i The deprecated feature was likely used in the ggtree package.   Please report the issue at <https://github.com/YuLab-SMU/ggtree/issues>.|
-signal_sedentism|stem|5fc466cd7197ecc9|afae565875960fe4|901a7b3f6790c33a|-541043544||t20711.6925304623s|s119835b|119835|rds|local|vector|||27126.209||
-signal_agriculture|stem|0bd660f16f199908|0cf2544db9b3c70b|901a7b3f6790c33a|-1170681045||t20711.7259400409s|s120287b|120287|rds|local|vector|||30029.952||
-plot_trait_food_storage|stem|919ef53b98f89afd|163f6592bcf0aae9|23c6af14e1040c98|-862456600||t20711.7261202315s|s16427219b|16427219|rds|local|vector|||6.709|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. i Please use `linewidth` instead. i The deprecated feature was likely used in the ggtree package.   Please report the issue at <https://github.com/YuLab-SMU/ggtree/issues>.|
-signal_plough_animals|stem|d56ba1418092559a|77ed65bd256d708e|901a7b3f6790c33a|1188697995||t20711.7480030061s|s120586b|120586|rds|local|vector|||9825.361||
-signal_monogamy|stem|0dc384be15b4c98a|4e266d1ed68bfdfc|901a7b3f6790c33a|1987335260||t20711.7861562171s|s120243b|120243|rds|local|vector|||35228.315||
-fit_craft_specialisation|stem|7dc300d2f98a2e1c|7e09d04ccf3001be|2b0dcfc10ad0b899|-360585670||t20712.4422254357s|s1462715619b|1462715619|rds|local|vector|||64709.098||
-summary_craft_specialisation|stem|2959311d4a007915|086fb8825d8eb4c6|b8593e08d15f7cf9|538580456||t20712.4445079169s|s53b|53|rds|local|vector|||176.321||
-plot_trait_movable_property_unigeniture|stem|387f85fcccd4e514|7f31b54843192022|23c6af14e1040c98|-1094466275||t20712.4446355445s|s16431787b|16431787|rds|local|vector|||3.712||
-plot_trait_external_warfare_frequency|stem|4797eeefb1ec8cd8|c49c737a1475d6c7|23c6af14e1040c98|1628923680||t20712.4447624345s|s16429796b|16429796|rds|local|vector|||3.338||
-data_subsample|stem|d6dd1af4852929de|221cb9b64e465b81|3951d5416c89e4c7|-1334058284||t20712.4447691703s|s3980b|3980|rds|local|vector|||0.06||
-prior_check_scalar_stress|stem|7b5ccae490369a18|87418c4d6a2a18db|c4150004dc398d70|-1027962223||t20712.4797028475s|s812277062b|812277062|rds|local|vector|||2980.998||
-fit_intergroup_conflict|stem|8caef3f8f7e5df04|6e47c10f9d9f172f|2b0dcfc10ad0b899|-378588900||t20712.4806256852s|s2157978643b|2157978643|rds|local|vector|||95145.283||
-plot_prior_scalar_stress|stem|fdfa9de22e31094f|af19f8621961245f|cfebdd2834f4795b|1833294293||t20712.4807212002s|s1623039872b|1623039872|rds|local|vector|||5.491||
-plot_coverage|stem|85b6ee357263486c|3c337ec3a4bb18ce|1564f71d405d2c95|249145699||t20712.480778006s|s458097b|458097|rds|local|vector|||0.233||
-plot_sample|stem|7bd2b73891301d38|26a2963c9bbcc853|b95243232df7c7ca|-1970076201||t20712.4808640867s|s7711102b|7711102|rds|local|vector|||2.777||
-A_std_intergroup_conflict|stem|6775b604452adf57|0fb0b63068e684d5|8de902e35d942c29|-840374260||t20712.4808765695s|s486128b|486128|rds|local|vector|||3.271||
-plot_trait_class_differentiation|stem|d891ce0c221975fb|4a2f605c31bff926|23c6af14e1040c98|1539337931||t20712.4810051304s|s16430789b|16430789|rds|local|vector|||4.637|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. i Please use `linewidth` instead. i The deprecated feature was likely used in the ggtree package.   Please report the issue at <https://github.com/YuLab-SMU/ggtree/issues>.|
-synthetic_data_bridewealth|stem|5447a492530eb106|39b68d439331bbb0|5e2a766b343b6fa4|856635690||t20712.4822800446s|s9405b|9405|rds|local|vector|||109.765||
-signal_external_warfare_frequency|stem|09c9ef83f020029a|219f2e6a2cb114c6|901a7b3f6790c33a|1258799475||t20712.4837755628s|s121052b|121052|rds|local|vector|||128.187||
-synthetic_data_plough_animals|stem|821e707b708d365b|738ac06bdf72f872|5e2a766b343b6fa4|-481459703||t20712.4858126268s|s10379b|10379|rds|local|vector|||175.625||
-signal_real_property_unigeniture|stem|787b558bbd2b03f3|ae937c4ff448b203|901a7b3f6790c33a|528775122||t20712.5775198633s|s120837b|120837|rds|local|vector|||8350.013||
-plot_trait_craft_specialisation|stem|609b22c139241c25|4a83da5817b30247|23c6af14e1040c98|-87578342||t20712.5776431955s|s16430512b|16430512|rds|local|vector|||3.366||
-fit_bridewealth|stem|bd381383102228e6|2f98222c3ef57152|2b0dcfc10ad0b899|743879563||t20712.6092307926s|s1466642383b|1466642383|rds|local|vector|||71051.368||
-summary_bridewealth|stem|2959311d4a007915|eef624a1a300fd72|53da8323a7542089|1911485713||t20712.6112943689s|s53b|53|rds|local|vector|||165.416||
-plot_trait_monogamy|stem|b20e51e80bd28d4d|dfbea32b8394b848|23c6af14e1040c98|-1193622748||t20712.6114265409s|s16426744b|16426744|rds|local|vector|||4.462|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. i Please use `linewidth` instead. i The deprecated feature was likely used in the ggtree package.   Please report the issue at <https://github.com/YuLab-SMU/ggtree/issues>.|
-synthetic_data_craft_specialisation|stem|bb6003ead54f5cac|311d2f7d99d1a01a|5e2a766b343b6fa4|2088484398||t20712.612987189s|s9412b|9412|rds|local|vector|||134.422||
-signal_patrilineality|stem|c48052b577d1864a|48e2e84edc4a4804|901a7b3f6790c33a|1345093646||t20712.7511887661s|s120425b|120425|rds|local|vector|||22927.701||
-fit_scalar_stress|stem|74bf97f3a189677c|6bdd182b89e5497a|2b0dcfc10ad0b899|602320134||t20712.7517109899s|s2162326214b|2162326214|rds|local|vector|||98927.764||
-A_std_scalar_stress|stem|1bcf522b17ca322e|0d5510cc9f848bb9|619c940c03d2288c|1099769541||t20712.7519666292s|s578015b|578015|rds|local|vector|||3.51||
-synthetic_data_population_size|stem|c5ab732ec29ed88d|0cecc5533a61b5d4|5e2a766b343b6fa4|-285821508||t20712.7535600103s|s10557b|10557|rds|local|vector|||137.273||
-signal_craft_specialisation|stem|a935e84870a8d0ba|5c553dd895d487ff|901a7b3f6790c33a|-516790633||t20712.7674030281s|s120389b|120389|rds|local|vector|||13340.572||
-fit_food_storage|stem|e963f123ac4ae4bb|4a8717108553b5be|2b0dcfc10ad0b899|1143525565||t20712.7754803704s|s2169831998b|2169831998|rds|local|vector|||88688.458||
-A_std_food_storage|stem|2cd47ac5e45ae366|8dc90ed485b12fa4|dcdf98b7f8e35121|-604144009||t20712.7757506412s|s667503b|667503|rds|local|vector|||3.469||
-plot_trait_bridewealth|stem|ce2348082a0af43a|fff879c8590428e3|23c6af14e1040c98|467350382||t20712.7758647462s|s16429513b|16429513|rds|local|vector|||3.358||
-A_std_craft_specialisation|stem|feedd2917b6c4557|31b4fd8d1d889231|4b5ca83987f0c946|-1652861039||t20712.7759930664s|s301108b|301108|rds|local|vector|||1.839||
-prior_check_food_storage|stem|410a9b5b4991621e|a91be2f252e8aa5e|c4150004dc398d70|-101032885||t20712.8032100696s|s812518198b|812518198|rds|local|vector|||2316.522||
-plot_prior_food_storage|stem|bf7fd89ddf248dbe|3834bf37f5b8a296|1078d1d15854f8f8|716449626||t20712.8041731356s|s1623987362b|1623987362|rds|local|vector|||6.096||
-signal_movable_property_unigeniture|stem|a35374aecb5947c7|97537077d0752052|901a7b3f6790c33a|-1209006011||t20712.8544323752s|s120924b|120924|rds|local|vector|||8714.491||
-signal_local_headman|stem|1138a7cc7a184656|2b4f2e5c39ca2807|901a7b3f6790c33a|-2098481973||t20712.8567160374s|s118768b|118768|rds|local|vector|||7715.796||
-prior_check_population_size|stem|3893de1689f0dc34|97cba8d4346cc1cf|c4150004dc398d70|511781539||t20712.8851039196s|s812469356b|812469356|rds|local|vector|||2612.491||
-plot_prior_population_size|stem|4398f49b97071f9f|ffe2cbf6b44cb5fe|f6a569873ed9cad8|-13420569||t20712.8861260293s|s1624101372b|1624101372|rds|local|vector|||6.449||
-prior_check_bridewealth|stem|4ab1c929b06f5471|2425c1c3483bb859|c4150004dc398d70|1407898675||t20712.9044726499s|s536597950b|536597950|rds|local|vector|||1546.031||
-plot_prior_bridewealth|stem|ba0248ed3c8a3671|e94edc671ed8cf0c|2662b42b99049e08|452567639||t20712.9051212573s|s1070557480b|1070557480|rds|local|vector|||2.705||
-prior_check_plough_animals|stem|653fa41568af0798|eba276ae4780bec5|c4150004dc398d70|-1438479460||t20712.9146584714s|s1091351512b|1091351512|rds|local|vector|||9496.707||
-plot_prior_plough_animals|stem|1b62ab981a7612b3|8dc76abfa59ed434|21c5fedf9a553c5a|1533048916||t20712.9158980166s|s2181295289b|2181295289|rds|local|vector|||5.324||
-prior_check_craft_specialisation|stem|062d615dd4dc62f0|b3b5b12ec2ede0c6|c4150004dc398d70|-1544948927||t20712.9319543384s|s536598000b|536598000|rds|local|vector|||1356.146||
-plot_prior_craft_specialisation|stem|d7833b84bd81b848|593cc68c66875a69|9722466d8da3b249|-1327187119||t20712.9326384062s|s1070557571b|1070557571|rds|local|vector|||2.579||
-prior_check_intergroup_conflict|stem|8b3aa6589b1514d3|1074b4572154d66f|c4150004dc398d70|-1543377566||t20712.9356030736s|s811985324b|811985324|rds|local|vector|||2591.271||
-plot_prior_intergroup_conflict|stem|db53ea7e833c0f69|f46a4edc42c87d7c|32f86b7e43237314|1678707575||t20712.936623359s|s1621835800b|1621835800|rds|local|vector|||4.199||
-prior_check_agriculture|stem|d6ffee094e40b49e|2617fc31bea9deab|c4150004dc398d70|1575411061||t20712.9482426379s|s536850796b|536850796|rds|local|vector|||1321.098||
-plot_prior_agriculture|stem|f455c7e38fcfa3e0|23963c99825809ba|cfc9124e380468ff|2109572897||t20712.9488486982s|s1071682099b|1071682099|rds|local|vector|||2.687||
-summary_intergroup_conflict|stem|2959311d4a007915|77d3fab9353f3126|62ab9cd1e3820700|-115011812||t20712.9517091987s|s53b|53|rds|local|vector|||231.482||
-A_std_bridewealth|stem|7920403a479c24d5|ddda2a2dcea9d5c4|b93b9868c058f804|-1578146655||t20712.9518443626s|s301201b|301201|rds|local|vector|||1.842||
-summary_scalar_stress|stem|2959311d4a007915|cb1e0f1316183e78|0533e040106df3d5|1099548570||t20712.9545888716s|s53b|53|rds|local|vector|||223.089||
-summary_food_storage|stem|2959311d4a007915|d5fd814b83689dac|6e655ec26d10a89c|979822281||t20712.9573328813s|s53b|53|rds|local|vector|||223.789||
-prior_check_intergenerational_wealth_transmission|stem|942a2454bbd3beec|e9ea7a34c22aac07|c4150004dc398d70|795865029||t20712.9962018209s|s1380114099b|1380114099|rds|local|vector|||5077.288||
-plot_prior_intergenerational_wealth_transmission|stem|645b9fe8801bfc5c|20e941cfae38c338|91f111c436e75c60|2039864174||t20712.9979499697s|s2759215655b|2759215655|rds|local|vector|||7.284||
-prior_check_family|stem|f5f1ef938a185022|91f0b55fb8d878a9|c4150004dc398d70|1484314846||t20713.0225955237s|s1091351631b|1091351631|rds|local|vector|||14280.653||
-plot_prior_family|stem|f6b2689a1ae09a41|71d0d0b05360468a|12ed0ed0d17cb936|1006072920||t20713.0239973212s|s2181295475b|2181295475|rds|local|vector|||6.976||
-signal_large_domestic_animals|stem|577f1afd58652518|31baf4f994757d8b|901a7b3f6790c33a|-236595803||t20713.0369218005s|s120124b|120124|rds|local|vector|||24686.081||
-phylogenetic_signal|stem|f939421b85481be7|139a42984378ca1f|df5eeda6511b909c|1057849121||t20713.0369315863s|s1801268b|1801268|rds|local|vector|||0.002||
-table_variables|stem|eba11125e4518283|30d4d849086ca7f1|9a7e619bafc1f274|-867459564||t20713.0369379578s|s1366b|1366|rds|local|vector|||0.2||
-fit_family|stem|0cf22b2734f6d7b4|5b0ff7cff49c4cf6|2b0dcfc10ad0b899|320313290||t20713.0502334181s|s2855500285b|2855500285|rds|local|vector|||139961.956||
-A_std_family|stem|ccd7c7ffc362e273|d9113f5cee8d1fde|09a0055d37c70ff7|636798350||t20713.0505903196s|s672050b|672050|rds|local|vector|||4.591||
-summary_family|stem|2959311d4a007915|0e1ca1972f1dd0d1|3cfcfc4f587b2d0e|-2103171528||t20713.0543667187s|s53b|53|rds|local|vector|||307.317||
-fit_plough_animals|stem|e56845a04e01603c|0c850499be01f56b|2b0dcfc10ad0b899|1522869800||t20713.0713808561s|s2843965774b|2843965774|rds|local|vector|||145504.201||
-A_std_plough_animals|stem|334694b1f183fea7|ebb358fdd7ef0cdb|1f4f5e8e1367bc47|-733068758||t20713.0723004458s|s669937b|669937|rds|local|vector|||4.286||
-summary_plough_animals|stem|2959311d4a007915|df249c6d8c4a6ab5|a468a304041fdc3f|-1009459813||t20713.0751652921s|s53b|53|rds|local|vector|||303.619||
-fit_population_size|stem|22a06be7d22dedba|d2e9a13bbdf780e0|2b0dcfc10ad0b899|1035047215||t20713.1054756062s|s2164283824b|2164283824|rds|local|vector|||119084.791||
-A_std_population_size|stem|84afa6213c8b32e2|d94bd5c97d007d50|eddd3e0e3b283134|-890268241||t20713.1058003224s|s485337b|485337|rds|local|vector|||3.537||
-summary_population_size|stem|2959311d4a007915|70763a5daaab08a1|001111d7e0f7c98a|1827792110||t20713.1087785571s|s53b|53|rds|local|vector|||243.352||
-fit_agriculture|stem|b33b20b7dd1a5cb8|08d4863b1ba5a50b|2b0dcfc10ad0b899|-1202320715||t20713.4673820621s|s1466743304b|1466743304|rds|local|vector|||76810.068||
-A_std_agriculture|stem|a9ff3fd81771a7cd|e7094f5f51f7a035|6b0b08f51a7fc791|-267209926||t20713.4683586143s|s300976b|300976|rds|local|vector|||2.587||
-summary_agriculture|stem|2959311d4a007915|51497d0385d7d050|e1438ae88c229c28|-1788799359||t20713.4695293321s|s53b|53|rds|local|vector|||172.339||
-fit_intergenerational_wealth_transmission|stem|1a89e8a870c40ae7|8dc52bcf2f52c55c|2b0dcfc10ad0b899|-1462613787||t20713.7323338062s|s3549676939b|3549676939|rds|local|vector|||203459.159||
-A_std_intergenerational_wealth_transmission|stem|441c07c68a520440|edf252abab36658d|16c7088af8b29e9e|1497346432||t20713.7327850341s|s1041277b|1041277|rds|local|vector|||6.422||
-summary_intergenerational_wealth_transmission|stem|2959311d4a007915|92de0da22a1b775a|e76285cfc0007ef6|-812153804||t20713.73872089s|s53b|53|rds|local|vector|||486.511||
-synthetic_fit_food_storage|stem|f47e42c8024441db|fb41024aeaca23f5|7b216bd6895a85dd|1823542803||t20716.6637049476s|s2129787355b|2129787355|rds|local|vector|||456169.195||
-plot_synthetic_food_storage|stem|ba75417d8a91f720|cda3e32247cdc03c|8dca953116e7cbc4|-289359994||t20716.6639593801s|s8015355b|8015355|rds|local|vector|||3.716|Dropping 'draws_df' class as required metadata was removed.|
+plot_cor|stem|665654f5ee87b69d|32c60c4e8375875e|06132f23e0cd5a85|854672363||t20718.4864708897s|s18625932b|18625932|rds|local|vector|||1.469|object 'distances' not found|
+plot_trait_agriculture|stem|d2ebd90199e7979e|0a40aeb2eb241b59|023d022b2d55502a|1972820836||t20718.4865384439s|s16174378b|16174378|rds|local|vector|||1.932|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead. ℹ The deprecated feature was likely used in the ggtree package.   Please report the issue at <https://github.com/YuLab-SMU/ggtree/issues>.|
+plot_trait_plough_animals|stem|7ee371b3b72334f3|fd0c8db71e783e62|023d022b2d55502a|531421282||t20718.4866014444s|s16170207b|16170207|rds|local|vector|||1.441||
+plot_trait_patrilineality|stem|4c9f06cd5f5244a5|27ef79354dd88ebe|023d022b2d55502a|935186421||t20718.4866629729s|s16170588b|16170588|rds|local|vector|||1.634||
+plot_trait_mean_size_local_community|stem|b39c9118084f03cf|3e7a72acece98213|023d022b2d55502a|-663139259||t20718.4867229773s|s16176662b|16176662|rds|local|vector|||1.484||
+plot_trait_sedentism|stem|45d9eb6677632b85|5e19f3ffa74ec392|023d022b2d55502a|-115882885||t20718.486784345s|s16176564b|16176564|rds|local|vector|||1.526||
+plot_trait_real_property_unigeniture|stem|9b7d7d780ded38b0|800d1fd795334f74|023d022b2d55502a|-1727256738||t20718.4868453817s|s16172910b|16172910|rds|local|vector|||1.565||
+plot_trait_large_domestic_animals|stem|352ba62889f71331|6903cded574c27e2|023d022b2d55502a|2013059600||t20718.4869059291s|s16170862b|16170862|rds|local|vector|||1.718||
+plot_trait_local_headman|stem|eedd48ced2ec1431|1197dfa5c7ac1bba|023d022b2d55502a|909372801||t20718.4869654896s|s16171944b|16171944|rds|local|vector|||1.377||
+plot_trait_food_storage|stem|e2717f575a3f1e5f|163f6592bcf0aae9|023d022b2d55502a|-862456600||t20718.4870250238s|s16170803b|16170803|rds|local|vector|||1.425||
+plot_trait_movable_property_unigeniture|stem|9344130be622e92e|7f31b54843192022|023d022b2d55502a|-1094466275||t20718.4870841306s|s16172734b|16172734|rds|local|vector|||1.462||
+plot_trait_external_warfare_frequency|stem|3f4f74a1b376c1b9|c49c737a1475d6c7|023d022b2d55502a|1628923680||t20718.4871440533s|s16170799b|16170799|rds|local|vector|||1.472||
+plot_coverage|stem|6348a75dba3d779b|3c337ec3a4bb18ce|f662946f75de09ac|249145699||t20718.4871470287s|s419090b|419090|rds|local|vector|||0.094||
+plot_sample|stem|ac4efeec8a23c858|26a2963c9bbcc853|386178a07b7a33e5|-1970076201||t20718.4871870974s|s7669668b|7669668|rds|local|vector|||1.179||
+plot_trait_class_differentiation|stem|2edd7db545e47ba1|4a2f605c31bff926|023d022b2d55502a|1539337931||t20718.4872477645s|s16175380b|16175380|rds|local|vector|||1.603||
+plot_trait_craft_specialisation|stem|b55e35deda90ef16|4a83da5817b30247|023d022b2d55502a|-87578342||t20718.4873064943s|s16171190b|16171190|rds|local|vector|||1.52||
+plot_trait_monogamy|stem|b7617721608f0f89|dfbea32b8394b848|023d022b2d55502a|-1193622748||t20718.4873637521s|s16170250b|16170250|rds|local|vector|||1.379||
+plot_trait_bridewealth|stem|ef59a6795b81b59f|fff879c8590428e3|023d022b2d55502a|467350382||t20718.4874214829s|s16170461b|16170461|rds|local|vector|||1.406||
+plot_synthetic_family|stem|0dadb60c137dbf7d|ca5832730ff6faf6|199b2d604ecc947f|-1103233302||t20718.4875445114s|s7312004b|7312004|rds|local|vector|||1.1|Dropping 'draws_df' class as required metadata was removed.|
+plot_synthetic_intergenerational_wealth_transmission|stem|d54a2d1ece59410e|01d26f5c7025c06f|14d9e3832dacff8b|-1185349958||t20718.4877075899s|s10519390b|10519390|rds|local|vector|||1.902|Dropping 'draws_df' class as required metadata was removed.|
+plot_synthetic_intergroup_conflict|stem|0ff94e92e6dce3b2|eecf901175d85a8e|84e3b3c0f21c7634|-2049338747||t20718.4878026806s|s5823839b|5823839|rds|local|vector|||0.551|Dropping 'draws_df' class as required metadata was removed.|
+plot_prior_intergroup_conflict|stem|e02169880f324ca3|f46a4edc42c87d7c|0765cd4cb6c92130|1678707575||t20718.4878643459s|s1957741b|1957741|rds|local|vector|||2.473||
+plot_prior_craft_specialisation|stem|adfeb69da60758f2|593cc68c66875a69|0df8b6fbb7a5973f|-1327187119||t20718.4879055764s|s1417458b|1417458|rds|local|vector|||1.426||
+plot_prior_scalar_stress|stem|f2a65fcc0814b935|af19f8621961245f|f97ec5072a98375c|1833294293||t20718.4879597753s|s2418114b|2418114|rds|local|vector|||1.911||
+plot_prior_food_storage|stem|b44cc68981398c8b|3834bf37f5b8a296|3865451ca48b5b7b|716449626||t20718.4880118833s|s2690918b|2690918|rds|local|vector|||1.704||
+plot_prior_plough_animals|stem|a5bcabd88a0b5cd9|8dc76abfa59ed434|a809a234e2e37525|1533048916||t20718.488082513s|s2681914b|2681914|rds|local|vector|||2.39||
+plot_prior_family|stem|40d7aa5c6e3219d3|71d0d0b05360468a|5fa984724c49afe8|1006072920||t20718.4881583494s|s2681903b|2681903|rds|local|vector|||2.347||
+plot_prior_population_size|stem|71f1ff604f8e50e4|ffe2cbf6b44cb5fe|017c36db218f9694|-13420569||t20718.4882157608s|s2780904b|2780904|rds|local|vector|||1.886||
+plot_prior_agriculture|stem|6eda87bf4d9d33e4|23963c99825809ba|0fdb008e43fe1062|2109572897||t20718.4882524508s|s1780578b|1780578|rds|local|vector|||1.281||
+plot_prior_bridewealth|stem|3756ff02879ed553|e94edc671ed8cf0c|2ff29bd17b32e8b9|452567639||t20718.4882831129s|s1417447b|1417447|rds|local|vector|||0.853||
+plot_prior_intergenerational_wealth_transmission|stem|ce37d203741f4326|20e941cfae38c338|0f3e91f7ef06cbdf|2039864174||t20718.4883938758s|s3150401b|3150401|rds|local|vector|||4.631||
+plot_synthetic_plough_animals|stem|f0d2a983cb3dcbb8|e07b63759dbce6d8|581c70b2d4ab6db2|-271073653||t20718.4885025633s|s7312019b|7312019|rds|local|vector|||0.614|Dropping 'draws_df' class as required metadata was removed.|
+plot_synthetic_agriculture|stem|7f3fe38fa0dccaf4|5ad68ef3be3ca8e7|ab03bd58b8798c39|-1488661531||t20718.4885675689s|s3927234b|3927234|rds|local|vector|||0.47|Dropping 'draws_df' class as required metadata was removed.|
+plot_synthetic_food_storage|stem|af2c12ec1e8fd9cf|cda3e32247cdc03c|2f6f6983daec80a5|-289359994||t20718.4886523066s|s6751111b|6751111|rds|local|vector|||0.519|Dropping 'draws_df' class as required metadata was removed.|
+plot_synthetic_scalar_stress|stem|3d6b97fcc87085e4|c90d139d421c4035|d7e377c554e76964|-980594035||t20718.4887341466s|s6285892b|6285892|rds|local|vector|||0.461|Dropping 'draws_df' class as required metadata was removed.|
+plot_synthetic_population_size|stem|cb4666b165182f20|a600a6b8d11d9835|7228763f7cf45218|-441647125||t20718.4888199601s|s5529424b|5529424|rds|local|vector|||0.614|Dropping 'draws_df' class as required metadata was removed.|
+plot_synthetic_bridewealth|stem|272e6b83a1663eeb|6e3d73a7b7699b7d|b9714fe2fd8862fe|-374067137||t20718.4888815387s|s3926450b|3926450|rds|local|vector|||0.641|Dropping 'draws_df' class as required metadata was removed.|
+plot_synthetic_craft_specialisation|stem|1c2833f3c73d58b1|42aba17d48949faf|8ee7c4adad8a0949|1244063401||t20718.4889422716s|s3926463b|3926463|rds|local|vector|||0.514|Dropping 'draws_df' class as required metadata was removed.|

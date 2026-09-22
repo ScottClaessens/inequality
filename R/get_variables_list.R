@@ -12,8 +12,10 @@
 #' @returns List
 #'
 get_variables_list <- function(model) {
+
   # get cutpoints list
   cutpoints <- get_cutpoints_list(model)
+
   # construct variables list
   variables <- list()
   for (i in 1:length(cutpoints)) {
@@ -24,6 +26,8 @@ get_variables_list <- function(model) {
       variables[[var]] <- "bernoulli_logit"
     }
   }
+
   # return
   variables
+
 }

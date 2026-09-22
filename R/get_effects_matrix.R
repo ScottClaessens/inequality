@@ -105,5 +105,6 @@ get_effects_matrix <- function(model) {
     ncol = length(variables),
     dimnames = list(variables, variables)
   )
+
 }
 

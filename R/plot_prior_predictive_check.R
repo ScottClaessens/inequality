@@ -12,16 +12,21 @@
 #' @returns A patchwork of ggplots
 #'
 plot_prior_predictive_check <- function(prior_check, model) {
+
   # get variables list
   variables <- get_variables_list(model)
+
   # get samples
   prior <- extract_samples(prior_check)
-  # get dordlogit function from rethinking package
+
+  # get logistic function from rethinking package
   logistic <- function(x) {
     p <- 1/(1 + exp(-x))
     p <- ifelse(x == Inf, 1, p)
     p
   }
+
+  # get dordlogit function from rethinking package
   dordlogit <- function(x, phi, a, log = FALSE) {
     a <- c(as.numeric(a), Inf)
     p <- logistic(a[x] - phi)
@@ -32,12 +37,15 @@ plot_prior_predictive_check <- function(prior_check, model) {
       p <- log(p)
     p
   }
+
   # loop over variables
   plots <- list()
   for (j in 1:length(variables)) {
+
     # get variable name and type
     variable_name <- names(variables)[j]
     is_ordinal <- variables[[j]] == "ordered_logistic"
+
     # get labels for plot
     if (is_ordinal) {
       labels <- levels(prior_check$data[[variable_name]])
@@ -49,6 +57,7 @@ plot_prior_predictive_check <- function(prior_check, model) {
       "No distinctions",
       labels
     )
+
     # get prior predictions
     if (is_ordinal) {
       k <- ncol(prior[[paste0("c", j)]]) + 1
@@ -75,6 +84,7 @@ plot_prior_predictive_check <- function(prior_check, model) {
         pred[i, ] <- c(1 - prob, prob)
       }
     }
+
     # plot prior predictive check
     plots[[j]] <-
       pred |>
@@ -100,6 +110,7 @@ plot_prior_predictive_check <- function(prior_check, model) {
       ggtitle(str_to_sentence(str_replace_all(variable_name, "_", " "))) +
       theme_classic() +
       theme(plot.title = element_text(size = 9))
+
     if (is_ordinal) {
       plots[[j]] <-
         plots[[j]] +
@@ -117,7 +128,9 @@ plot_prior_predictive_check <- function(prior_check, model) {
         theme(axis.text.x = element_text(size = 8))
     }
     names(plots)[j] <- variable_name
+
   }
+
   # layout of plots
   if (length(variables) == 2) {
     design <- "12"
@@ -137,6 +150,7 @@ plot_prior_predictive_check <- function(prior_check, model) {
       334455
     "
   }
+
   # put plots together
   out <-
     wrap_plots(plots) +
@@ -144,12 +158,20 @@ plot_prior_predictive_check <- function(prior_check, model) {
       design = design,
       axis_titles = "collect_y"
     )
-  # save and return
+
+  # save
   ggsave(
     plot = out,
     filename = paste0("plots/prior/prior_", model, ".pdf"),
     height = ifelse(length(variables) <= 2, 4, 6),
     width = 7
   )
+
+  # cleanup
+  rm(prior_check, model, variables, prior, logistic, dordlogit,
+     variable_name, is_ordinal, plots, labels, k, pred, phi, design)
+
+  # return
   out
+
 }

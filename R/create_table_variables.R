@@ -10,6 +10,7 @@
 #' @returns A tibble
 #'
 create_table_variables <- function(data, phylogenetic_signal) {
+
   # get counts and proportions of observed data
   prop_observed <-
     data |>
@@ -26,6 +27,7 @@ create_table_variables <- function(data, phylogenetic_signal) {
       names_to = "Name",
       values_to = "N societies with observed data (%)"
     )
+
   # function for printing phylogenetic signal with percentile interval
   print_lambda <- function(x, prob = 0.95) {
     paste0(
@@ -37,6 +39,7 @@ create_table_variables <- function(data, phylogenetic_signal) {
       "]"
     )
   }
+
   # wrangle signals
   signals <-
     phylogenetic_signal |>
@@ -51,6 +54,7 @@ create_table_variables <- function(data, phylogenetic_signal) {
       `Phylogenetic signal` = print_lambda(phylogenetic),
       `Geographic signal` = print_lambda(geographic)
     )
+
   # create table
   tibble(
     Name = colnames(data)[10:24],
@@ -103,4 +107,5 @@ create_table_variables <- function(data, phylogenetic_signal) {
       ),
       Name = ifelse(Name == "Local headman", "Leadership", Name)
     )
+
 }

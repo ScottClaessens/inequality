@@ -8,9 +8,11 @@
 #' @returns A ggplot object
 #'
 plot_variable_coverage <- function(data) {
+
   # counts of observed data for D-PLACE variables
   counts <- apply(data, 2, function(x) sum(!is.na(x)))[-c(1:9)]
   names(counts) <- str_to_sentence(str_replace_all(names(counts), "_", " "))
+
   # plot
   p <-
     tibble(
@@ -37,6 +39,7 @@ plot_variable_coverage <- function(data) {
     ) +
     theme_classic() +
     theme(axis.text.x = element_text(angle = 30, hjust = 1))
+
   # save
   ggsave(
     filename = "plots/coverage.pdf",
@@ -44,5 +47,11 @@ plot_variable_coverage <- function(data) {
     width = 6,
     height = 5
   )
+
+  # cleanup
+  rm(data, counts)
+
+  # return
   p
+
 }

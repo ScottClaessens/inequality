@@ -8,6 +8,7 @@
 #' @returns A ggplot object
 #'
 plot_world_map <- function(data) {
+
   ne_countries(
     scale = "small",
     returnclass = "sf"
@@ -50,4 +51,5 @@ plot_world_map <- function(data) {
       legend.box.background = element_rect(),
       legend.margin = margin(0, 5, 0, 0)
     )
+
 }

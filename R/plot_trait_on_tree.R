@@ -6,12 +6,14 @@
 #' @returns A ggplot object
 #'
 plot_trait_on_tree <- function(data, mcc_tree, variable) {
+
   # wrangle data
   d <-
     data |>
     transmute(var = as.factor(as.numeric(!!sym(variable)))) |>
     as.data.frame()
   rownames(d) <- data$xd_id
+
   # plot tree
   tree <-
     ggtree(
@@ -19,6 +21,7 @@ plot_trait_on_tree <- function(data, mcc_tree, variable) {
       layout = "circular",
       linewidth = 0.1
     )
+
   # add data to tree
   out <-
     gheatmap(
@@ -29,6 +32,7 @@ plot_trait_on_tree <- function(data, mcc_tree, variable) {
       colnames = FALSE,
       color = NA
     )
+
   if (is.ordered(data[[variable]])) {
     out <-
       out +
@@ -48,6 +52,7 @@ plot_trait_on_tree <- function(data, mcc_tree, variable) {
         values = c("#ADD8E6", "#26667C")
       )
   }
+
   # taxa bookends for major language families
   taxa_bookends <- list(
     "Atlantic-Congo"          = c("xd10",   "xd253"),
@@ -69,10 +74,13 @@ plot_trait_on_tree <- function(data, mcc_tree, variable) {
     "Central Sudanic"         = c("xd155",  "xd358"),
     "Cariban"                 = c("xd1328", "xd1350")
   )
+
   # add clade labels for major language families
   for (family in names(taxa_bookends)) {
+
     # node number for most recent common ancestor
     node <- getMRCA(mcc_tree, taxa_bookends[[family]])
+
     # add clade label
     out <-
       out +
@@ -89,7 +97,9 @@ plot_trait_on_tree <- function(data, mcc_tree, variable) {
           1, 0
         )
       )
+
   }
+
   # save
   ggsave(
     filename = paste0("plots/tree/tree_", variable, ".pdf"),
@@ -97,6 +107,11 @@ plot_trait_on_tree <- function(data, mcc_tree, variable) {
     height = 10,
     width = 10
   )
+
+  # cleanup
+  rm(data, mcc_tree, variable, d, tree, taxa_bookends)
+
   # return
   out
+
 }

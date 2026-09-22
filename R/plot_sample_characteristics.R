@@ -8,12 +8,16 @@
 #' @returns A patchwork of ggplots
 #'
 plot_sample_characteristics <- function(data) {
+
   # edit class labels for plot
   levels(data$class_differentiation)[1] <- "No distinctions"
+
   # internal function to plot histogram
   plot_histogram <- function(variable) {
+
     # get plot title
     title <- str_to_sentence(str_replace_all(variable, "_", " "))
+
     # plot
     out <-
       data |>
@@ -35,6 +39,7 @@ plot_sample_characteristics <- function(data) {
         axis.title = element_text(size = 7),
         axis.text = element_text(size = 6)
       )
+
     if ("ordered" %in% class(data[[variable]])) {
       out +
         theme(
@@ -47,7 +52,9 @@ plot_sample_characteristics <- function(data) {
     } else {
       out
     }
+
   }
+
   # variables on each row
   rows <-
     list(
@@ -57,6 +64,7 @@ plot_sample_characteristics <- function(data) {
         "movable_property_unigeniture", "plough_animals"),
       c("patrilineality", "monogamy", "local_headman", "bridewealth", "craft_specialisation")
     )
+
   # combine plots
   out <-
     wrap_plots(
@@ -70,6 +78,7 @@ plot_sample_characteristics <- function(data) {
       ),
       nrow = length(rows)
     )
+
   # save
   ggsave(
     filename = "plots/sample_characteristics.pdf",
@@ -77,5 +86,11 @@ plot_sample_characteristics <- function(data) {
     height = 5,
     width = 6
   )
+
+  # cleanup
+  rm(data, plot_histogram, rows)
+
+  # return
   out
+
 }

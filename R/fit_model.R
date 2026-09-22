@@ -27,8 +27,10 @@
 fit_model <- function(data, tree, model, prior_only = FALSE, adapt_delta = 0.99,
                       iter_warmup = 1000, iter_sampling = 1000, chains = 4,
                       cores = 4L, nuts_sampler = "stan") {
+
   # set temporary options
   withr::with_options(list(cmdstanr_warn_inits = FALSE), {
+
     # ensure binary variables are 0/1 integers in data for coevolve
     variables <- get_variables_list(model)
     for (j in 1:length(variables)) {
@@ -37,11 +39,13 @@ fit_model <- function(data, tree, model, prior_only = FALSE, adapt_delta = 0.99,
         data[[variable_name]] <- as.integer(data[[variable_name]] == "Present")
       }
     }
+
     # get tree as multiphylo object
     tree <- ape::keep.tip.multiPhylo(
       phytools::as.multiPhylo(tree),
       tip = data$xd_id
     )
+
     # get priors for model
     priors <- list(
       b          = "std_normal()",
@@ -53,8 +57,10 @@ fit_model <- function(data, tree, model, prior_only = FALSE, adapt_delta = 0.99,
       sigma_dist = "std_normal()",
       rho_dist   = "normal(0, 0.2)"
     )
+
     # get effects matrix
     effects_matrix <- get_effects_matrix(model)
+
     # fit model
     if (nuts_sampler == "stan") {
 
@@ -101,5 +107,7 @@ fit_model <- function(data, tree, model, prior_only = FALSE, adapt_delta = 0.99,
       )
 
     }
+
   })
+
 }

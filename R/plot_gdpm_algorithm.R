@@ -6,8 +6,10 @@
 #' @returns A ggplot object
 #'
 plot_gdpm_algorithm <- function() {
+
   # set random seed
   set.seed(123)
+
   # top row: co-evolving latent variables
   # set up simulation
   n <- 60
@@ -16,6 +18,7 @@ plot_gdpm_algorithm <- function() {
     x = c(0.1, rep(NA, n - 1)),
     y = c(-0.1, rep(NA, n - 1))
   )
+
   for (t in 2:n) {
     # autoregressive effects
     d$x[t] <- d$x[t - 1] * 0.9
@@ -26,12 +29,14 @@ plot_gdpm_algorithm <- function() {
     d$x[t] <- d$x[t] + rnorm(1, 0, 0.15)
     d$y[t] <- d$y[t] + rnorm(1, 0, 0.15)
   }
+
   # pivot simulation data longer
   d <- pivot_longer(
     data = d,
     cols = x:y
   ) |>
     mutate(name = ifelse(name == "x", "Trait 1", "Trait 2"))
+
   # plot top
   top <-
     ggplot(
@@ -71,16 +76,19 @@ plot_gdpm_algorithm <- function() {
       legend.background = element_rect(fill = "#f8fdff"),
       legend.margin = margin()
     )
+
   # bottom row: example phylogenetic tree
   # simulate tree
   tree <- ape::rcoal(6)
   tree$tip.label <- c("F", "E", "B", "A", "C", "D")
+
   # plot bottom
   bottom <-
     ggtree(
       tr = tree,
       linewidth = 1
     )
+
   # add highlights
   bottom <-
     bottom +
@@ -107,6 +115,7 @@ plot_gdpm_algorithm <- function() {
       colour = "#016699",
       geom = "segment"
     )
+
   # rest of the plot
   bottom <-
     bottom +
@@ -132,6 +141,7 @@ plot_gdpm_algorithm <- function() {
       ),
       axis.text.x = element_blank()
     )
+
   # put together
   plot_grid(
     NULL,
@@ -140,4 +150,5 @@ plot_gdpm_algorithm <- function() {
     nrow = 3,
     rel_heights = c(0.15, 0.85, 1)
   )
+
 }

@@ -7,26 +7,26 @@ library(tidyverse)
 tar_option_set(
   packages = c("ape", "brms", "cmdstanr", "coevolve", "cowplot", "ggdist",
                "ggtree", "gt", "patchwork", "phangorn", "phytools", "posterior",
-               "reticulate", "rnaturalearth", "sf", "tidyverse", "withr"),
-  garbage_collection = 1,
-  controller = crew_controller_slurm(
-    workers = 10,
-    options_metrics = crew_options_metrics(
-      path = "/dev/stdout",
-      seconds_interval = 60
-    ),
-    options_cluster = crew_options_slurm(
-      script_lines = c(
-        "#SBATCH --account=arch039044",
-        "module load languages/R/4.5.1"
-      ),
-      memory_gigabytes_required = 100,
-      cpus_per_task = 8,
-      time_minutes = 10 * 24 * 60,
-      log_output = "crew_log_%A.out",
-      log_error = "crew_log_%A.err"
-    )
-  )
+               "reticulate", "rnaturalearth", "sf", "tidyverse", "withr")#,
+  #garbage_collection = 1,
+  #controller = crew_controller_slurm(
+  #  workers = 10,
+  #  options_metrics = crew_options_metrics(
+  #    path = "/dev/stdout",
+  #    seconds_interval = 60
+  #  ),
+  #  options_cluster = crew_options_slurm(
+  #    script_lines = c(
+  #      "#SBATCH --account=arch039044",
+  #      "module load languages/R/4.5.1"
+  #    ),
+  #    memory_gigabytes_required = 100,
+  #    cpus_per_task = 8,
+  #    time_minutes = 10 * 24 * 60,
+  #    log_output = "crew_log_%A.out",
+  #    log_error = "crew_log_%A.err"
+  #  )
+  #)
 )
 tar_source()
 

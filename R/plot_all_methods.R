@@ -12,6 +12,7 @@
 #' @returns A ggplot object
 #'
 plot_all_methods <- function(plot_world, plot_tree, plot_gdpm) {
+
   # bottom row
   bottom <- plot_grid(
     plot_tree,
@@ -19,6 +20,7 @@ plot_all_methods <- function(plot_world, plot_tree, plot_gdpm) {
     nrow = 1,
     labels = c("B", "C")
   )
+
   # combine all
   p <- plot_grid(
     plot_world,
@@ -26,6 +28,7 @@ plot_all_methods <- function(plot_world, plot_tree, plot_gdpm) {
     nrow = 2,
     labels = c("A", "")
   )
+
   # save
   ggsave(
     filename = "plots/methods.pdf",
@@ -33,5 +36,11 @@ plot_all_methods <- function(plot_world, plot_tree, plot_gdpm) {
     height = 9,
     width = 9
   )
+
+  # cleanup
+  rm(plot_world, plot_tree, plot_gdpm, bottom)
+
+  # return
   p
+
 }

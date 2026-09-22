@@ -12,6 +12,7 @@
 #' @returns List
 #'
 get_cutpoints_list <- function(model) {
+
   # ordinal cutpoints (null if binary variable)
   cutpoints <- list(
     class_differentiation = c(-0.04, 0.74, 0.90, 2.45),
@@ -30,7 +31,9 @@ get_cutpoints_list <- function(model) {
     external_warfare_frequency = c(-0.33, 1.44),
     food_storage = c(-1.39, 2.30, 2.92, 3.34)
   )
+
   # return
   vars <- rownames(get_effects_matrix(model))
   cutpoints[vars]
+
 }

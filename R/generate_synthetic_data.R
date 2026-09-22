@@ -15,8 +15,10 @@
 #' @returns Tibble of synthetic data
 #'
 generate_synthetic_data <- function(data, mcc_tree, model) {
+
   # get list of variables for model
   variables <- get_variables_list(model)
+
   # ensure binary variables are 0/1 integers in data
   data <-
     data |>
@@ -26,6 +28,7 @@ generate_synthetic_data <- function(data, mcc_tree, model) {
         function (x) as.integer(x == "Present")
       )
     )
+
   # generate stan data and code with relevant variables
   stan_data <-
     suppressMessages(
@@ -46,6 +49,7 @@ generate_synthetic_data <- function(data, mcc_tree, model) {
       tree = mcc_tree,
       estimate_correlated_drift = FALSE
     )
+
   # manually fix parameters in stan code
   stan_code_fix <-
     fix_parameters(
@@ -59,6 +63,7 @@ generate_synthetic_data <- function(data, mcc_tree, model) {
       ),
       model = model
     )
+
   # run simulation
   sim <-
     suppressWarnings(
@@ -74,28 +79,38 @@ generate_synthetic_data <- function(data, mcc_tree, model) {
         show_messages = FALSE
       )
     )
+
   # construct synthetic dataset by looping over variables
   draws <- as_draws_rvars(sim)
   out <- tibble(xd_id = mcc_tree$tip.label)
+
   for (i in 1:length(variables)) {
+
     # yrep contains simulated data
     yrep <- draws_of(draws$yrep)[1, 1, 1:nrow(out), i]
     var <- names(variables)[i]
+
     if (variables[[i]] == "ordered_logistic") {
+
       # construct ordinal variable
       levels <- levels(data[[var]])
       out[[var]] <- ordered(levels[yrep], levels = levels)
+
     } else if (variables[[i]] == "bernoulli_logit") {
+
       # construct binary variable
       out[[var]] <- factor(
         ifelse(yrep == 0, "Absent", "Present"), levels = c("Absent", "Present")
       )
+
     }
   }
+
   # return synthetic dataset with longitude and latitude information
   out |>
     left_join(
       dplyr::select(data, c(xd_id, longitude, latitude)),
       by = "xd_id"
     )
+
 }

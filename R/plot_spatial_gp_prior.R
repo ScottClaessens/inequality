@@ -3,10 +3,13 @@
 #' @returns A ggplot object
 #'
 plot_spatial_gp_prior <- function() {
+
   withr::with_seed(1234, {
+
     # vector of distances between 0 and 1
     n <- 100
     distance <- seq(0, 1, length.out = n)
+
     # simulate draws from the prior for gaussian process kernel function
     ndraws <- 50
     sdgp <- abs(rnorm(ndraws, 0, 1))   # sdgp ~ half-normal(0, 1)
@@ -16,6 +19,7 @@ plot_spatial_gp_prior <- function() {
       covariance[, i] <- sdgp^2 * exp(-(1 / (2 * rho^2)) * distance[i]^2)
     }
     colnames(covariance) <- distance
+
     # plot
     out <-
       covariance |>
@@ -42,13 +46,17 @@ plot_spatial_gp_prior <- function() {
         y = "Covariance"
       ) +
       theme_classic()
+
   })
-  # save and return
+
+  # save
   ggsave(
     plot = out,
     filename = "plots/prior_spatial_gp.pdf",
     height = 4,
     width = 4
   )
+
+  # return
   out
 }

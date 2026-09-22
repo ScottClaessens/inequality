@@ -10,15 +10,18 @@
 #' @returns A ggplot object
 #'
 plot_linguistic_spatial_distance <- function(data, mcc_tree) {
+
   # get linguistic distance matrix (logged and normalised)
   lin_dist_mat <- log(ape::cophenetic.phylo(mcc_tree) + 1)
   diag(lin_dist_mat) <- 0
   lin_dist_mat <- lin_dist_mat / max(lin_dist_mat)
+
   # arrange dataset by tip labels
   data <- data[match(mcc_tree$tip.label, data$xd_id), ]
   if (!identical(data$xd_id, mcc_tree$tip.label)) {
     stop("Data and tree are not aligned.")
   }
+
   # calculate x,y,z coordinates on unit sphere
   data <-
     data |>
@@ -31,21 +34,25 @@ plot_linguistic_spatial_distance <- function(data, mcc_tree) {
       y = cos(xlat) * sin(xlon),
       z = sin(xlat)
     )
+
   # get geographic distance matrix (logged and normalised)
   geo_dist_mat <- log(as.matrix(dist(data[, c("x", "y", "z")])) + 1)
   diag(geo_dist_mat) <- 0
   geo_dist_mat <- geo_dist_mat / max(geo_dist_mat)
+
   # get correlation between lower triangles
   correlation <- cor(
     lin_dist_mat[lower.tri(lin_dist_mat)],
     geo_dist_mat[lower.tri(geo_dist_mat)]
   )
+
   # get distances for plot
   distances <-
     tibble(
       linguistic_distance = lin_dist_mat[lower.tri(lin_dist_mat)],
       geographic_distance = geo_dist_mat[lower.tri(geo_dist_mat)]
     )
+
   # plot distances
   out <-
     ggplot(
@@ -72,8 +79,7 @@ plot_linguistic_spatial_distance <- function(data, mcc_tree) {
       subtitle = "Transformed with log + 1 and normalised between 0-1"
     ) +
     theme_classic()
-  # remove datasets to save space
-  rm(data, distances, mcc_tree)
+
   # save
   ggsave(
     plot = out,
@@ -81,6 +87,12 @@ plot_linguistic_spatial_distance <- function(data, mcc_tree) {
     height = 4.5,
     width = 5
   )
+
+  # cleanup
+  rm(data, distances, mcc_tree, lin_dist_mat,
+     geo_dist_mat, correlation, distances)
+
   # return
   out
+
 }

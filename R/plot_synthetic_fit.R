@@ -13,12 +13,14 @@
 #' @returns A ggplot object
 #'
 plot_synthetic_fit <- function(synthetic_fit, model) {
+
   # get posterior draws
   if (synthetic_fit$nuts_sampler == "stan") {
     post <- as_draws_df(synthetic_fit$fit)
   } else if (synthetic_fit$nuts_sampler == "nutpie") {
     post <- as_draws_df(synthetic_fit$fit$draws_array)
   }
+
   # wrangle posterior draws
   post <-
     post |>
@@ -35,6 +37,7 @@ plot_synthetic_fit <- function(synthetic_fit, model) {
       cols = !c(.chain, .iteration, .draw),
       names_to = "parameter"
     )
+
   # get true parameter values
   true_values <-
     tibble(par = unique(post$parameter)) |>
@@ -50,6 +53,7 @@ plot_synthetic_fit <- function(synthetic_fit, model) {
       parameter = par,
       true_value = true
     )
+
   # plot
   out <-
     ggplot() +
@@ -79,6 +83,7 @@ plot_synthetic_fit <- function(synthetic_fit, model) {
       y = "Parameter"
     ) +
     theme_classic()
+
   # save and return
   ggsave(
     plot = out,
@@ -86,6 +91,10 @@ plot_synthetic_fit <- function(synthetic_fit, model) {
     width = 4,
     height = (3 + length(synthetic_fit$variables)) / 2 # scale height
   )
-  rm(synthetic_fit)
+
+  # cleanup
+  rm(synthetic_fit, model, post, true_values)
+
+  # return
   out
 }
