@@ -85,7 +85,7 @@ list(
   tar_target(plot_coverage, plot_variable_coverage(data)),
 
   # plot world map
-  #tar_target(plot_world, plot_world_map(data)),
+  tar_target(plot_world, plot_world_map(data)),
 
   # plot maximum clade credibility tree
   tar_target(plot_tree, ggtree(mcc_tree, layout = "circular")),
@@ -94,7 +94,7 @@ list(
   tar_target(plot_gdpm, plot_gdpm_algorithm()),
 
   # plot all methods together
-  #tar_target(plot_methods, plot_all_methods(plot_world, plot_tree, plot_gdpm)),
+  tar_target(plot_methods, plot_all_methods(plot_world, plot_tree, plot_gdpm)),
 
   # plot correlation between linguistic and geographic distances
   tar_target(plot_cor, plot_linguistic_spatial_distance(data, mcc_tree)),
@@ -224,7 +224,7 @@ list(
   ),
 
   # generate manuscript
-  #tar_quarto(manuscript, "quarto/manuscript.qmd", quiet = FALSE),
+  tar_quarto(manuscript, "quarto/manuscript.qmd", quiet = FALSE),
 
   # print session info
   tar_target(

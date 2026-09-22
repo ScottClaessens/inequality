@@ -109,7 +109,7 @@ plot_trait_on_tree <- function(data, mcc_tree, variable) {
   )
 
   # cleanup
-  rm(data, mcc_tree, variable, d, tree, taxa_bookends)
+  rm(mcc_tree, d, tree, taxa_bookends)
 
   # return
   out
