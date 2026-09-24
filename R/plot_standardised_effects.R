@@ -13,10 +13,13 @@ plot_standardised_effects <- function(
 
   # internal function to plot standardised effects
   plot_effect <- function(names, values_list, label) {
-    tibble(
-      name = names,
-      value = values_list
-    ) |>
+
+    # get data for plot
+    data <-
+      tibble(
+        name = names,
+        value = values_list
+      ) |>
       rowwise() |>
       mutate(
         name = factor(name, levels = names),
@@ -24,17 +27,31 @@ plot_standardised_effects <- function(
         lower = coda::HPDinterval(coda::mcmc(value), prob = 0.9)[1],
         upper = coda::HPDinterval(coda::mcmc(value), prob = 0.9)[2]
       ) |>
-      unnest(value) |>
-      ggplot(aes(y = fct_rev(name))) +
+      unnest(value)
+
+    # plot
+    ggplot() +
       tidybayes::stat_slab(
-        aes(x = value),
+        data = data,
+        aes(
+          x = value,
+          y = fct_rev(name)
+        ),
         normalize = "none"
       ) +
       geom_pointrange(
+        data = data |>
+          group_by(name) |>
+          summarise(
+            median = unique(median),
+            lower = unique(lower),
+            upper = unique(upper)
+          ),
         aes(
           x = median,
           xmin = lower,
-          xmax = upper
+          xmax = upper,
+          y = fct_rev(name)
         ),
         size = 0.2
       ) +
@@ -55,6 +72,7 @@ plot_standardised_effects <- function(
         axis.title = element_text(size = 8),
         plot.tag = element_text(size = 6, face = "bold")
       )
+
   }
 
   # agriculture model
@@ -217,7 +235,20 @@ plot_standardised_effects <- function(
   )
 
   # cleanup
-  rm(plot_effect, pA, pB, pC, pD, pE)
+  rm(
+    A_std_agriculture,
+    A_std_intergenerational_wealth_transmission,
+    A_std_family,
+    A_std_population_size,
+    A_std_plough_animals,
+    A_std_scalar_stress,
+    A_std_intergroup_conflict,
+    A_std_bridewealth,
+    A_std_craft_specialisation,
+    A_std_food_storage,
+    plot_effect,
+    pA, pB, pC, pD, pE
+  )
 
   # return
   out

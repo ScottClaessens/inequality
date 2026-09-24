@@ -115,9 +115,23 @@ plot_synthetic_scalar_stress|stem|3d6b97fcc87085e4|c90d139d421c4035|d7e377c554e7
 plot_synthetic_population_size|stem|cb4666b165182f20|a600a6b8d11d9835|7228763f7cf45218|-441647125||t20718.4888199601s|s5529424b|5529424|rds|local|vector|||0.614|Dropping 'draws_df' class as required metadata was removed.|
 plot_synthetic_bridewealth|stem|272e6b83a1663eeb|6e3d73a7b7699b7d|b9714fe2fd8862fe|-374067137||t20718.4888815387s|s3926450b|3926450|rds|local|vector|||0.641|Dropping 'draws_df' class as required metadata was removed.|
 plot_synthetic_craft_specialisation|stem|1c2833f3c73d58b1|42aba17d48949faf|8ee7c4adad8a0949|1244063401||t20718.4889422716s|s3926463b|3926463|rds|local|vector|||0.514|Dropping 'draws_df' class as required metadata was removed.|
-plot_std_effects|stem|e421506ea4baa1a0|a235384c267701fa|471971b2d27ee646|-1685882055||t20718.5672223173s|s28009059b|28009059|rds|local|vector|||4.167|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead.. Removed 312 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 164 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 33 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 259 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 144 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 1 row containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 881 rows containing missing values or values outside the scale range (`stat_slabinterval()`).|
 plot_world|stem|97c014ae506fbba9|597e0c0ffcff6594|7daa33a512179678|-1778573588||t20718.748182416s|s775885b|775885|rds|local|vector|||0.059||
 plot_methods|stem|d024bc98b0a6391a|ed909cd554c0cd7f|473458a59d77e993|478310962||t20718.7482156611s|s7778023b|7778023|rds|local|vector|||1.352||
+plot_trait_patrilineality|stem|5372523c3b12438c|27ef79354dd88ebe|57a8ac36f58690ce|935186421||t20718.7581914804s|s16200732b|16200732|rds|local|vector|||1.237|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead. ℹ The deprecated feature was likely used in the ggtree package.   Please report the issue at <https://github.com/YuLab-SMU/ggtree/issues>.|
+plot_trait_class_differentiation|stem|636e29a793dad0da|4a2f605c31bff926|57a8ac36f58690ce|1539337931||t20718.7582373739s|s16209717b|16209717|rds|local|vector|||1.075||
+plot_trait_plough_animals|stem|92c97c8778090136|fd0c8db71e783e62|57a8ac36f58690ce|531421282||t20718.7582841015s|s16203408b|16203408|rds|local|vector|||1.084||
+plot_trait_bridewealth|stem|b0e470f35a48265e|fff879c8590428e3|57a8ac36f58690ce|467350382||t20718.7583310819s|s16203655b|16203655|rds|local|vector|||1.097||
+plot_trait_real_property_unigeniture|stem|3f4e5c769419522d|800d1fd795334f74|57a8ac36f58690ce|-1727256738||t20718.7583763652s|s16206545b|16206545|rds|local|vector|||1.045||
+plot_trait_large_domestic_animals|stem|6bb75b1083956afe|6903cded574c27e2|57a8ac36f58690ce|2013059600||t20718.7584223045s|s16204241b|16204241|rds|local|vector|||1.069||
+plot_trait_sedentism|stem|41ed247a5488d4ad|5e19f3ffa74ec392|57a8ac36f58690ce|-115882885||t20718.7584710767s|s16211150b|16211150|rds|local|vector|||1.144||
+plot_trait_local_headman|stem|50d9d17fa19ef426|1197dfa5c7ac1bba|57a8ac36f58690ce|909372801||t20718.7585167464s|s16205351b|16205351|rds|local|vector|||1.05||
+plot_trait_craft_specialisation|stem|d6075ed1e2053516|4a83da5817b30247|57a8ac36f58690ce|-87578342||t20718.7585629641s|s16204490b|16204490|rds|local|vector|||1.091||
+plot_trait_mean_size_local_community|stem|07ab03c6664cc7c2|3e7a72acece98213|57a8ac36f58690ce|-663139259||t20718.7586098185s|s16211323b|16211323|rds|local|vector|||1.111||
+plot_trait_monogamy|stem|b387a63e52675526|dfbea32b8394b848|57a8ac36f58690ce|-1193622748||t20718.7586580667s|s16203450b|16203450|rds|local|vector|||1.134||
+plot_trait_external_warfare_frequency|stem|bc554b5c41e9dc70|c49c737a1475d6c7|57a8ac36f58690ce|1628923680||t20718.7587039281s|s16204124b|16204124|rds|local|vector|||1.054||
+plot_trait_movable_property_unigeniture|stem|326c51e13afde514|7f31b54843192022|57a8ac36f58690ce|-1094466275||t20718.7587502695s|s16206328b|16206328|rds|local|vector|||1.1||
+plot_trait_agriculture|stem|2bc2d8c5ee484d5b|0a40aeb2eb241b59|57a8ac36f58690ce|1972820836||t20718.7587972957s|s16208567b|16208567|rds|local|vector|||1.114||
+plot_trait_food_storage|stem|7b3c23f640fdf34d|163f6592bcf0aae9|57a8ac36f58690ce|-862456600||t20718.758846104s|s16204190b|16204190|rds|local|vector|||1.144||
 wrangle_sccs|function|7c04b41b2cc92487
 calculate_phylogenetic_signal|function|26fe6106ad9643ba
 plot_world_map|function|8bf09b9b701a5479
@@ -134,7 +148,7 @@ subsample_data|function|03488ab8c4868c39
 plot_gdpm_algorithm|function|ff5c69c7d5111b70
 plot_spatial_gp_prior|function|11a777ba75897eeb
 print_model_summary|function|175d7507c9c7dbb7
-plot_standardised_effects|function|26d83df7c70f9688
+plot_standardised_effects|function|7cde45e72e4ef26e
 plot_trait_on_tree|function|432fd6c8e6cc9ca7
 create_table_variables|function|a74030a1facf2bcb
 load_dplace_data|function|5f7e98896a3e7067
@@ -144,19 +158,5 @@ fix_parameters|function|42597dab9243b8e0
 plot_prior_predictive_check|function|27395fc47c638317
 fit_model|function|c8caa89052c490cc
 generate_synthetic_data|function|fd688ef4f35a89b8
-plot_trait_patrilineality|stem|5372523c3b12438c|27ef79354dd88ebe|57a8ac36f58690ce|935186421||t20718.7581914804s|s16200732b|16200732|rds|local|vector|||1.237|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead. ℹ The deprecated feature was likely used in the ggtree package.   Please report the issue at <https://github.com/YuLab-SMU/ggtree/issues>.|
-plot_trait_class_differentiation|stem|636e29a793dad0da|4a2f605c31bff926|57a8ac36f58690ce|1539337931||t20718.7582373739s|s16209717b|16209717|rds|local|vector|||1.075||
-plot_trait_plough_animals|stem|92c97c8778090136|fd0c8db71e783e62|57a8ac36f58690ce|531421282||t20718.7582841015s|s16203408b|16203408|rds|local|vector|||1.084||
-plot_trait_bridewealth|stem|b0e470f35a48265e|fff879c8590428e3|57a8ac36f58690ce|467350382||t20718.7583310819s|s16203655b|16203655|rds|local|vector|||1.097||
-plot_trait_real_property_unigeniture|stem|3f4e5c769419522d|800d1fd795334f74|57a8ac36f58690ce|-1727256738||t20718.7583763652s|s16206545b|16206545|rds|local|vector|||1.045||
-plot_trait_large_domestic_animals|stem|6bb75b1083956afe|6903cded574c27e2|57a8ac36f58690ce|2013059600||t20718.7584223045s|s16204241b|16204241|rds|local|vector|||1.069||
-plot_trait_sedentism|stem|41ed247a5488d4ad|5e19f3ffa74ec392|57a8ac36f58690ce|-115882885||t20718.7584710767s|s16211150b|16211150|rds|local|vector|||1.144||
-plot_trait_local_headman|stem|50d9d17fa19ef426|1197dfa5c7ac1bba|57a8ac36f58690ce|909372801||t20718.7585167464s|s16205351b|16205351|rds|local|vector|||1.05||
-plot_trait_craft_specialisation|stem|d6075ed1e2053516|4a83da5817b30247|57a8ac36f58690ce|-87578342||t20718.7585629641s|s16204490b|16204490|rds|local|vector|||1.091||
-plot_trait_mean_size_local_community|stem|07ab03c6664cc7c2|3e7a72acece98213|57a8ac36f58690ce|-663139259||t20718.7586098185s|s16211323b|16211323|rds|local|vector|||1.111||
-plot_trait_monogamy|stem|b387a63e52675526|dfbea32b8394b848|57a8ac36f58690ce|-1193622748||t20718.7586580667s|s16203450b|16203450|rds|local|vector|||1.134||
-plot_trait_external_warfare_frequency|stem|bc554b5c41e9dc70|c49c737a1475d6c7|57a8ac36f58690ce|1628923680||t20718.7587039281s|s16204124b|16204124|rds|local|vector|||1.054||
-plot_trait_movable_property_unigeniture|stem|326c51e13afde514|7f31b54843192022|57a8ac36f58690ce|-1094466275||t20718.7587502695s|s16206328b|16206328|rds|local|vector|||1.1||
-plot_trait_agriculture|stem|2bc2d8c5ee484d5b|0a40aeb2eb241b59|57a8ac36f58690ce|1972820836||t20718.7587972957s|s16208567b|16208567|rds|local|vector|||1.114||
-plot_trait_food_storage|stem|7b3c23f640fdf34d|163f6592bcf0aae9|57a8ac36f58690ce|-862456600||t20718.758846104s|s16204190b|16204190|rds|local|vector|||1.144||
-manuscript|stem|55533e07b81e802b|ad6a377a1310aa1e|764a1e39ba344076|-1793997187|quarto/manuscript.docx*quarto/manuscript.pdf*quarto/manuscript.qmd*quarto/supplement.qmd|t20718.7607960841s|s6358379b|6358379|file|local|vector|||134.12||
+plot_std_effects|stem|82d4402d9d7b193e|a235384c267701fa|150b523e9c90a6a0|-1685882055||t20720.6749079254s|s27590504b|27590504|rds|local|vector|||1.727|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead.. Removed 312 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 164 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 33 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 259 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 144 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 1 row containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 881 rows containing missing values or values outside the scale range (`stat_slabinterval()`).|
+manuscript|stem|7459d59d835244e0|0f703634969f81ca|500b1b4625dd33e3|-1793997187|quarto/manuscript.docx*quarto/manuscript.pdf*quarto/manuscript.qmd*quarto/supplement.qmd|t20720.6768903844s|s6650201b|6650201|file|local|vector|||137.559||
