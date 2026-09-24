@@ -2,6 +2,7 @@
 #'
 #' @param data Tibble of D-PLACE data
 #' @param mcc_tree Maximum clade credibility tree of D-PLACE societies
+#' @param variable Variable from dataset to plot
 #'
 #' @returns A ggplot object
 #'

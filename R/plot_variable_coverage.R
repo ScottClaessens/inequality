@@ -10,6 +10,8 @@
 plot_variable_coverage <- function(data) {
 
   # counts of observed data for D-PLACE variables
+  data <- dplyr::select(data, !c(real_property_inheritance,
+                                 movable_property_inheritance))
   counts <- apply(data, 2, function(x) sum(!is.na(x)))[-c(1:9)]
   names(counts) <- str_to_sentence(str_replace_all(names(counts), "_", " "))
 

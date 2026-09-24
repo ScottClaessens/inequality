@@ -6,7 +6,7 @@
 #' linked to the phylogenetic tree.
 #'
 #' @details The dataset produced by this function is a tibble with 1258
-#'   observations and 24 variables:
+#'   observations and 26 variables:
 #' \describe{
 #'  \item{soc_id}{Character, society ID}
 #'  \item{xd_id}{Character, cross-dataset ID (see
@@ -53,6 +53,12 @@
 #'    of external warfare (attacking); recoded from SCCS892}
 #'  \item{food_storage}{Ordered factor (five levels), extent of food storage;
 #'    coded from SCCS20}
+#'  \item{real_property_inheritance}{Ordered factor (three levels),
+#'    concentration of real property inheritance (no inheritance, equal
+#'    inheritance, sole inheritance); coded from EA075}
+#'  \item{movable_property_inheritance}{Ordered factor (three levels),
+#'    concentration of movable property inheritance (no inheritance, equal
+#'    inheritance, sole inheritance); coded from EA077}
 #' }
 #'
 #' @param dplace_data_url URL to access cldf/data.csv from D-PLACE v3.3.0
@@ -67,18 +73,18 @@
 #'
 load_dplace_data <- function(dplace_data_url, dplace_societies_url,
                              glottolog_languages_url, mcc_tree) {
-  
+
   # load csv files
   data <- read.csv(file = dplace_data_url)
   societies <- read.csv(file = dplace_societies_url)
   languages <- read.csv(file = glottolog_languages_url)
-  
+
   # wrangle ethnographic atlas data (n = 1290)
   ea <- wrangle_ea(data, societies)
-  
+
   # wrangle sccs data (n = 186)
   sccs <- wrangle_sccs(data, societies)
-  
+
   # join datasets
   left_join(ea, sccs, by = "xd_id") |>
     # filter to societies in phylogenetic tree (n = 1258)
@@ -94,7 +100,9 @@ load_dplace_data <- function(dplace_data_url, dplace_societies_url,
       by = c("Family_ID" = "Glottocode")
     ) |>
     dplyr::select(soc_id:glottocode, Name, region:food_storage) |>
-    rename(language_family = Name)
+    rename(language_family = Name) |>
+    dplyr::relocate(c(real_property_inheritance, movable_property_inheritance),
+                    .after = last_col())
 
 }
 
@@ -109,7 +117,7 @@ load_dplace_data <- function(dplace_data_url, dplace_societies_url,
 #' @returns A tibble
 #'
 wrangle_ea <- function(data, societies) {
-  
+
   # ordered levels
   levels_EA028 <- c("No agriculture", "Casual", "Extensive/shifting",
                     "Horticulture", "Intensive", "Intensive irrigated")
@@ -121,7 +129,11 @@ wrangle_ea <- function(data, societies) {
   levels_EA066 <- c("Absence of distinctions", "Wealth distinctions",
                     "Elite stratification", "Dual stratification",
                     "Complex stratification")
-  
+  levels_EA075 <- c("No inher. of real property", "Equally distributed",
+                    "Unigeniture")
+  levels_EA077 <- c("No inher. of mov. property", "Equally distributed",
+                    "Unigeniture")
+
   # absence codes
   absent_EA006 <- c("Gift exchange", "Woman exchange", "Insignificant", "Dowry")
   absent_EA009 <- c("Limited polygyny", "Polygyny, sororal cohabit",
@@ -137,7 +149,7 @@ wrangle_ea <- function(data, societies) {
   absent_EA077 <- c("No inher. of mov. property", "Equally distributed")
   absent_craft <- c("Junior age", "Senior age", "Industrial", "Most adults",
                     "Activity is absent")
-  
+
   # function to code absent/present values
   code_absence_presence <- function(variable, absent_values) {
     ifelse(
@@ -146,7 +158,7 @@ wrangle_ea <- function(data, societies) {
       )
     )
   }
-  
+
   # wrangle ethnographic atlas data
   data |>
     # filter to ethnographic atlas data only
@@ -166,6 +178,8 @@ wrangle_ea <- function(data, societies) {
     ) |>
     # retain variables
     transmute(
+
+      # metadata
       soc_id                       = Soc_ID,
       xd_id                        = xd_id,
       society                      = Name,
@@ -174,6 +188,8 @@ wrangle_ea <- function(data, societies) {
       focal_year                   = main_focal_year,
       latitude                     = Latitude,
       longitude                    = Longitude,
+
+      # preregistered variables
       class_differentiation        = ordered(EA066, levels = levels_EA066),
       agriculture                  = ordered(EA028, levels = levels_EA028),
       large_domestic_animals       = code_absence_presence(EA040, absent_EA040),
@@ -191,7 +207,26 @@ wrangle_ea <- function(data, societies) {
       craft_leather_working        = code_absence_presence(EA057, absent_craft),
       craft_pottery_making         = code_absence_presence(EA058, absent_craft),
       craft_boat_building          = code_absence_presence(EA059, absent_craft),
-      craft_house_construction     = code_absence_presence(EA060, absent_craft)
+      craft_house_construction     = code_absence_presence(EA060, absent_craft),
+
+      # non-preregistered variables
+      real_property_inheritance = ordered(
+        ifelse(
+          EA075 %in% c("Best qualified", "Primogeniture", "Ultimogeniture"),
+          "Unigeniture",
+          EA075
+        ),
+        levels = levels_EA075
+      ),
+      movable_property_inheritance = ordered(
+        ifelse(
+          EA077 %in% c("Best qualified", "Primogeniture", "Ultimogeniture"),
+          "Unigeniture",
+          EA077
+        ),
+        levels = levels_EA077
+      )
+
     ) |>
     # calculate craft specialisation variable
     rowwise() |>
@@ -232,12 +267,12 @@ wrangle_ea <- function(data, societies) {
 #' @returns A tibble
 #'
 wrangle_sccs <- function(data, societies) {
-  
+
   # ordered levels
   levels_SCCS892 <- c("Infrequent", "Frequent", "Continual")
   levels_SCCS20 <- c("None", "Individual households", "Communal facilities",
                      "Political agent controlled", "Economic agent controlled")
-  
+
   # wrangle standard cross-cultural sample data
   data |>
     # filter to sccs data only

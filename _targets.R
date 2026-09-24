@@ -8,26 +8,26 @@ tar_option_set(
   packages = c("ape", "brms", "cmdstanr", "coda", "coevolve", "cowplot",
                "ggdist", "ggtree", "gt", "patchwork", "phangorn", "phytools",
                "posterior", "reticulate", "rnaturalearth", "sf", "tidyverse",
-               "withr")#,
-  #garbage_collection = 1,
-  #controller = crew_controller_slurm(
-  #  workers = 10,
-  #  options_metrics = crew_options_metrics(
-  #    path = "/dev/stdout",
-  #    seconds_interval = 60
-  #  ),
-  #  options_cluster = crew_options_slurm(
-  #    script_lines = c(
-  #      "#SBATCH --account=arch039044",
-  #      "module load languages/R/4.5.1"
-  #    ),
-  #    memory_gigabytes_required = 100,
-  #    cpus_per_task = 8,
-  #    time_minutes = 10 * 24 * 60,
-  #    log_output = "crew_log_%A.out",
-  #    log_error = "crew_log_%A.err"
-  #  )
-  #)
+               "withr"),
+  garbage_collection = 1,
+  controller = crew_controller_slurm(
+    workers = 10,
+    options_metrics = crew_options_metrics(
+      path = "/dev/stdout",
+      seconds_interval = 60
+    ),
+    options_cluster = crew_options_slurm(
+      script_lines = c(
+        "#SBATCH --account=arch039044",
+        "module load languages/R/4.5.1"
+      ),
+      memory_gigabytes_required = 100,
+      cpus_per_task = 8,
+      time_minutes = 10 * 24 * 60,
+      log_output = "crew_log_%A.out",
+      log_error = "crew_log_%A.err"
+    )
+  )
 )
 tar_source()
 
@@ -155,7 +155,7 @@ list(
   # create subsample of dummy data for prior predictive check
   tar_target(data_subsample, subsample_data(data)),
 
-  # loop over causal models
+  # loop over preregistered causal models
   tar_map(
     values = tibble(
       model = c(
@@ -221,6 +221,33 @@ list(
       A_std_craft_specialisation,
       A_std_food_storage
     )
+  ),
+
+  # loop over exploratory models
+  tar_map(
+    values = tibble(
+      model = c("intergenerational_wealth_transmission2", "plough_animals2")
+    ),
+    # fit model to observed data
+    tar_target(
+      fit,
+      fit_model(
+        data, mcc_tree, model,
+        iter_warmup = 3000, iter_sampling = 1500,
+        chains = 8, cores = 8L,
+        nuts_sampler = "nutpie"
+      )
+    ),
+    # print model summary to file
+    tar_target(
+      summary,
+      print_model_summary(
+        fit,
+        paste0("outputs/summary_", model, ".txt")
+      )
+    ),
+    # extract standardised selection matrix
+    tar_target(A_std, extract_standardised(fit))
   ),
 
   # generate manuscript

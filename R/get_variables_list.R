@@ -6,8 +6,9 @@
 #' @param model String of length one. Causal model. Must be equal to one of the
 #'   following: "agriculture", "intergenerational_wealth_transmission",
 #'   "family", "population_size", "plough_animals", "scalar_stress",
-#'   "intergroup_conflict", "bridewealth", "craft_specialisation", or
-#'   "food_storage"
+#'   "intergroup_conflict", "bridewealth", "craft_specialisation",
+#'   "food_storage", "intergenerational_wealth_transmission2", or
+#'   "plough_animals2"
 #'
 #' @returns List
 #'

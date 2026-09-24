@@ -12,7 +12,6 @@ tree|stem|8e49bd8b91a9d1d6|c77021f1bbaff69b|4d480221af427e94|437279712||t20718.1
 phylogenetic_signal_model|stem|e85bcafc3f838692|804aea6e4ee99aab|91a4a466485913f5|574656795||t20672.8528125s|s17824b|17824|rds|local|vector|||31.137||
 tree_ids|stem|c8d99ba4f65d3dc1|bb199b886fdd3ecb|6e521ad2d4809cd4|1609238890||t20718.0314483657s|s85b|85|rds|local|vector|||0||
 mcc_tree|stem|cea89e7500b0dd56|c47da3594f89d0e8|6e521ad2d4809cd4|-2069454262||t20717.9803894667s|s33470b|33470|rds|local|vector|||36.323||
-data|stem|1f09dfe3e9705b09|b9cd236e90084022|f45119163a068e7c|33550471||t20711.3752430556s|s37993b|37993|rds|local|vector|||12.69||
 plot_tree|stem|2296ba3c877e5cea|fd50c2d27dc55c0b|ed5f2d00dc8edf6a|-120768443||t20718.0742080321s|s949064b|949064|rds|local|vector|||0.374||
 fit_intergenerational_wealth_transmission|stem|1a89e8a870c40ae7|8dc52bcf2f52c55c|2b0dcfc10ad0b899|-1462613787||t20718.0124786537s|s3549676939b|3549676939|rds|local|vector|||203459.159||
 synthetic_data_family|stem|c870746660b923a2|97d0b36c1f9fd4ec|5e2a766b343b6fa4|-404474078||t20711.381087963s|s10359b|10359|rds|local|vector|||237.146||
@@ -92,9 +91,6 @@ synthetic_fit_craft_specialisation|stem|4ea20d74c348006e|a56bdd0c6961c575|95c388
 synthetic_fit_population_size|stem|7b084a513cc923b8|3943ba5183c7c341|105555d2182b1499|931312762||t20705.7424884259s|s2071251264b|2071251264|rds|local|vector|||110718.799||
 phylogenetic_signal|stem|f939421b85481be7|139a42984378ca1f|df5eeda6511b909c|1057849121||t20718.1672608925s|s1801268b|1801268|rds|local|vector|||0.002||
 table_variables|stem|eba11125e4518283|30d4d849086ca7f1|9a7e619bafc1f274|-867459564||t20718.0497254412s|s1366b|1366|rds|local|vector|||0.2||
-plot_cor|stem|665654f5ee87b69d|32c60c4e8375875e|06132f23e0cd5a85|854672363||t20718.4864708897s|s18625932b|18625932|rds|local|vector|||1.469|object 'distances' not found|
-plot_coverage|stem|6348a75dba3d779b|3c337ec3a4bb18ce|f662946f75de09ac|249145699||t20718.4871470287s|s419090b|419090|rds|local|vector|||0.094||
-plot_sample|stem|ac4efeec8a23c858|26a2963c9bbcc853|386178a07b7a33e5|-1970076201||t20718.4871870974s|s7669668b|7669668|rds|local|vector|||1.179||
 plot_synthetic_family|stem|0dadb60c137dbf7d|ca5832730ff6faf6|199b2d604ecc947f|-1103233302||t20718.4875445114s|s7312004b|7312004|rds|local|vector|||1.1|Dropping 'draws_df' class as required metadata was removed.|
 plot_synthetic_intergenerational_wealth_transmission|stem|d54a2d1ece59410e|01d26f5c7025c06f|14d9e3832dacff8b|-1185349958||t20718.4877075899s|s10519390b|10519390|rds|local|vector|||1.902|Dropping 'draws_df' class as required metadata was removed.|
 plot_synthetic_intergroup_conflict|stem|0ff94e92e6dce3b2|eecf901175d85a8e|84e3b3c0f21c7634|-2049338747||t20718.4878026806s|s5823839b|5823839|rds|local|vector|||0.551|Dropping 'draws_df' class as required metadata was removed.|
@@ -115,8 +111,6 @@ plot_synthetic_scalar_stress|stem|3d6b97fcc87085e4|c90d139d421c4035|d7e377c554e7
 plot_synthetic_population_size|stem|cb4666b165182f20|a600a6b8d11d9835|7228763f7cf45218|-441647125||t20718.4888199601s|s5529424b|5529424|rds|local|vector|||0.614|Dropping 'draws_df' class as required metadata was removed.|
 plot_synthetic_bridewealth|stem|272e6b83a1663eeb|6e3d73a7b7699b7d|b9714fe2fd8862fe|-374067137||t20718.4888815387s|s3926450b|3926450|rds|local|vector|||0.641|Dropping 'draws_df' class as required metadata was removed.|
 plot_synthetic_craft_specialisation|stem|1c2833f3c73d58b1|42aba17d48949faf|8ee7c4adad8a0949|1244063401||t20718.4889422716s|s3926463b|3926463|rds|local|vector|||0.514|Dropping 'draws_df' class as required metadata was removed.|
-plot_world|stem|97c014ae506fbba9|597e0c0ffcff6594|7daa33a512179678|-1778573588||t20718.748182416s|s775885b|775885|rds|local|vector|||0.059||
-plot_methods|stem|d024bc98b0a6391a|ed909cd554c0cd7f|473458a59d77e993|478310962||t20718.7482156611s|s7778023b|7778023|rds|local|vector|||1.352||
 plot_trait_patrilineality|stem|5372523c3b12438c|27ef79354dd88ebe|57a8ac36f58690ce|935186421||t20718.7581914804s|s16200732b|16200732|rds|local|vector|||1.237|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead. ℹ The deprecated feature was likely used in the ggtree package.   Please report the issue at <https://github.com/YuLab-SMU/ggtree/issues>.|
 plot_trait_class_differentiation|stem|636e29a793dad0da|4a2f605c31bff926|57a8ac36f58690ce|1539337931||t20718.7582373739s|s16209717b|16209717|rds|local|vector|||1.075||
 plot_trait_plough_animals|stem|92c97c8778090136|fd0c8db71e783e62|57a8ac36f58690ce|531421282||t20718.7582841015s|s16203408b|16203408|rds|local|vector|||1.084||
@@ -132,13 +126,21 @@ plot_trait_external_warfare_frequency|stem|bc554b5c41e9dc70|c49c737a1475d6c7|57a
 plot_trait_movable_property_unigeniture|stem|326c51e13afde514|7f31b54843192022|57a8ac36f58690ce|-1094466275||t20718.7587502695s|s16206328b|16206328|rds|local|vector|||1.1||
 plot_trait_agriculture|stem|2bc2d8c5ee484d5b|0a40aeb2eb241b59|57a8ac36f58690ce|1972820836||t20718.7587972957s|s16208567b|16208567|rds|local|vector|||1.114||
 plot_trait_food_storage|stem|7b3c23f640fdf34d|163f6592bcf0aae9|57a8ac36f58690ce|-862456600||t20718.758846104s|s16204190b|16204190|rds|local|vector|||1.144||
+plot_std_effects|stem|82d4402d9d7b193e|a235384c267701fa|150b523e9c90a6a0|-1685882055||t20720.6749079254s|s27590504b|27590504|rds|local|vector|||1.727|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead.. Removed 312 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 164 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 33 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 259 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 144 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 1 row containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 881 rows containing missing values or values outside the scale range (`stat_slabinterval()`).|
+manuscript|stem|a91a531a13c8d792|0f703634969f81ca|500b1b4625dd33e3|-1793997187|quarto/manuscript.docx*quarto/manuscript.pdf*quarto/manuscript.qmd*quarto/supplement.qmd|t20720.7264731444s|s6651838b|6651838|file|local|vector|||137.126||
+data|stem|d67e8948e304ac7e|b9cd236e90084022|0e52e3136276c1a5|33550471||t20720.7504752412s|s39260b|39260|rds|local|vector|||16.895||
+plot_sample|stem|7db05e4edaa4d55c|26a2963c9bbcc853|0bb8e444814f237f|-1970076201||t20720.7514073463s|s7725521b|7725521|rds|local|vector|||0.795||
+plot_coverage|stem|2e5e9c1485956e96|3c337ec3a4bb18ce|c04b4313cfbb471f|249145699||t20720.7526499258s|s417836b|417836|rds|local|vector|||0.112||
+plot_world|stem|06541ac7fdbbfeb5|597e0c0ffcff6594|bc557f0560230d0e|-1778573588||t20720.7527244376s|s782302b|782302|rds|local|vector|||0.036||
+plot_methods|stem|870c5311cb5826a6|ed909cd554c0cd7f|2a21f9696a92e900|478310962||t20720.7529360776s|s7783724b|7783724|rds|local|vector|||1.046||
+plot_cor|stem|665654f5ee87b69d|32c60c4e8375875e|aa98c545d51fc0c6|854672363||t20720.7530185863s|s18625932b|18625932|rds|local|vector|||0.76|object 'distances' not found|
 wrangle_sccs|function|7c04b41b2cc92487
 calculate_phylogenetic_signal|function|26fe6106ad9643ba
 plot_world_map|function|8bf09b9b701a5479
 plot_all_methods|function|0fd7f5f791c94dee
-plot_variable_coverage|function|1737c7cc64743ba3
+plot_variable_coverage|function|78244f63aa06069e
 plot_sample_characteristics|function|2b63d1e8066dadd1
-wrangle_ea|function|d58c877b1344eb11
+wrangle_ea|function|a803499ce7cd4ee9
 load_tree|function|36feda55b1e32dd5
 get_effects_matrix|function|281e9d2a4eb723c7
 extract_standardised|function|93272dbd59e03d1c
@@ -151,12 +153,10 @@ print_model_summary|function|175d7507c9c7dbb7
 plot_standardised_effects|function|7cde45e72e4ef26e
 plot_trait_on_tree|function|432fd6c8e6cc9ca7
 create_table_variables|function|a74030a1facf2bcb
-load_dplace_data|function|5f7e98896a3e7067
+load_dplace_data|function|057fc5e8b633380a
 get_cutpoints_list|function|1904fea920bd0028
 get_variables_list|function|fc883381446834d1
 fix_parameters|function|42597dab9243b8e0
 plot_prior_predictive_check|function|27395fc47c638317
 fit_model|function|c8caa89052c490cc
 generate_synthetic_data|function|fd688ef4f35a89b8
-plot_std_effects|stem|82d4402d9d7b193e|a235384c267701fa|150b523e9c90a6a0|-1685882055||t20720.6749079254s|s27590504b|27590504|rds|local|vector|||1.727|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead.. Removed 312 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 164 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 33 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 259 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 144 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 1 row containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 881 rows containing missing values or values outside the scale range (`stat_slabinterval()`).|
-manuscript|stem|7459d59d835244e0|0f703634969f81ca|500b1b4625dd33e3|-1793997187|quarto/manuscript.docx*quarto/manuscript.pdf*quarto/manuscript.qmd*quarto/supplement.qmd|t20720.6768903844s|s6650201b|6650201|file|local|vector|||137.559||

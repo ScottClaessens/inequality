@@ -6,8 +6,9 @@
 #' @param model String of length one. Causal model. Must be equal to one of the
 #'   following: "agriculture", "intergenerational_wealth_transmission",
 #'   "family", "population_size", "plough_animals", "scalar_stress",
-#'   "intergroup_conflict", "bridewealth", "craft_specialisation", or
-#'   "food_storage"
+#'   "intergroup_conflict", "bridewealth", "craft_specialisation",
+#'   "food_storage", "intergenerational_wealth_transmission2", or
+#'   "plough_animals2"
 #'
 #' @returns List
 #'
@@ -29,7 +30,9 @@ get_cutpoints_list <- function(model) {
     sedentism = c(-2.61, -1.23, -0.82, -0.76, -0.22, 0.15, 3.60),
     craft_specialisation = NULL,
     external_warfare_frequency = c(-0.33, 1.44),
-    food_storage = c(-1.39, 2.30, 2.92, 3.34)
+    food_storage = c(-1.39, 2.30, 2.92, 3.34),
+    real_property_inheritance = c(-1.03, 0.57),
+    movable_property_inheritance = c(-1.74, 0.69)
   )
 
   # return

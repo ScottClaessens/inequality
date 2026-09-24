@@ -6,8 +6,9 @@
 #' @param model String of length one. Causal model. Must be equal to one of the
 #'   following: "agriculture", "intergenerational_wealth_transmission",
 #'   "family", "population_size", "plough_animals", "scalar_stress",
-#'   "intergroup_conflict", "bridewealth", "craft_specialisation", or
-#'   "food_storage"
+#'   "intergroup_conflict", "bridewealth", "craft_specialisation",
+#'   "food_storage", "intergenerational_wealth_transmission2", or
+#'   "plough_animals2"
 #'
 #' @returns Matrix of logical values
 #'
@@ -91,6 +92,26 @@ get_effects_matrix <- function(model) {
                         FALSE, TRUE, TRUE,
                         FALSE, TRUE, TRUE)
 
+  } else if (model == "intergenerational_wealth_transmission2") {
+
+    variables <- c("class_differentiation", "agriculture",
+                   "large_domestic_animals", "real_property_inheritance",
+                   "movable_property_inheritance")
+    effects_matrix <- c(TRUE, FALSE, FALSE, TRUE, TRUE,
+                        FALSE, TRUE, FALSE, FALSE, FALSE,
+                        FALSE, FALSE, TRUE, FALSE, FALSE,
+                        FALSE, TRUE, TRUE, TRUE, FALSE,
+                        FALSE, TRUE, TRUE, FALSE, TRUE)
+
+  } else if (model == "plough_animals2") {
+
+    variables <- c("class_differentiation", "agriculture",
+                   "plough_animals", "real_property_inheritance")
+    effects_matrix <- c(TRUE, FALSE, FALSE, TRUE,
+                        FALSE, TRUE, FALSE, FALSE,
+                        FALSE, TRUE, TRUE, FALSE,
+                        FALSE, FALSE, TRUE, TRUE)
+
   } else {
 
     stop("Argument 'model' not recognised.")
@@ -107,4 +128,3 @@ get_effects_matrix <- function(model) {
   )
 
 }
-
