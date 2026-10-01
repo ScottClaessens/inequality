@@ -177,9 +177,8 @@ list(
       synthetic_fit,
       fit_model(
         synthetic_data, mcc_tree, model,
-        iter_warmup = 3000, iter_sampling = 1500,
-        chains = 8, cores = 8L,
-        nuts_sampler = "nutpie"
+        iter_warmup = 2000, iter_sampling = 500,
+        chains = 8, cores = 8L
       )
     ),
     # plot synthetic results
@@ -188,10 +187,9 @@ list(
     tar_target(
       fit,
       fit_model(
-        data, mcc_tree, model,
-        iter_warmup = 3000, iter_sampling = 1500,
-        chains = 8, cores = 8L,
-        nuts_sampler = "nutpie"
+        data, tree[tree_ids], model,
+        iter_warmup = 2000, iter_sampling = 500,
+        chains = 8, cores = 8L
       )
     ),
     # print model summary to file
@@ -233,9 +231,8 @@ list(
       fit,
       fit_model(
         data, mcc_tree, model,
-        iter_warmup = 3000, iter_sampling = 1500,
-        chains = 8, cores = 8L,
-        nuts_sampler = "nutpie"
+        iter_warmup = 2000, iter_sampling = 500,
+        chains = 8, cores = 8L
       )
     ),
     # print model summary to file
