@@ -250,6 +250,15 @@ list(
     tar_target(A_std, extract_standardised(fit))
   ),
 
+  # plot standardised effects from exploratory models
+  tar_target(
+    plot_std_effects_exploratory,
+    plot_standardised_effects_exploratory(
+      A_std_intergenerational_wealth_transmission2,
+      A_std_plough_animals2
+    )
+  ),
+
   # generate manuscript
   #tar_quarto(manuscript, "quarto/manuscript.qmd", quiet = FALSE),
 

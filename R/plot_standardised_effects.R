@@ -1,3 +1,23 @@
+#' Plot standardised effects from pre-registered models
+#'
+#' @param A_std_agriculture Standardised effects from the agriculture model
+#' @param A_std_intergenerational_wealth_transmission Standardised effects from
+#'   the intergenerational wealth transmission model
+#' @param A_std_family Standardised effects from the family model
+#' @param A_std_population_size Standardised effects from the population size
+#'   model
+#' @param A_std_plough_animals Standardised effects from the plough animals
+#'   model
+#' @param A_std_scalar_stress Standardised effects from the scalar stress model
+#' @param A_std_intergroup_conflict Standardised effects from the intergroup
+#'   conflict model
+#' @param A_std_bridewealth Standardised effects from the bridewealth model
+#' @param A_std_craft_specialisation Standardised effects from the craft
+#'   specialisation model
+#' @param A_std_food_storage Standardised effects from the food storage model
+#'
+#' @returns A patchwork of ggplots
+#'
 plot_standardised_effects <- function(
     A_std_agriculture,
     A_std_intergenerational_wealth_transmission,
