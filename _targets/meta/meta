@@ -4,14 +4,11 @@ dplace_societies_url|stem|c3caf7f2ccd75161|aee14d29acec2be0|2c530c1562a7fbd1|173
 .Random.seed|object|ec8aa6caec9458b8
 glottolog_languages_url|stem|f18a0e38130eafea|bbd54384d0ebe985|2c530c1562a7fbd1|1513706872|https://raw.githubusercontent.com/glottolog/glottolog-cldf/072ca0d0410039fb8b779be8fc165bac575d2cda/cldf/languages.csv|t20699.3289641318s||0|url|local|vector|||13.456||
 sessionInfo|stem|2959311d4a007915|6f338939dd102f8f|2c530c1562a7fbd1|1164010252||t20717.940270787s|s53b|53|rds|local|vector|||0.036||
-tree_file|stem|097e0a16f1431efe|1de9ec4cb0b83efe|2c530c1562a7fbd1|-419834672|data/tree/dplace.nxs|t20557.9999421296s|s55689082b|55689082|file|local|vector|||15.851|package 'stringr' was built under R version 4.5.2|
 file_stan|stem|93ec70372d4a0771|ada09a347cdb2d7a|2c530c1562a7fbd1|739539972|stan/phylogenetic_signal.stan|t20621.6182360506s|s1320b|1320|file|local|vector|||2.783||
 plot_spatial_prior|stem|67c5ee2614f2ae53|73182a2d47786d20|31f041d10b99cc3e|-1566623752||t20718.122005379s|s509044b|509044|rds|local|vector|||0.593||
 plot_gdpm|stem|934e3f7f92eb3b06|e1fe878bf61ed907|7a614baa99810060|-258833698||t20672.7971759259s|s1735234b|1735234|rds|local|vector|||13.621|package 'stringr' was built under R version 4.5.2|
-tree|stem|8e49bd8b91a9d1d6|c77021f1bbaff69b|4d480221af427e94|437279712||t20718.1465994619s|s26891456b|26891456|rds|local|vector|||15.028||
 phylogenetic_signal_model|stem|e85bcafc3f838692|804aea6e4ee99aab|91a4a466485913f5|574656795||t20672.8528125s|s17824b|17824|rds|local|vector|||31.137||
 tree_ids|stem|c8d99ba4f65d3dc1|bb199b886fdd3ecb|6e521ad2d4809cd4|1609238890||t20718.0314483657s|s85b|85|rds|local|vector|||0||
-mcc_tree|stem|cea89e7500b0dd56|c47da3594f89d0e8|6e521ad2d4809cd4|-2069454262||t20717.9803894667s|s33470b|33470|rds|local|vector|||36.323||
 plot_tree|stem|2296ba3c877e5cea|fd50c2d27dc55c0b|ed5f2d00dc8edf6a|-120768443||t20718.0742080321s|s949064b|949064|rds|local|vector|||0.374||
 fit_intergenerational_wealth_transmission|stem|1a89e8a870c40ae7|8dc52bcf2f52c55c|2b0dcfc10ad0b899|-1462613787||t20718.0124786537s|s3549676939b|3549676939|rds|local|vector|||203459.159||
 synthetic_data_family|stem|c870746660b923a2|97d0b36c1f9fd4ec|5e2a766b343b6fa4|-404474078||t20711.381087963s|s10359b|10359|rds|local|vector|||237.146||
@@ -128,12 +125,15 @@ plot_trait_agriculture|stem|2bc2d8c5ee484d5b|0a40aeb2eb241b59|57a8ac36f58690ce|1
 plot_trait_food_storage|stem|7b3c23f640fdf34d|163f6592bcf0aae9|57a8ac36f58690ce|-862456600||t20718.758846104s|s16204190b|16204190|rds|local|vector|||1.144||
 plot_std_effects|stem|82d4402d9d7b193e|a235384c267701fa|150b523e9c90a6a0|-1685882055||t20720.6749079254s|s27590504b|27590504|rds|local|vector|||1.727|Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0. ℹ Please use `linewidth` instead.. Removed 312 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 164 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 33 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 259 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 144 rows containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 1 row containing missing values or values outside the scale range (`stat_slabinterval()`).. Removed 881 rows containing missing values or values outside the scale range (`stat_slabinterval()`).|
 manuscript|stem|a91a531a13c8d792|0f703634969f81ca|500b1b4625dd33e3|-1793997187|quarto/manuscript.docx*quarto/manuscript.pdf*quarto/manuscript.qmd*quarto/supplement.qmd|t20720.7264731444s|s6651838b|6651838|file|local|vector|||137.126||
-data|stem|d67e8948e304ac7e|b9cd236e90084022|0e52e3136276c1a5|33550471||t20720.7504752412s|s39260b|39260|rds|local|vector|||16.895||
 plot_sample|stem|7db05e4edaa4d55c|26a2963c9bbcc853|0bb8e444814f237f|-1970076201||t20720.7514073463s|s7725521b|7725521|rds|local|vector|||0.795||
 plot_coverage|stem|2e5e9c1485956e96|3c337ec3a4bb18ce|c04b4313cfbb471f|249145699||t20720.7526499258s|s417836b|417836|rds|local|vector|||0.112||
 plot_world|stem|06541ac7fdbbfeb5|597e0c0ffcff6594|bc557f0560230d0e|-1778573588||t20720.7527244376s|s782302b|782302|rds|local|vector|||0.036||
 plot_methods|stem|870c5311cb5826a6|ed909cd554c0cd7f|2a21f9696a92e900|478310962||t20720.7529360776s|s7783724b|7783724|rds|local|vector|||1.046||
 plot_cor|stem|665654f5ee87b69d|32c60c4e8375875e|aa98c545d51fc0c6|854672363||t20720.7530185863s|s18625932b|18625932|rds|local|vector|||0.76|object 'distances' not found|
+tree_file|stem|097e0a16f1431efe|1de9ec4cb0b83efe|2c530c1562a7fbd1|-419834672|data/tree/dplace.nxs|t20672.8098505321s|s55689082b|55689082|file|local|vector|||15.851|package 'stringr' was built under R version 4.5.2|
+tree|stem|8e49bd8b91a9d1d6|c77021f1bbaff69b|4d480221af427e94|437279712||t20672.8450737706s|s26891456b|26891456|rds|local|vector|||15.028||
+mcc_tree|stem|cea89e7500b0dd56|c47da3594f89d0e8|6e521ad2d4809cd4|-2069454262||t20672.8532801099s|s33470b|33470|rds|local|vector|||36.323||
+data|stem|24aecde712329c4c|b9cd236e90084022|0e52e3136276c1a5|33550471||t20720.7791124186s|s39269b|39269|rds|local|vector|||25.927||
 wrangle_sccs|function|7c04b41b2cc92487
 calculate_phylogenetic_signal|function|26fe6106ad9643ba
 plot_world_map|function|8bf09b9b701a5479
@@ -142,7 +142,7 @@ plot_variable_coverage|function|78244f63aa06069e
 plot_sample_characteristics|function|2b63d1e8066dadd1
 wrangle_ea|function|a803499ce7cd4ee9
 load_tree|function|36feda55b1e32dd5
-get_effects_matrix|function|281e9d2a4eb723c7
+get_effects_matrix|function|932ab14bf9dcbec4
 extract_standardised|function|93272dbd59e03d1c
 plot_linguistic_spatial_distance|function|877f49e646772943
 plot_synthetic_fit|function|b3fa705bc559591c
@@ -154,9 +154,15 @@ plot_standardised_effects|function|7cde45e72e4ef26e
 plot_trait_on_tree|function|432fd6c8e6cc9ca7
 create_table_variables|function|a74030a1facf2bcb
 load_dplace_data|function|057fc5e8b633380a
-get_cutpoints_list|function|1904fea920bd0028
-get_variables_list|function|fc883381446834d1
-fix_parameters|function|42597dab9243b8e0
-plot_prior_predictive_check|function|27395fc47c638317
-fit_model|function|c8caa89052c490cc
-generate_synthetic_data|function|fd688ef4f35a89b8
+get_cutpoints_list|function|9721784a26e98b59
+get_variables_list|function|6de1232a8c008675
+fix_parameters|function|3fd5f358ee6b2628
+plot_prior_predictive_check|function|7e0c922d0495e36c
+fit_model|function|522f5e5207d2be83
+generate_synthetic_data|function|50661c8dd9544f90
+fit_plough_animals2|stem|a3805420f8f9d58c|ba1141ee8234c970|61a6895840e241e9|181056831||t20723.0198049318s|s2847735945b|2847735945|rds|local|vector|||189854.077||
+summary_plough_animals2|stem|2959311d4a007915|473c101e21628538|895ac393eb89068b|200420620||t20723.0248334861s|s53b|53|rds|local|vector|||408.329||
+A_std_plough_animals2|stem|a3e97f17519c76b7|f78133a95f25d1eb|69b1118d2e7572ab|-864480125||t20723.0251684834s|s669204b|669204|rds|local|vector|||5.325||
+fit_intergenerational_wealth_transmission2|stem|1493354864144394|8e55bac6c98ef0b8|61a6895840e241e9|-519766366||t20723.2004987767s|s3561639370b|3561639370|rds|local|vector|||202471.815||
+A_std_intergenerational_wealth_transmission2|stem|da1bdaf5dc751649|bb4e18abec6c3808|877b61d0ebb83eb5|509801394||t20723.2008658278s|s1039784b|1039784|rds|local|vector|||5.506||
+summary_intergenerational_wealth_transmission2|stem|2959311d4a007915|d006a2a186ea28a7|675f30effd75a629|1054942436||t20723.206096306s|s53b|53|rds|local|vector|||429.129||

@@ -1,0 +1,71 @@
+Variables: class_differentiation = ordered_logistic 
+           agriculture = ordered_logistic 
+           large_domestic_animals = bernoulli_logit 
+           real_property_inheritance = ordered_logistic 
+           movable_property_inheritance = ordered_logistic 
+     Data: data (Number of observations: 1258)
+Phylogeny: tree (Number of trees: 1)
+    Draws: 8 chains, each with iter = 1500; warmup = 3000; thin = 1
+           total post-warmup draws = 12000
+
+Autoregressive selection effects:
+                             Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation           -1.39      0.63 -2.70 -0.28 1.00     1556     1402
+agriculture                     -0.61      0.44 -1.65 -0.03 1.01      566      723
+large_domestic_animals          -0.53      0.40 -1.50 -0.03 1.00     2107     2409
+real_property_inheritance       -1.46      0.72 -2.98 -0.19 1.00      939      639
+movable_property_inheritance    -1.25      0.70 -2.73 -0.06 1.01      521      183
+
+Cross selection effects:
+                                                           Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+agriculture <U+27F6> real_property_inheritance                   3.24      1.13  1.15  5.57 1.01      497      942
+agriculture <U+27F6> movable_property_inheritance                2.00      1.08 -0.04  4.22 1.01      468     1138
+large_domestic_animals <U+27F6> real_property_inheritance        0.35      1.01 -1.72  2.36 1.02      371      820
+large_domestic_animals <U+27F6> movable_property_inheritance     0.31      1.05 -1.80  2.47 1.02      390      865
+real_property_inheritance <U+27F6> class_differentiation         1.66      1.27 -0.77  4.29 1.01      762     1544
+movable_property_inheritance <U+27F6> class_differentiation     -0.04      1.45 -2.82  2.94 1.00      730     1232
+
+Drift parameters:
+                                 Estimate Est.Error 2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+sd(class_differentiation)            3.63      0.55 2.56  4.71 1.00     2003     3361
+sd(agriculture)                      3.30      0.42 2.51  4.16 1.01      884     2203
+sd(large_domestic_animals)           3.30      0.59 2.19  4.51 1.00     2110     3135
+sd(real_property_inheritance)        1.22      0.76 0.08  2.80 1.02      522      718
+sd(movable_property_inheritance)     1.83      0.72 0.33  3.20 1.01      790      769
+
+Continuous time intercept parameters:
+                             Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation           -0.30      0.95 -2.14  1.58 1.00     1839     3132
+agriculture                     -0.09      0.92 -1.93  1.68 1.01      745     1268
+large_domestic_animals           0.09      0.85 -1.58  1.77 1.01     1636     3668
+real_property_inheritance       -0.08      0.99 -2.06  1.83 1.01     1208     2649
+movable_property_inheritance     0.08      0.97 -1.78  2.01 1.01     1289     2477
+
+Ordinal cutpoint parameters:
+                                Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation[1]           -0.91      1.07 -3.08  1.22 1.01      737     1728
+class_differentiation[2]            0.38      1.07 -1.78  2.51 1.01      736     1756
+class_differentiation[3]            0.64      1.07 -1.52  2.78 1.01      736     1728
+class_differentiation[4]            2.85      1.08  0.68  5.01 1.01      746     1835
+agriculture[1]                     -3.18      0.83 -4.82 -1.57 1.01      520     1256
+agriculture[2]                     -2.48      0.82 -4.12 -0.89 1.01      522     1299
+agriculture[3]                      1.06      0.82 -0.58  2.65 1.01      535     1344
+agriculture[4]                      1.75      0.82  0.12  3.35 1.01      537     1347
+agriculture[5]                      3.56      0.83  1.89  5.18 1.01      546     1400
+real_property_inheritance[1]       -1.60      1.25 -4.20  0.83 1.02      346      791
+real_property_inheritance[2]        1.22      1.24 -1.36  3.65 1.02      345      755
+movable_property_inheritance[1]    -3.39      1.12 -5.61 -1.22 1.02      469     1141
+movable_property_inheritance[2]     1.26      1.11 -0.95  3.43 1.02      483     1185
+
+Gaussian Process parameters for distances:
+                                   Estimate Est.Error 2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+sdgp(class_differentiation)            1.61      0.33 1.08  2.38 1.00     1957     3082
+sdgp(agriculture)                      2.37      0.33 1.78  3.07 1.00     1907     3947
+sdgp(large_domestic_animals)           2.98      0.41 2.25  3.86 1.00     3664     5730
+sdgp(real_property_inheritance)        1.35      0.46 0.63  2.44 1.00     1855     1911
+sdgp(movable_property_inheritance)     1.30      0.26 0.87  1.87 1.00     2403     4031
+rho(class_differentiation)             0.07      0.02 0.04  0.11 1.01     1592     2974
+rho(agriculture)                       0.09      0.02 0.06  0.13 1.00      909     1406
+rho(large_domestic_animals)            0.08      0.01 0.05  0.11 1.00     2623     4627
+rho(real_property_inheritance)         0.06      0.03 0.03  0.13 1.00     1820     1600
+rho(movable_property_inheritance)      0.10      0.03 0.05  0.16 1.00     1488     2072

@@ -1,0 +1,60 @@
+Variables: class_differentiation = ordered_logistic 
+           agriculture = ordered_logistic 
+           plough_animals = bernoulli_logit 
+           real_property_inheritance = ordered_logistic 
+     Data: data (Number of observations: 1258)
+Phylogeny: tree (Number of trees: 1)
+    Draws: 8 chains, each with iter = 1500; warmup = 3000; thin = 1
+           total post-warmup draws = 12000
+
+Autoregressive selection effects:
+                          Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation        -1.33      0.64 -2.64 -0.17 1.01      925      609
+agriculture                  -0.48      0.37 -1.39 -0.01 1.01      818      605
+plough_animals               -0.71      0.53 -1.97 -0.03 1.01      624      508
+real_property_inheritance    -0.88      0.58 -2.19 -0.04 1.01      659      549
+
+Cross selection effects:
+                                                       Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+agriculture <U+27F6> plough_animals                          3.77      1.15  1.66  6.17 1.01      925     1867
+plough_animals <U+27F6> real_property_inheritance            1.57      0.79  0.18  3.25 1.02      406      703
+real_property_inheritance <U+27F6> class_differentiation     1.67      1.03 -0.25  3.78 1.01      736     1508
+
+Drift parameters:
+                              Estimate Est.Error 2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+sd(class_differentiation)         3.60      0.56 2.56  4.73 1.00     1764     2978
+sd(agriculture)                   3.11      0.40 2.37  3.95 1.00     1709     3264
+sd(plough_animals)                1.65      0.80 0.14  3.19 1.01      769      471
+sd(real_property_inheritance)     2.35      0.66 1.05  3.63 1.01      813      885
+
+Continuous time intercept parameters:
+                          Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation        -0.19      0.95 -2.13  1.64 1.00     1613     2851
+agriculture                  -0.42      0.92 -2.20  1.43 1.00      834     1789
+plough_animals               -0.56      0.94 -2.40  1.29 1.01     1422     2967
+real_property_inheritance     0.11      0.96 -1.78  1.97 1.00     1207     2276
+
+Ordinal cutpoint parameters:
+                             Estimate Est.Error  2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+class_differentiation[1]        -1.23      1.08 -3.42  0.85 1.00      655     1403
+class_differentiation[2]         0.06      1.07 -2.12  2.12 1.00      655     1405
+class_differentiation[3]         0.32      1.07 -1.86  2.38 1.00      656     1395
+class_differentiation[4]         2.53      1.08  0.34  4.62 1.00      674     1551
+agriculture[1]                  -4.09      0.75 -5.61 -2.62 1.01      715     1535
+agriculture[2]                  -3.40      0.75 -4.90 -1.96 1.01      730     1512
+agriculture[3]                   0.11      0.74 -1.35  1.55 1.01      790     1636
+agriculture[4]                   0.81      0.74 -0.65  2.26 1.01      802     1648
+agriculture[5]                   2.62      0.74  1.16  4.06 1.01      850     1777
+real_property_inheritance[1]    -3.30      1.17 -5.67 -1.00 1.01      642     1149
+real_property_inheritance[2]    -0.43      1.18 -2.79  1.83 1.01      649     1260
+
+Gaussian Process parameters for distances:
+                                Estimate Est.Error 2.5% 97.5% Rhat Bulk_ESS Tail_ESS
+sdgp(class_differentiation)         1.63      0.35 1.09  2.45 1.00     2127     3874
+sdgp(agriculture)                   2.39      0.33 1.80  3.10 1.00     1906     3750
+sdgp(plough_animals)                2.36      0.43 1.61  3.29 1.00     4025     5767
+sdgp(real_property_inheritance)     1.24      0.47 0.43  2.34 1.01      909      512
+rho(class_differentiation)          0.07      0.02 0.04  0.11 1.01     1658     3192
+rho(agriculture)                    0.09      0.02 0.06  0.13 1.01     1159     2167
+rho(plough_animals)                 0.13      0.03 0.08  0.21 1.00     1416     3061
+rho(real_property_inheritance)      0.07      0.05 0.03  0.20 1.00     1192      749

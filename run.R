@@ -1,1 +1,1 @@
-targets::tar_make()
+targets::tar_make(c(A_std_intergenerational_wealth_transmission2, A_std_plough_animals2, summary_intergenerational_wealth_transmission2, summary_plough_animals2))
